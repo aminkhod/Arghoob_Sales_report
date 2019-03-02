@@ -17,6 +17,8 @@ with open('RawData.csv', newline='') as f:
 print(row[0])
 
 
+
+
 # In[69]:
 
 
