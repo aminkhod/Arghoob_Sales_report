@@ -1,20 +1,21 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[4]:
+# In[2]:
 
 
 import pandas as pd
 import numpy as np
 # import os
-import plotly.graph_objs as go
 # import plotly.io as pio
 # import plotly.plotly as py
 # import plotly.figure_factory as ff
-# import dash
-# import dash_core_components as dcc
-# import dash_html_components as html
+import plotly.graph_objs as go
+import dash
+import dash_core_components as dcc
+import dash_html_components as html
 from  plotly.offline import plot
+import dash_auth
 # import plotly
 # from IPython.display import SVG, display
 # from IPython.display import Image
@@ -24,6 +25,24 @@ from  plotly.offline import plot
 # from IPython.display import IFrame
 # from plotly.offline import iplot, init_notebook_mode
 # from IPython.display import YouTubeVideo
+
+
+# In[3]:
+
+
+VALID_USERNAME_PASSWORD_PAIRS = [
+    ['123', '123']
+]
+
+
+# In[4]:
+
+
+app = dash.Dash('auth')
+auth = dash_auth.BasicAuth(
+    app,
+    VALID_USERNAME_PASSWORD_PAIRS
+)
 
 
 # In[5]:
@@ -66,12 +85,60 @@ for col in numListOfBranch:
 
 
 
-trace = go.Table(
-    header=dict(values=numListOfBranch),
-    cells=dict(values=branchTot))
+# trace = go.Table(
+#     header=dict(values=numListOfBranch),
+#     cells=dict(values=branchTot))
 
-data = [trace] 
-plot(data, filename = 'basic_table')
+# data = [trace] 
+# plot(data, filename = 'basic_table')
+
+
+# In[9]:
+
+
+
+
+app = dash.Dash(__name__)
+server = app.server
+
+# df = pd.read_csv(
+#     'https://gist.githubusercontent.com/chriddyp/' +
+#     '5d1ea79569ed194d432e56108a04d188/raw/' +
+#     'a9f9e8076b837d541398e999dcbac2b2826a81f8/'+
+#     'gdp-life-exp-2007.csv')
+
+
+app.layout = html.Div([
+    dcc.Graph(
+        id='life-exp-vs-gdp',
+        figure={
+            'data': [
+                go.Bar(
+                    x=numListOfBranch,
+                    y=branchTot,
+#                     text=df[df['continent'] == i]['country'],
+#                     mode='markers',
+                    opacity=0.8,
+                    marker={
+#                         'size': 15,
+                        'line': {'width': 0.5, 'color': 'white'}
+                    },
+                    name='Total Sale')
+#                 ) for i in numListOfBranch
+            ],
+            'layout': go.Layout(
+                xaxis={'type': 'log', 'title': 'Branches'},
+                yaxis={'title': 'Sale'},
+                margin={'l': 40, 'b': 40, 't': 10, 'r': 10},
+                legend={'x': 0, 'y': 1},
+                hovermode='closest'
+            )
+        }
+    )
+])
+
+if __name__ == '__main__':
+    app.run_server()
 
 
 # In[ ]:
