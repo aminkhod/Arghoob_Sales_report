@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[2]:
+# In[39]:
 
 
 import pandas as pd
@@ -24,121 +24,14 @@ from IPython.display import HTML
 from IPython.display import IFrame
 from plotly.offline import iplot, init_notebook_mode
 from IPython.display import YouTubeVideo
-init_notebook_mode(connected=True)
+# init_notebook_mode(connected=True)
 
 # import subprocess
 # subprocess.check_call(['pip', 'install', 'numpy']) # install pkg
 # subprocess.check_call(['pip', 'install',"--upgrade", 'numpy']) # upgrade pkg
 
 
-# In[2]:
-
-
-path = '4Th Month/'
-
-files = []
-filesNoAdd = []
-# r=root, d=directories, f = files
-for r, d, f in os.walk(path):
-    for file in f:
-        if '.CSV' in file:
-            files.append(os.path.join(r, file))
-            filesNoAdd.append(file)
-
-for f in filesNoAdd:
-    print(f)
-
-
-# In[3]:
-
-
-# f1 = '04-05-2019'
-for ff in filesNoAdd:
-    f1 = (path+ ff)
-    rawData = pd.read_csv(f1 , encoding='latin1')
-    # rawData
-    sku = rawData.values[:189,0]
-    upc = rawData.values[:189,1]
-    Catalogue = rawData.values[:189,2]
-    title = rawData.values[:189,3]
-    label = rawData.values[:189,4]
-    Cost_Price = rawData.values[:189,5]
-    VSP = rawData.values[:189,6]
-    rawDatVal = []
-    rawDatVal = rawData.values[:189,7:149]
-    eachRaw = []
-    allRawvalue = []
-    BranchTotal = rawDatVal.sum(axis=0)
-
-    for i in range(len(rawDatVal[:,0])):
-        for j in range(int((len(rawDatVal[0,:]))/3)):
-
-            k=3 * j 
-
-            eachRaw.append(rawDatVal[i,k])
-        eachRaw = np.array(eachRaw)
-        allRawvalue.append(eachRaw.sum())
-        eachRaw = []
-
-    # rawData['Sum of sale for each goods'] = allRawvalue
-
-    eachRaw = []
-
-    BranchTotal = rawDatVal.sum(axis=0)
-    for j in range(int(len(rawDatVal[0,:])/3)):
-        k=3 * j 
-        sum = 0
-        for i in range(len(rawDatVal[:,0])):
-            sum += rawDatVal[i,k]
-        rawData.iloc[i+1,k] = sum
-
-
-        eachRaw = []
-    # allRawvalue.append(np.array(allRawvalue).sum())
-    # allRawvalue.append(np.array(allRawvalue).sum())
-
-    Virgin_Stock = []
-    Virgin_Stock = pd.DataFrame(Virgin_Stock)
-    Virgin_Stock['sku'] = sku
-    Virgin_Stock['upc'] = upc
-    Virgin_Stock['Catalogue'] = Catalogue
-    Virgin_Stock['title'] = title
-    Virgin_Stock['label'] = label
-    Virgin_Stock['VMS Cost'] = Cost_Price
-    Virgin_Stock['VSP'] = VSP
-
-
-    Virgin_Stock[f1] = list(allRawvalue)
-
-    i = 1
-    buf = np.zeros([len(Virgin_Stock.values[:,1]),1], dtype=int)
-    ## i
-    for j in range(i):
-        buf += np.reshape(np.array(Virgin_Stock.values[:,7+j], dtype = int),[189,1])
-
-    Virgin_Stock["TOTAL"] = buf
-    ii = np.full(len(Virgin_Stock.values[:,1]) ,i )
-
-    Virgin_Stock["AVG. WEEK"] = np.divide(Virgin_Stock["TOTAL"] , ii)
-    Virgin_Stock['total VMS Cost'] = Virgin_Stock["TOTAL"] * Virgin_Stock['VMS Cost']
-    Virgin_Stock['total V.S.P.'] = Virgin_Stock["TOTAL"] * Virgin_Stock['VSP']
-    count = 0
-    for head in list(rawData.head(0)):
-        if ".Sales Quantity" in head:
-            Virgin_Stock[head] = rawData[head]
-            try:
-                headNum = int(head.replace(".Sales Quantity",''))
-            except:
-                print(int(headNum)," can't be cast to int")
-            headNum = str(headNum)
-            Virgin_Stock['TOTAL' + headNum] = rawData.values[:189, count]
-            Virgin_Stock['VMS Cost' + headNum] = Virgin_Stock['VMS Cost'] * Virgin_Stock['TOTAL' + headNum]
-            Virgin_Stock['V.S.P.' + headNum] = Virgin_Stock['VSP'] * Virgin_Stock['TOTAL' + headNum]
-            Virgin_Stock['AVG. WEEK' + headNum] = np.divide(Virgin_Stock['TOTAL' + headNum] , ii)
-        count +=1
-
-
-# In[4]:
+# In[40]:
 
 
 # sku = rawData.values[:189,0]
@@ -150,7 +43,7 @@ for ff in filesNoAdd:
 # VSP = rawData.values[:189,6]
 
 
-# In[5]:
+# In[41]:
 
 
 # rawDatVal = []
@@ -172,7 +65,7 @@ for ff in filesNoAdd:
 # # rawData['Sum of sale for each goods'] = allRawvalue
 
 
-# In[6]:
+# In[42]:
 
 
 
@@ -192,7 +85,7 @@ for ff in filesNoAdd:
 # # allRawvalue.append(np.array(allRawvalue).sum())
 
 
-# In[7]:
+# In[43]:
 
 
 # Virgin_Stock = []
@@ -209,7 +102,7 @@ for ff in filesNoAdd:
 # Virgin_Stock[f1] = list(allRawvalue)
 
 
-# In[8]:
+# In[44]:
 
 
 # i = 1
@@ -244,37 +137,13 @@ for ff in filesNoAdd:
         
 
 
-# In[9]:
-
-
-Virgin_Stock.to_csv('Virgin_Stock.csv', index =False)
-
-
-# In[10]:
+# In[45]:
 
 
 #  Virgin_Stock['VMS Cost'] * Virgin_Stock['TOTAL' + headNum]
 
 
-# In[2]:
-
-
-path = '4Th Month/'
-
-files = []
-filesNoAdd = []
-# r=root, d=directories, f = files
-for r, d, f in os.walk(path):
-    for file in f:
-        if '.csv' in file:
-            files.append(os.path.join(r, file))
-            filesNoAdd.append(file)
-
-for f in filesNoAdd:
-    print(f)
-
-
-# In[3]:
+# In[46]:
 
 
 numListOfBranch = ['401','402','404','405','412','416','417','423',
@@ -299,166 +168,26 @@ header = productDetail.copy()
 header.extend(listOfBranch.copy())
 
 
-# In[4]:
-
-
-def findID(sku, Data):
-    numb = 0
-    for SKUref in Data['Sku']:
-        
-        if str(sku) == str(SKUref):
-            return numb
-        numb += 1
-    return "This good with Sku of " + sku + " is not in data." 
-
-
-# In[5]:
+# In[47]:
 
 
 # findID(str(748116), rawData)
 # rawData
 
 
-# In[6]:
-
-
-def buildList(num, ide, productDetail, listOfBranch, rawData):
-    
-    producList = []
-    for det in productDetail:
-        producList.append(rawData[det][ide])
-    for branch in listOfBranch:
-        head = str(branch + '.Sales Quantity')
-        if head in rawData.head(0):
-            try:
-                producList.append(float(rawData[head][ide]))
-                producList.append(float(rawData[head][ide]) * float(rawData['V.S.P.'][ide]))
-                producList.append(float(rawData[head][ide]) * float(rawData['Cost Price'][ide]))
-                producList.append(float(rawData[head][ide]) / float(num))
-                
-            except:
-                print("A number in raw data is string")
-                
-    return producList
-
-
-# In[7]:
-
-
-def listAddition(Dataide, ide, num, productDetail, listOfBranch, rawData, monthRawData):
-    colid = 0
-    for branch in listOfBranch:
-        head = str(branch + '.Sales Quantity')
-        if head in rawData.head(0):
-            monthRawData.iloc[Dataide, colid+7] = monthRawData.iloc[Dataide, colid+7] + rawData[head][ide]
-            monthRawData.iloc[Dataide, colid+8] = monthRawData.iloc[Dataide, colid+7] * float(rawData['V.S.P.'][ide])
-            monthRawData.iloc[Dataide, colid+9] = monthRawData.iloc[Dataide, colid+7] * float(rawData['Cost Price'][ide])
-            monthRawData.iloc[Dataide, colid+10]= monthRawData.iloc[Dataide, colid+7] / float(num)
-        colid += 1
-    return monthRawData
-
-
-# In[8]:
-
-
-def noStock(sku,rawData):
-    sku = str(sku)
-    i = findID(sku, rawData)
-    if np.sum(rawData.values[i,7:]) > 0:
-        return False
-    else:
-        return True
-
-
-# In[20]:
+# In[48]:
 
 
 # noStock(748116,rawData)
 
 
-# In[9]:
-
-
-# a = np.zeros(shape=(1,len(header)))
-monthRawData = pd.DataFrame(columns = list(header))
-
-fcount = len(files)
-b = []
-for f in files:
-#     f1 = (path + f)
-    f1 = (f)
-    rawData = pd.read_csv(f1 , encoding='latin1')
-
-    
-    sid =0
-    b = 0
-    for sku in rawData['Sku']:
-        if sku not in list(monthRawData['Sku']):
-            df = pd.DataFrame([list(buildList(fcount, sid, productDetail, listOfBranch, rawData))],
-                              columns= list(header))
-            monthRawData = monthRawData.append(df)
-            
-        else:
-            Dataide = findID(sku, monthRawData)
-            b = listAddition(Dataide, sid, fcount, productDetail, listOfBranch, rawData, monthRawData)
-        sid +=1
-
-
-# In[10]:
-
-
-totalGoodSale = []
-count = 0
-for sku in monthRawData['Sku']:
-    saleOfGood = []
-    for numB in numListOfBranch:
-        saleOfGood.append(monthRawData.iloc[count][numB])
-    totalGoodSale.append(np.sum(saleOfGood))
-    count += 1
-monthRawData["total sale of Goods"] = totalGoodSale
-status = []
-for tot in totalGoodSale:
-#     if tot == 0:
-    if tot <= 0:
-        status.append('Not moving')
-    if (tot > 0) and (tot <=2):
-        status.append('Slow moving')
-    if tot > 2:
-        status.append('Fast moving')
-#
-for j in range(len(filesNoAdd)):
-    rawData = pd.read_csv(files[j])
-
-    for i in range(len(status)):
-#         print(i)
-        try:
-            if noStock(monthRawData.iloc[i]['Sku'],rawData):
-                status[i] = 'Run out of stock'
-        except:
-            continue
-#
-monthRawData["Status"] = status
-
-
-# In[27]:
+# In[49]:
 
 
 # monthRawData.iloc[155]['Sku']
 
 
-# In[11]:
-
-
-monthRawData.to_csv("hg.csv", index=False)
-
-
-# In[ ]:
-
-
-
-
-
-# In[29]:
+# In[50]:
 
 
 
@@ -490,17 +219,17 @@ monthRawData.to_csv("hg.csv", index=False)
 #     app.run_server(debug=True)
 
 
-# In[4]:
+# In[52]:
 
 
-df = pd.read_csv('hg.csv')
+df = pd.read_csv('toalOfMonth.csv')
 
 branchTot = []
 for col in numListOfBranch:
     branchTot.append(df[col].sum())
 
 
-# In[4]:
+# In[53]:
 
 
 
@@ -513,7 +242,7 @@ data = [trace]
 plot(data, filename = 'basic_table')
 
 
-# In[33]:
+# In[54]:
 
 
 
@@ -534,13 +263,13 @@ fig = dict(data=data, layout=layout)
 plot(fig, filename = 'styled_table')
 
 
-# In[38]:
+# In[56]:
 
 
 
 
 # df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/2014_usa_states.csv')
-df = monthRawData
+df = pd.read_csv('toalOfMonth.csv')
 
 trace = go.Table(
     header=dict(values=list(numListOfBranch),
@@ -554,7 +283,7 @@ data = [trace]
 plot(data, filename = 'pandas_table')
 
 
-# In[35]:
+# In[57]:
 
 
 
@@ -598,7 +327,7 @@ plot(data, filename = 'pandas_table')
 # plot(data, filename = "Row and Column Size")
 
 
-# In[17]:
+# In[58]:
 
 
 
@@ -641,7 +370,7 @@ if len(cl.scales['7']['seq']['Blues']) <= 14:
     len(color)
 
 
-# In[18]:
+# In[59]:
 
 
 
@@ -677,7 +406,7 @@ data = [trace0]
 plot(data, filename = "row variable color")
 
 
-# In[25]:
+# In[60]:
 
 
 
@@ -710,25 +439,7 @@ plot(data, filename = "row variable color")
 # plot(data, filename = "cell variable color")
 
 
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[26]:
+# In[61]:
 
 
 
@@ -743,7 +454,7 @@ plot(data, filename = "row variable color")
 # pio.write_image(table, 'table.pdf')
 
 
-# In[11]:
+# In[68]:
 
 
 # import tkinter
@@ -781,11 +492,11 @@ plot(data, filename = "row variable color")
 # top.mainloop()
 
 
-# In[12]:
+# In[69]:
 
 
 
-data = pd.read_csv('hg.csv')
+data = pd.read_csv('toalOfMonth.csv')
 
 branchTot = []
 for col in numListOfBranch:
@@ -798,12 +509,12 @@ data = [go.Bar(x=numListOfBranch,
 plot(data, filename='jupyter-basic_bar')
 
 
-# In[13]:
+# In[70]:
 
 
 
 
-data = pd.read_csv('hg.csv')
+data = pd.read_csv('toalOfMonth.csv')
 
 branchTot = []
 for col in numListOfBranch:
@@ -826,11 +537,11 @@ fig.add_scatter(x=x,
 plot(fig)
 
 
-# In[14]:
+# In[71]:
 
 
 
-data = pd.read_csv('hg.csv')
+data = pd.read_csv('toalOfMonth.csv')
 
 branchTot = []
 for col in numListOfBranch:
@@ -854,14 +565,14 @@ pio.write_image(data, 'fig1.webp')
 display(SVG(img_bytes))
 
 
-# In[15]:
+# In[72]:
 
 
 img_bytes = pio.to_image(data, format='png', width=600, height=400, scale=2)
 Image(img_bytes)
 
 
-# In[33]:
+# In[73]:
 
 
 # %%time
@@ -871,7 +582,7 @@ Image(img_bytes)
 # display(SVG(img_bytes))
 
 
-# In[23]:
+# In[74]:
 
 
 
@@ -903,7 +614,7 @@ Image(img_bytes)
 # plot(fig, sharing='private', filename='jupyter-styled_bar')
 
 
-# In[24]:
+# In[75]:
 
 
 
@@ -963,7 +674,7 @@ Image(img_bytes)
 # plot(fig, filename='jupyter-Nuclear Waste Sites on American Campuses')
 
 
-# In[25]:
+# In[76]:
 
 
 
@@ -1007,7 +718,7 @@ Image(img_bytes)
 # plot(fig, filename='jupyter-parametric_plot')
 
 
-# In[26]:
+# In[77]:
 
 
 
@@ -1042,7 +753,7 @@ Image(img_bytes)
 # plot(fig, filename='Sine Wave Slider')
 
 
-# In[27]:
+# In[78]:
 
 
 
@@ -1051,7 +762,7 @@ Image(img_bytes)
 # # YouTubeVideo('')
 
 
-# In[28]:
+# In[79]:
 
 
 
@@ -1060,35 +771,35 @@ Image(img_bytes)
 # display(Math(r'F(k) = \int_{-\infty}^{\infty} f(x) e^{2\pi i k} dx'))
 
 
-# In[29]:
+# In[80]:
 
 
 # IFrame(src= "https://dash-simple-apps.plotly.host/dash-tableplot/", width="100%", height="850px", frameBorder="0")
 
 
-# In[30]:
+# In[81]:
 
 
 
 # IFrame(src= "https://dash-simple-apps.plotly.host/dash-tableplot/code", width="100%", height=500, frameBorder="0")
 
 
-# In[34]:
+# In[82]:
 
 
-hg = pd.read_csv('hg.csv')
+toalOfMonth = pd.read_csv('toalOfMonth.csv')
 numListOfBranch = ['401','402','404','405','412','416','417','423',
                    '424','425','426','429','444','490',]
 branchTot = []
 for col in numListOfBranch:
-    branchTot.append(hg[col].sum())
+    branchTot.append(toalOfMonth[col].sum())
     
 np.random.seed(42)
 random_x = np.random.randint(1,101,100)
 random_y = np.random.randint(1,101,100)
 
 
-# In[35]:
+# In[83]:
 
 
 data = [go.Box(y = branchTot, name = 'sale distribution',
@@ -1115,7 +826,7 @@ fig = go.Figure(data=data,layout=layout)
 plot(fig, filename = "sale distribution of each branch")
 
 
-# In[36]:
+# In[84]:
 
 
 data = [go.Bar(x = numListOfBranch, y = branchTot,
@@ -1137,7 +848,7 @@ fig = go.Figure(data = data, layout = layout)
 plot(fig, filename = 'sale amount of each branch')
 
 
-# In[37]:
+# In[85]:
 
 
 
