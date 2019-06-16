@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[2]:
+# In[1]:
 
 
 import pandas as pd
@@ -31,7 +31,7 @@ init_notebook_mode(connected=True)
 # subprocess.check_call(['pip', 'install',"--upgrade", 'numpy']) # upgrade pkg
 
 
-# In[3]:
+# In[2]:
 
 
 path = '4Th Month/'
@@ -49,7 +49,7 @@ for f in filesNoAdd:
     print(f)
 
 
-# In[4]:
+# In[3]:
 
 
 # f1 = '04-05-2019'
@@ -138,13 +138,13 @@ for ff in filesNoAdd:
         count +=1
 
 
-# In[5]:
+# In[4]:
 
 
 Virgin_Stock.to_csv('Virgin_Stock.csv', index =False)
 
 
-# In[6]:
+# In[5]:
 
 
 path = '4Th Month/'
@@ -162,32 +162,32 @@ for f in filesNoAdd:
     print(f)
 
 
-# In[7]:
+# In[6]:
 
 
-numListOfBranch = ['401','402','404','405','412','416','417','423',
-                   '424','425','426','429','444','490',]
-listOfBranch = ['401', '401.VMS cost', '401.V.S.P.', '401.AVG. WEEK',
-                '402', '402.VMS cost', '402.V.S.P.', '402.AVG. WEEK',
-                '404', '404.VMS cost', '404.V.S.P.', '404.AVG. WEEK',
-                '405', '405.VMS cost', '405.V.S.P.', '405.AVG. WEEK',
-                '412', '412.VMS cost', '412.V.S.P.', '412.AVG. WEEK',
-                '416', '416.VMS cost', '416.V.S.P.', '416.AVG. WEEK',
-                '417', '417.VMS cost', '417.V.S.P.', '417.AVG. WEEK',
-                '423', '423.VMS cost', '423.V.S.P.', '423.AVG. WEEK',
-                '424', '424.VMS cost', '424.V.S.P.', '424.AVG. WEEK',
-                '425', '425.VMS cost', '425.V.S.P.', '425.AVG. WEEK',
-                '426', '426.VMS cost', '426.V.S.P.', '426.AVG. WEEK',
-                '429', '429.VMS cost', '429.V.S.P.', '429.AVG. WEEK',
-                '444', '444.VMS cost', '444.V.S.P.', '444.AVG. WEEK',
-                '490', '490.VMS cost', '490.V.S.P.', '490.AVG. WEEK']
+numListOfBranch = ['401 Co','402 Co','404 Co','405 Co','412 Co','416 Co',
+                   '417 Co','423 Co', '424 Co','425 Co','426 Co','429 Co','444 Co','490 Co']
+listOfBranch = ['401 Co', '401.VMS cost', '401.V.S.P.', '401.AVG. WEEK',
+                '402 Co', '402.VMS cost', '402.V.S.P.', '402.AVG. WEEK',
+                '404 Co', '404.VMS cost', '404.V.S.P.', '404.AVG. WEEK',
+                '405 Co', '405.VMS cost', '405.V.S.P.', '405.AVG. WEEK',
+                '412 Co', '412.VMS cost', '412.V.S.P.', '412.AVG. WEEK',
+                '416 Co', '416.VMS cost', '416.V.S.P.', '416.AVG. WEEK',
+                '417 Co', '417.VMS cost', '417.V.S.P.', '417.AVG. WEEK',
+                '423 Co', '423.VMS cost', '423.V.S.P.', '423.AVG. WEEK',
+                '424 Co', '424.VMS cost', '424.V.S.P.', '424.AVG. WEEK',
+                '425 Co', '425.VMS cost', '425.V.S.P.', '425.AVG. WEEK',
+                '426 Co', '426.VMS cost', '426.V.S.P.', '426.AVG. WEEK',
+                '429 Co', '429.VMS cost', '429.V.S.P.', '429.AVG. WEEK',
+                '444 Co', '444.VMS cost', '444.V.S.P.', '444.AVG. WEEK',
+                '490 Co', '490.VMS cost', '490.V.S.P.', '490.AVG. WEEK']
 
 productDetail = ['Sku', 'UPC', 'Catalogue N', 'Title', 'Label' ,'Cost Price' ,'V.S.P.']
 header = productDetail.copy()
 header.extend(listOfBranch.copy())
 
 
-# In[8]:
+# In[7]:
 
 
 def findID(sku, Data):
@@ -200,7 +200,7 @@ def findID(sku, Data):
     return "This good with Sku of " + sku + " is not in data." 
 
 
-# In[9]:
+# In[18]:
 
 
 def buildList(num, ide, productDetail, listOfBranch, rawData):
@@ -209,6 +209,7 @@ def buildList(num, ide, productDetail, listOfBranch, rawData):
     for det in productDetail:
         producList.append(rawData[det][ide])
     for branch in listOfBranch:
+        branch = branch.replace(' Co','')
         head = str(branch + '.Sales Quantity')
         if head in rawData.head(0):
             try:
@@ -223,12 +224,13 @@ def buildList(num, ide, productDetail, listOfBranch, rawData):
     return producList
 
 
-# In[10]:
+# In[25]:
 
 
 def listAddition(Dataide, ide, num, productDetail, listOfBranch, rawData, monthRawData):
     colid = 0
     for branch in listOfBranch:
+        branch = branch.replace(' Co','')
         head = str(branch + '.Sales Quantity')
         if head in rawData.head(0):
             monthRawData.iloc[Dataide, colid+7] = monthRawData.iloc[Dataide, colid+7] + rawData[head][ide]
@@ -239,19 +241,19 @@ def listAddition(Dataide, ide, num, productDetail, listOfBranch, rawData, monthR
     return monthRawData
 
 
-# In[11]:
+# In[26]:
 
 
 def noStock(sku,rawData):
     sku = str(sku)
     i = findID(sku, rawData)
-    if np.sum(rawData.values[i,7:]) > 0:
+    if np.sum(rawData.values[i,7:45]) > 0:
         return False
     else:
         return True
 
 
-# In[12]:
+# In[27]:
 
 
 # a = np.zeros(shape=(1,len(header)))
@@ -269,8 +271,8 @@ for f in files:
     b = 0
     for sku in rawData['Sku']:
         if sku not in list(monthRawData['Sku']):
-            df = pd.DataFrame([list(buildList(fcount, sid, productDetail, listOfBranch, rawData))],
-                              columns= list(header))
+            df = pd.DataFrame([list(buildList(fcount, sid, productDetail,
+                                              listOfBranch, rawData))], columns= list(header))
             monthRawData = monthRawData.append(df)
             
         else:
@@ -279,7 +281,7 @@ for f in files:
         sid +=1
 
 
-# In[13]:
+# In[28]:
 
 
 totalGoodSale = []
@@ -315,7 +317,7 @@ for j in range(len(filesNoAdd)):
 monthRawData["Status"] = status
 
 
-# In[15]:
+# In[30]:
 
 
 monthRawData.to_csv("toalOfMonth.csv", index=False)
