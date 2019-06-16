@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[39]:
+# In[15]:
 
 
 import pandas as pd
 import numpy as np
 import os
 import plotly.graph_objs as go
-import plotly.io as pio
+# import plotly.io as pio
 import plotly.plotly as py
 import plotly.figure_factory as ff
 import dash
@@ -16,14 +16,14 @@ import dash_core_components as dcc
 import dash_html_components as html
 from  plotly.offline import plot
 import plotly
-from IPython.display import SVG, display
-from IPython.display import Image
-from IPython.display import display, Math, Latex
+# from IPython.display import SVG, display
+# from IPython.display import Image
+# from IPython.display import display, Math, Latex
 import colorlover as cl
-from IPython.display import HTML
-from IPython.display import IFrame
-from plotly.offline import iplot, init_notebook_mode
-from IPython.display import YouTubeVideo
+# from IPython.display import HTML
+# from IPython.display import IFrame
+# from plotly.offline import iplot, init_notebook_mode
+# from IPython.display import YouTubeVideo
 # init_notebook_mode(connected=True)
 
 # import subprocess
@@ -31,7 +31,7 @@ from IPython.display import YouTubeVideo
 # subprocess.check_call(['pip', 'install',"--upgrade", 'numpy']) # upgrade pkg
 
 
-# In[40]:
+# In[16]:
 
 
 # sku = rawData.values[:189,0]
@@ -43,7 +43,7 @@ from IPython.display import YouTubeVideo
 # VSP = rawData.values[:189,6]
 
 
-# In[41]:
+# In[17]:
 
 
 # rawDatVal = []
@@ -65,7 +65,7 @@ from IPython.display import YouTubeVideo
 # # rawData['Sum of sale for each goods'] = allRawvalue
 
 
-# In[42]:
+# In[18]:
 
 
 
@@ -85,7 +85,7 @@ from IPython.display import YouTubeVideo
 # # allRawvalue.append(np.array(allRawvalue).sum())
 
 
-# In[43]:
+# In[19]:
 
 
 # Virgin_Stock = []
@@ -102,7 +102,7 @@ from IPython.display import YouTubeVideo
 # Virgin_Stock[f1] = list(allRawvalue)
 
 
-# In[44]:
+# In[20]:
 
 
 # i = 1
@@ -137,57 +137,57 @@ from IPython.display import YouTubeVideo
         
 
 
-# In[45]:
+# In[21]:
 
 
 #  Virgin_Stock['VMS Cost'] * Virgin_Stock['TOTAL' + headNum]
 
 
-# In[46]:
+# In[22]:
 
 
-numListOfBranch = ['401','402','404','405','412','416','417','423',
-                   '424','425','426','429','444','490',]
-listOfBranch = ['401', '401.VMS cost', '401.V.S.P.', '401.AVG. WEEK',
-                '402', '402.VMS cost', '402.V.S.P.', '402.AVG. WEEK',
-                '404', '404.VMS cost', '404.V.S.P.', '404.AVG. WEEK',
-                '405', '405.VMS cost', '405.V.S.P.', '405.AVG. WEEK',
-                '412', '412.VMS cost', '412.V.S.P.', '412.AVG. WEEK',
-                '416', '416.VMS cost', '416.V.S.P.', '416.AVG. WEEK',
-                '417', '417.VMS cost', '417.V.S.P.', '417.AVG. WEEK',
-                '423', '423.VMS cost', '423.V.S.P.', '423.AVG. WEEK',
-                '424', '424.VMS cost', '424.V.S.P.', '424.AVG. WEEK',
-                '425', '425.VMS cost', '425.V.S.P.', '425.AVG. WEEK',
-                '426', '426.VMS cost', '426.V.S.P.', '426.AVG. WEEK',
-                '429', '429.VMS cost', '429.V.S.P.', '429.AVG. WEEK',
-                '444', '444.VMS cost', '444.V.S.P.', '444.AVG. WEEK',
-                '490', '490.VMS cost', '490.V.S.P.', '490.AVG. WEEK']
+numListOfBranch = ['401 Co','402 Co','404 Co','405 Co','412 Co','416 Co','417 Co','423 Co',
+                   '424 Co','425 Co','426 Co','429 Co','444 Co','490 Co',]
+listOfBranch = ['401 Co', '401.VMS cost', '401.V.S.P.', '401.AVG. WEEK',
+                '402 Co', '402.VMS cost', '402.V.S.P.', '402.AVG. WEEK',
+                '404 Co', '404.VMS cost', '404.V.S.P.', '404.AVG. WEEK',
+                '405 Co', '405.VMS cost', '405.V.S.P.', '405.AVG. WEEK',
+                '412 Co', '412.VMS cost', '412.V.S.P.', '412.AVG. WEEK',
+                '416 Co', '416.VMS cost', '416.V.S.P.', '416.AVG. WEEK',
+                '417 Co', '417.VMS cost', '417.V.S.P.', '417.AVG. WEEK',
+                '423 Co', '423.VMS cost', '423.V.S.P.', '423.AVG. WEEK',
+                '424 Co', '424.VMS cost', '424.V.S.P.', '424.AVG. WEEK',
+                '425 Co', '425.VMS cost', '425.V.S.P.', '425.AVG. WEEK',
+                '426 Co', '426.VMS cost', '426.V.S.P.', '426.AVG. WEEK',
+                '429 Co', '429.VMS cost', '429.V.S.P.', '429.AVG. WEEK',
+                '444 Co', '444.VMS cost', '444.V.S.P.', '444.AVG. WEEK',
+                '490 Co', '490.VMS cost', '490.V.S.P.', '490.AVG. WEEK']
 
 productDetail = ['Sku', 'UPC', 'Catalogue N', 'Title', 'Label' ,'Cost Price' ,'V.S.P.']
 header = productDetail.copy()
 header.extend(listOfBranch.copy())
 
 
-# In[47]:
+# In[23]:
 
 
 # findID(str(748116), rawData)
 # rawData
 
 
-# In[48]:
+# In[24]:
 
 
 # noStock(748116,rawData)
 
 
-# In[49]:
+# In[25]:
 
 
 # monthRawData.iloc[155]['Sku']
 
 
-# In[50]:
+# In[26]:
 
 
 
@@ -219,7 +219,7 @@ header.extend(listOfBranch.copy())
 #     app.run_server(debug=True)
 
 
-# In[52]:
+# In[27]:
 
 
 df = pd.read_csv('toalOfMonth.csv')
@@ -229,7 +229,7 @@ for col in numListOfBranch:
     branchTot.append(df[col].sum())
 
 
-# In[53]:
+# In[28]:
 
 
 
@@ -242,7 +242,7 @@ data = [trace]
 plot(data, filename = 'basic_table')
 
 
-# In[54]:
+# In[29]:
 
 
 
@@ -263,7 +263,7 @@ fig = dict(data=data, layout=layout)
 plot(fig, filename = 'styled_table')
 
 
-# In[56]:
+# In[30]:
 
 
 
@@ -283,7 +283,7 @@ data = [trace]
 plot(data, filename = 'pandas_table')
 
 
-# In[57]:
+# In[31]:
 
 
 
@@ -327,7 +327,7 @@ plot(data, filename = 'pandas_table')
 # plot(data, filename = "Row and Column Size")
 
 
-# In[58]:
+# In[32]:
 
 
 
@@ -370,7 +370,7 @@ if len(cl.scales['7']['seq']['Blues']) <= 14:
     len(color)
 
 
-# In[59]:
+# In[33]:
 
 
 
@@ -406,7 +406,7 @@ data = [trace0]
 plot(data, filename = "row variable color")
 
 
-# In[60]:
+# In[34]:
 
 
 
@@ -439,7 +439,7 @@ plot(data, filename = "row variable color")
 # plot(data, filename = "cell variable color")
 
 
-# In[61]:
+# In[35]:
 
 
 
@@ -454,7 +454,7 @@ plot(data, filename = "row variable color")
 # pio.write_image(table, 'table.pdf')
 
 
-# In[68]:
+# In[36]:
 
 
 # import tkinter
@@ -492,7 +492,7 @@ plot(data, filename = "row variable color")
 # top.mainloop()
 
 
-# In[69]:
+# In[37]:
 
 
 
@@ -509,7 +509,7 @@ data = [go.Bar(x=numListOfBranch,
 plot(data, filename='jupyter-basic_bar')
 
 
-# In[70]:
+# In[38]:
 
 
 
@@ -537,42 +537,42 @@ fig.add_scatter(x=x,
 plot(fig)
 
 
-# In[71]:
+# In[40]:
 
 
 
-data = pd.read_csv('toalOfMonth.csv')
+# data = pd.read_csv('toalOfMonth.csv')
 
-branchTot = []
-for col in numListOfBranch:
-    branchTot.append(data[col].sum())
+# branchTot = []
+# for col in numListOfBranch:
+#     branchTot.append(data[col].sum())
 
-x = numListOfBranch
-y = branchTot
-colors = np.random.rand(N)
+# x = numListOfBranch
+# y = branchTot
+# colors = np.random.rand(N)
   
-data = go.Figure()
-data.add_bar(x=x,
-                y=y,
-                marker={
-                        'color': colors,
-                        'opacity': 0.6,
-                        'colorscale': 'Viridis'
-                       })
-pio.write_image(data, 'fig1.jpeg')
-img_bytes = pio.to_image(data, format='svg')
-pio.write_image(data, 'fig1.webp')
-display(SVG(img_bytes))
+# data = go.Figure()
+# data.add_bar(x=x,
+#                 y=y,
+#                 marker={
+#                         'color': colors,
+#                         'opacity': 0.6,
+#                         'colorscale': 'Viridis'
+#                        })
+# pio.write_image(data, 'fig1.jpeg')
+# img_bytes = pio.to_image(data, format='svg')
+# pio.write_image(data, 'fig1.webp')
+# display(SVG(img_bytes))
 
 
-# In[72]:
+# In[42]:
 
 
-img_bytes = pio.to_image(data, format='png', width=600, height=400, scale=2)
-Image(img_bytes)
+# img_bytes = pio.to_image(data, format='png', width=600, height=400, scale=2)
+# Image(img_bytes)
 
 
-# In[73]:
+# In[43]:
 
 
 # %%time
@@ -582,7 +582,7 @@ Image(img_bytes)
 # display(SVG(img_bytes))
 
 
-# In[74]:
+# In[44]:
 
 
 
@@ -614,7 +614,7 @@ Image(img_bytes)
 # plot(fig, sharing='private', filename='jupyter-styled_bar')
 
 
-# In[75]:
+# In[45]:
 
 
 
@@ -674,7 +674,7 @@ Image(img_bytes)
 # plot(fig, filename='jupyter-Nuclear Waste Sites on American Campuses')
 
 
-# In[76]:
+# In[46]:
 
 
 
@@ -718,7 +718,7 @@ Image(img_bytes)
 # plot(fig, filename='jupyter-parametric_plot')
 
 
-# In[77]:
+# In[47]:
 
 
 
@@ -753,7 +753,7 @@ Image(img_bytes)
 # plot(fig, filename='Sine Wave Slider')
 
 
-# In[78]:
+# In[48]:
 
 
 
@@ -762,7 +762,7 @@ Image(img_bytes)
 # # YouTubeVideo('')
 
 
-# In[79]:
+# In[49]:
 
 
 
@@ -771,35 +771,34 @@ Image(img_bytes)
 # display(Math(r'F(k) = \int_{-\infty}^{\infty} f(x) e^{2\pi i k} dx'))
 
 
-# In[80]:
+# In[50]:
 
 
 # IFrame(src= "https://dash-simple-apps.plotly.host/dash-tableplot/", width="100%", height="850px", frameBorder="0")
 
 
-# In[81]:
+# In[51]:
 
 
 
 # IFrame(src= "https://dash-simple-apps.plotly.host/dash-tableplot/code", width="100%", height=500, frameBorder="0")
 
 
-# In[82]:
+# In[52]:
 
 
-toalOfMonth = pd.read_csv('toalOfMonth.csv')
-numListOfBranch = ['401','402','404','405','412','416','417','423',
-                   '424','425','426','429','444','490',]
-branchTot = []
-for col in numListOfBranch:
-    branchTot.append(toalOfMonth[col].sum())
+# toalOfMonth = pd.read_csv('toalOfMonth.csv')
+
+# branchTot = []
+# for col in numListOfBranch:
+#     branchTot.append(toalOfMonth[col].sum())
     
-np.random.seed(42)
-random_x = np.random.randint(1,101,100)
-random_y = np.random.randint(1,101,100)
+# np.random.seed(42)
+# random_x = np.random.randint(1,101,100)
+# random_y = np.random.randint(1,101,100)
 
 
-# In[83]:
+# In[53]:
 
 
 data = [go.Box(y = branchTot, name = 'sale distribution',
@@ -826,7 +825,7 @@ fig = go.Figure(data=data,layout=layout)
 plot(fig, filename = "sale distribution of each branch")
 
 
-# In[84]:
+# In[54]:
 
 
 data = [go.Bar(x = numListOfBranch, y = branchTot,
@@ -848,12 +847,11 @@ fig = go.Figure(data = data, layout = layout)
 plot(fig, filename = 'sale amount of each branch')
 
 
-# In[85]:
+# In[56]:
 
 
-
-IFrame(src= "https://dash-simple-apps.plotly.host/dash-boxplot/",
-       width="100%", height="650px", frameBorder="0")
+# IFrame(src= "https://dash-simple-apps.plotly.host/dash-boxplot/",
+#        width="100%", height="650px", frameBorder="0")
 
 
 # In[ ]:
