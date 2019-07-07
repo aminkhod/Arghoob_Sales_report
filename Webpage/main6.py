@@ -39,7 +39,7 @@ mysql.init_app(app)
 conn = mysql.connect()
 cursor = conn.cursor()
 
-path = 'Monthes/'
+path = '../Monthes/'
 
 files = []
 filesNoAdd = []
