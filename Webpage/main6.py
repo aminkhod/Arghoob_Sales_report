@@ -140,8 +140,13 @@ def signUp():
         ),
         name=monthDate[3]
     )
+    trace5 = go.Table(
+        header=dict(values=numListOfBranch),
+        cells=dict(values=branchTot))
 
-    data = Data([trace1, trace2, trace3, trace4])
+    data = [trace]
+    plot(data, filename = 'basic_table')
+    data = Data([trace1, trace2, trace3, trace4,trace5])
     layout = Layout(
         title='2019 sale for each months',
         updatemenus=list([
