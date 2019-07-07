@@ -180,7 +180,7 @@ def signUp():
         ]),
     )
     fig = Figure(data=data, layout=layout)
-    iplot(fig)
+    return render_template(plot(fig))
 
 
 if __name__ == "__main__":
