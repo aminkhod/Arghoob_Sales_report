@@ -135,7 +135,6 @@ def signUp():
         name=monthDate[0]
     )
 
-
     trace2 = Bar(
     #     x=countries,
         y=silver,
@@ -184,27 +183,27 @@ def signUp():
                 yanchor='top',
                 buttons=list([
                     dict(
-                        args=['visible', [True, True, True, True]],
+                        args=['visible', [True, True, True, True, False]],
                         label='All',
                         method='restyle'
                     ),
                     dict(
-                        args=['visible', [True, False, False, False]],
+                        args=['visible', [True, False, False, False, True]],
                         label=monthDate[0],
                         method='restyle'
                     ),
                     dict(
-                        args=['visible', [False, True, False, False]],
+                        args=['visible', [False, True, False, False, False]],
                         label=monthDate[1],
                         method='restyle'
                     ),
                     dict(
-                        args=['visible', [False, False, True, False]],
+                        args=['visible', [False, False, True, False, False]],
                         label=monthDate[2],
                         method='restyle'
                     ),
                     dict(
-                        args=['visible', [False, False, False, True]],
+                        args=['visible', [False, False, False, True, False]],
                         label=monthDate[3],
                         method='restyle'
                     )
