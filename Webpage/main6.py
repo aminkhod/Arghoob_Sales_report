@@ -197,7 +197,7 @@ def signUp():
 
     # data = [trace]
     # plot(data, filename = 'basic_table')
-    data = Data([trace1, trace2, trace3, trace4, trace5,trace6])
+    data = Data([trace1, trace2, trace3, trace4, trace5, trace6, trace7, trace8])
     layout = Layout(
         title='2019 sale for each months',
         updatemenus=list([
