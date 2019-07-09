@@ -14,6 +14,7 @@ def home():
         'index.jade',
         title='Home Page',
         year=datetime.now().year,
+
     )
 
 @app.route('/contact')
