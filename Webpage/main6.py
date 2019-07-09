@@ -128,36 +128,38 @@ def signUp():
     trace1 = Scatter(
     #     x=countries,
         y=gold,
-        line=Line(
-            color='#FFD700',
-            width=3
-        ),
+        # line=Line(
+        #     color='#FFD700',
+        #     width=3
+        # ),
         name=monthDate[0]
     )
 
     trace2 = Scatter(
     #     x=countries,
         y=silver,
-        line=Line(
-            color='#C0C0C0',
-            width=3
-        ),
+        # line=Line(
+        #     color='#C0C0C0',
+        #     width=3
+        # ),
         name=monthDate[1]
     )
 
-    trace3 = Scatter(
+    trace3 = Bar(
     #     x=countries,
         y=bronze,
-        line=Line(
-            color='#BA8651',
-            width=3
-        ),
+        color='#BA8651',
+        # line=Line(
+        #     color='#BA8651',
+        #     width=3
+        # ),
         name=monthDate[2]
     )
 
     trace4 = Bar(
     #     x=countries,
         y=total,
+        color='#000000',
         # line=Line(
         #     color='#000000',
         #     width=4
