@@ -10,6 +10,7 @@ import os
 import plotly.io as pio
 import plotly.plotly as py
 import plotly.figure_factory as ff
+import plotly.graph_objs as go
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
@@ -58,8 +59,31 @@ df = pd.read_csv('allMonthes.csv')
 yV = []
 for i in range(5):
     yV.append(df.values[:,i + 8])
+numListOfBranch = ['401 Co','402 Co','404 Co','405 Co','412 Co','416 Co','417 Co','423 Co',
+                   '424 Co','425 Co','426 Co','429 Co','444 Co','490 Co',]
+listOfBranch = ['401 Co', '401.VMS cost', '401.V.S.P.', '401.AVG. WEEK',
+                '402 Co', '402.VMS cost', '402.V.S.P.', '402.AVG. WEEK',
+                '404 Co', '404.VMS cost', '404.V.S.P.', '404.AVG. WEEK',
+                '405 Co', '405.VMS cost', '405.V.S.P.', '405.AVG. WEEK',
+                '412 Co', '412.VMS cost', '412.V.S.P.', '412.AVG. WEEK',
+                '416 Co', '416.VMS cost', '416.V.S.P.', '416.AVG. WEEK',
+                '417 Co', '417.VMS cost', '417.V.S.P.', '417.AVG. WEEK',
+                '423 Co', '423.VMS cost', '423.V.S.P.', '423.AVG. WEEK',
+                '424 Co', '424.VMS cost', '424.V.S.P.', '424.AVG. WEEK',
+                '425 Co', '425.VMS cost', '425.V.S.P.', '425.AVG. WEEK',
+                '426 Co', '426.VMS cost', '426.V.S.P.', '426.AVG. WEEK',
+                '429 Co', '429.VMS cost', '429.V.S.P.', '429.AVG. WEEK',
+                '444 Co', '444.VMS cost', '444.V.S.P.', '444.AVG. WEEK',
+                '490 Co', '490.VMS cost', '490.V.S.P.', '490.AVG. WEEK']
 
+productDetail = ['Sku', 'UPC', 'Catalogue N', 'Title', 'Label' ,'Cost Price' ,'V.S.P.']
+header = productDetail.copy()
+header.extend(listOfBranch.copy())
+df = pd.read_csv('../Monthes/01-2019.csv')
 
+branchTot = []
+for col in numListOfBranch:
+    branchTot.append(df[col].sum())
 
 
 @app.route("/")
@@ -131,7 +155,7 @@ def signUp():
         name=monthDate[2]
     )
 
-    trace4 = Scatter(
+    trace4 = Bar(
     #     x=countries,
         y=total,
         line=Line(
@@ -140,12 +164,13 @@ def signUp():
         ),
         name=monthDate[3]
     )
+
     trace5 = go.Table(
         header=dict(values=numListOfBranch),
         cells=dict(values=branchTot))
 
-    data = [trace]
-    plot(data, filename = 'basic_table')
+    # data = [trace]
+    # plot(data, filename = 'basic_table')
     data = Data([trace1, trace2, trace3, trace4,trace5])
     layout = Layout(
         title='2019 sale for each months',
