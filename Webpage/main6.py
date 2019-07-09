@@ -27,6 +27,7 @@ from plotly.graph_objs import *
 
 
 app = Flask(__name__)
+pd.r
 
 # mysql = MySQL()
 #
@@ -129,7 +130,7 @@ def btnMonthlySale():
     	trace8 = go.Table(
     		header=dict(values=numListOfBranch),
     		cells=dict(values=branchTot4))
-    data = Data([trace1, trace2, trace3, trace4])
+    data = Data([trace, trace2, trace3, trace4])
     layout = Layout(
         title='2019 sale for each months',
         updatemenus=list([
