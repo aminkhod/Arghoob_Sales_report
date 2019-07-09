@@ -158,10 +158,10 @@ def signUp():
     trace4 = Bar(
     #     x=countries,
         y=total,
-        line=Line(
-            color='#000000',
-            width=4
-        ),
+        # line=Line(
+        #     color='#000000',
+        #     width=4
+        # ),
         name=monthDate[3]
     )
 
