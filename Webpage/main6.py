@@ -125,7 +125,7 @@ def signUp():
     bronze = yV[2]
     total = yV[3]
 
-    trace1 = Scatter(
+    trace1 = Bar(
     #     x=countries,
         y=gold,
         # line=Line(
@@ -135,7 +135,8 @@ def signUp():
         name=monthDate[0]
     )
 
-    trace2 = Scatter(
+
+    trace2 = Bar(
     #     x=countries,
         y=silver,
         # line=Line(
@@ -148,7 +149,7 @@ def signUp():
     trace3 = Bar(
     #     x=countries,
         y=bronze,
-        color='#BA8651',
+        # color='#BA8651',
         # line=Line(
         #     color='#BA8651',
         #     width=3
@@ -159,7 +160,7 @@ def signUp():
     trace4 = Bar(
     #     x=countries,
         y=total,
-        color='#000000',
+        # color='#000000',
         # line=Line(
         #     color='#000000',
         #     width=4
