@@ -1,29 +1,29 @@
 
 from flask import Flask, render_template, json, request
 # from flaskext.mysql import MySQL
-# from werkzeug import generate_password_hash, check_password_hash
+from werkzeug import generate_password_hash, check_password_hash
 
-# import plotly
+import plotly
 import pandas as pd
-# import numpy as np
+import numpy as np
 import os
-# import plotly.io as pio
-# import plotly.plotly as py
-# import plotly.figure_factory as ff
+import plotly.io as pio
+import plotly.plotly as py
+import plotly.figure_factory as ff
 import plotly.graph_objs as go
-# import dash
-# import dash_core_components as dcc
-# import dash_html_components as html
+import dash
+import dash_core_components as dcc
+import dash_html_components as html
 from  plotly.offline import plot
-# import plotly
-# from IPython.display import SVG, display
-# from IPython.display import Image
-# from IPython.display import display, Math, Latex
-# import colorlover as cl
-# from IPython.display import HTML
-# from IPython.display import IFrame
-# from plotly.offline import iplot, init_notebook_mode
-# from plotly.graph_objs import *
+import plotly
+from IPython.display import SVG, display
+from IPython.display import Image
+from IPython.display import display, Math, Latex
+import colorlover as cl
+from IPython.display import HTML
+from IPython.display import IFrame
+from plotly.offline import iplot, init_notebook_mode
+from plotly.graph_objs import *
 
 
 app = Flask(__name__)
