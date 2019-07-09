@@ -79,11 +79,7 @@ listOfBranch = ['401 Co', '401.VMS cost', '401.V.S.P.', '401.AVG. WEEK',
 productDetail = ['Sku', 'UPC', 'Catalogue N', 'Title', 'Label' ,'Cost Price' ,'V.S.P.']
 header = productDetail.copy()
 header.extend(listOfBranch.copy())
-df = pd.read_csv('../Monthes/01-2019.csv')
 
-branchTot = []
-for col in numListOfBranch:
-    branchTot.append(df[col].sum())
 
 
 @app.route("/")
@@ -167,13 +163,41 @@ def signUp():
         name=monthDate[3]
     )
 
-    trace5 = go.Table(
-        header=dict(values=numListOfBranch),
-        cells=dict(values=branchTot))
+    df = pd.read_csv('../Monthes/01-2019.csv')
+    branchTot1 = []
+    for col in numListOfBranch:
+    	branchTot1.append(df[col].sum())
+    	trace5 = go.Table(
+    		header=dict(values=numListOfBranch),
+    		cells=dict(values=branchTot1))
+
+    df = pd.read_csv('../Monthes/02-2019.csv')
+    branchTot2 = []
+    for col in numListOfBranch:
+    	branchTot2.append(df[col].sum())
+    	trace6 = go.Table(
+    		header=dict(values=numListOfBranch),
+    		cells=dict(values=branchTot2))
+
+    df = pd.read_csv('../Monthes/03-2019.csv')
+    branchTot3 = []
+    for col in numListOfBranch:
+    	branchTot3.append(df[col].sum())
+    	trace7 = go.Table(
+    		header=dict(values=numListOfBranch),
+    		cells=dict(values=branchTot3))
+
+    df = pd.read_csv('../Monthes/04-2019.csv')
+    branchTot4 = []
+    for col in numListOfBranch:
+    	branchTot4.append(df[col].sum())
+    	trace8 = go.Table(
+    		header=dict(values=numListOfBranch),
+    		cells=dict(values=branchTot4))
 
     # data = [trace]
     # plot(data, filename = 'basic_table')
-    data = Data([trace1, trace2, trace3, trace4,trace5])
+    data = Data([trace1, trace2, trace3, trace4, trace5,trace6])
     layout = Layout(
         title='2019 sale for each months',
         updatemenus=list([
@@ -183,27 +207,27 @@ def signUp():
                 yanchor='top',
                 buttons=list([
                     dict(
-                        args=['visible', [True, True, True, True, False]],
+                        args=['visible', [True, True, True, True, False, False, False, False]],
                         label='All',
                         method='restyle'
                     ),
                     dict(
-                        args=['visible', [True, False, False, False, True]],
+                        args=['visible', [True, False, False, False, True, False, False, False]],
                         label=monthDate[0],
                         method='restyle'
                     ),
                     dict(
-                        args=['visible', [False, True, False, False, False]],
+                        args=['visible', [False, True, False, False, False, True, False, False]],
                         label=monthDate[1],
                         method='restyle'
                     ),
                     dict(
-                        args=['visible', [False, False, True, False, False]],
+                        args=['visible', [False, False, True, False, False, False, True, False]],
                         label=monthDate[2],
                         method='restyle'
                     ),
                     dict(
-                        args=['visible', [False, False, False, True, False]],
+                        args=['visible', [False, False, False, True, False, False, False, True]],
                         label=monthDate[3],
                         method='restyle'
                     )
