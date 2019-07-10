@@ -14,7 +14,7 @@ import plotly.graph_objs as go
 # import dash
 # import dash_core_components as dcc
 # import dash_html_components as html
-from  plotly.offline import plot
+from  plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
 import plotly
 # from IPython.display import SVG, display
 # from IPython.display import Image
@@ -22,7 +22,6 @@ import plotly
 import colorlover as cl
 # from IPython.display import HTML
 # from IPython.display import IFrame
-# from plotly.offline import iplot, init_notebook_mode
 from plotly.graph_objs import *
 
 
@@ -176,7 +175,8 @@ def btnMonthlySale():
         ]),
     )
     fig = Figure(data=data, layout=layout)
-    return render_template(plot(fig))
+    plot(fig, filename='Monthly_Sale')
+    return render_template("Monthly_Sale.html")
 
 
 @app.route('/GoodsSale',methods=['POST'])
@@ -302,7 +302,8 @@ def GoodsSale():
         ]),
     )
     fig = Figure(data=data, layout=layout)
-    return render_template(plot(fig))
+    plot(fig,filename='Sale_Of_Goods')
+    return render_template('Sale_Of_Goods.html')
 
 
 if __name__ == "__main__":
