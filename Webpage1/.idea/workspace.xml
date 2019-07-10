@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6e224e6-d6bf-4e62-88ed-19cc7de721d1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Monthly_Sale.html" beforeDir="false" afterPath="$PROJECT_DIR$/Monthly_Sale.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sale_Of_Goods.html" beforeDir="false" afterPath="$PROJECT_DIR$/Sale_Of_Goods.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main6.py" beforeDir="false" afterPath="$PROJECT_DIR$/main6.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/jquery-3.4.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/jquery-3.4.1.js" afterDir="false" />
     </list>
@@ -18,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main6.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="315" selection-start-line="315" selection-end-line="315" />
+            <state relative-caret-position="422">
+              <caret line="309" selection-start-line="309" selection-end-line="310" selection-end-column="57" />
               <folding>
                 <element signature="e#1#56#0" expanded="true" />
               </folding>
@@ -122,7 +120,7 @@
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.36510068" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.36510068" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -147,8 +145,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main6.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="315" selection-start-line="315" selection-end-line="315" />
+        <state relative-caret-position="422">
+          <caret line="309" selection-start-line="309" selection-end-line="310" selection-end-column="57" />
           <folding>
             <element signature="e#1#56#0" expanded="true" />
           </folding>

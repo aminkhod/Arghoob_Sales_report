@@ -10627,7 +10627,7 @@ $(function() {
 	   $('#btnStockStatus').click(function() {
  
         $.ajax({
-            url: '/Stock Status',
+            url: '/StockStatus',
             //data: $('form').serialize(),
 			data: {},
             type: 'POST',
