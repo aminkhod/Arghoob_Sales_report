@@ -308,10 +308,9 @@ def GoodsSale():
 @app.route('/StockStatus',methods=['POST'])
 def stockStatus():
     df = pd.read_csv('allMonthes.csv')
-    df[df['Stock Status'],0:8].to_html('fast moving.html')
-    # fig = Figure(data=data, layout=layout)
-    # plot(fig,filename='Sale_Of_Goods')
-    # return render_template('Sale_Of_Goods.html')
+    newdf = df[df['Stock Status'] == 'Fast moving']
+    newdf = newdf.loc[:,['Sku', 'UPC', 'Catalogue N', 'Title', 'Label', 'Arq COST', "Cost Price", 'V.S.P.']].reindex()
+    newdf.to_html('fast moving.html')
     return render_template('fast moving.html')
 
 
