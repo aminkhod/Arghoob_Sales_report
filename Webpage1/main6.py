@@ -169,13 +169,13 @@ def btnMonthlySale():
                         args=['visible', [False, False, False, False, True]],
                         label = monthDate[4],
                         method='restyle'
-                    )
-                ]),
-            )
-        ]),
-    )
+                        )
+                    ]),
+                )
+            ]),
+        )
     fig = Figure(data=data, layout=layout)
-    plot(fig, filename='Monthly_Sale')
+    plot(fig, filename='Monthly_Sale.html')
     return render_template("Monthly_Sale.html")
 
 
@@ -310,7 +310,7 @@ def stockStatus():
     df = pd.read_csv('allMonthes.csv')
     newdf = df[df['Stock Status'] == 'Fast moving']
     newdf = newdf.loc[:,['Sku', 'UPC', 'Catalogue N', 'Title', 'Label', 'Arq COST', "Cost Price", 'V.S.P.']].reindex()
-    newdf.to_html('fast moving.html')
+    newdf.to_html('fast moving.html',index =False)
     return render_template('fast moving.html')
 
 
