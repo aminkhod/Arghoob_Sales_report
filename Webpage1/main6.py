@@ -308,11 +308,11 @@ def GoodsSale():
 @app.route('/StockStatus',methods=['POST'])
 def stockStatus():
     df = pd.read_csv('allMonthes.csv')
-    df[df['Stock Status'],0:8].to_html('fast moing.html')
+    df[df['Stock Status'],0:8].to_html('fast moving.html')
     # fig = Figure(data=data, layout=layout)
     # plot(fig,filename='Sale_Of_Goods')
     # return render_template('Sale_Of_Goods.html')
-    return render_template('fast moing.html')
+    return render_template('fast moving.html')
 
 
 if __name__ == "__main__":
