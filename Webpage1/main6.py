@@ -27,7 +27,7 @@ from plotly.graph_objs import *
 
 
 app = Flask(__name__)
-pd.r
+# pd.r
 
 # mysql = MySQL()
 #
@@ -97,7 +97,7 @@ def about():
 def showSignUp():
     return render_template('signup.html')
 
-@app.route('/btnMonthlySale', methods=['POST'])
+@app.route('/MonthlySale', methods=['POST'])
 def btnMonthlySale():
     df = pd.read_csv('../Monthes/01-2019.csv')
     branchTot1 = []
@@ -130,7 +130,14 @@ def btnMonthlySale():
     	trace8 = go.Table(
     		header=dict(values=numListOfBranch),
     		cells=dict(values=branchTot4))
-    data = Data([trace, trace2, trace3, trace4])
+    df = pd.read_csv('../Monthes/05-2019.csv')
+    branchTot4 = []
+    for col in numListOfBranch:
+    	branchTot4.append(df[col].sum())
+    	trace9 = go.Table(
+    		header=dict(values=numListOfBranch),
+    		cells=dict(values=branchTot4))
+    data = Data([trace5, trace6, trace7, trace8, trace9])
     layout = Layout(
         title='2019 sale for each months',
         updatemenus=list([
@@ -140,28 +147,28 @@ def btnMonthlySale():
                 yanchor='top',
                 buttons=list([
                     dict(
-                        args=['visible', [True, True, True, True, False, False, False, False]],
-                        label='All',
+                        args=['visible', [ True, False, False, False, False]],
+                        label = monthDate[0],
                         method='restyle'
                     ),
                     dict(
-                        args=['visible', [True, False, False, False, True, False, False, False]],
-                        label=monthDate[0],
+                        args=['visible', [False, True, False, False, False]],
+                        label = monthDate[1],
                         method='restyle'
                     ),
                     dict(
-                        args=['visible', [False, True, False, False, False, True, False, False]],
-                        label=monthDate[1],
+                        args=['visible', [False, False, True, False, False]],
+                        label = monthDate[2],
                         method='restyle'
                     ),
                     dict(
-                        args=['visible', [False, False, True, False, False, False, True, False]],
-                        label=monthDate[2],
+                        args=['visible', [False, False, False, True, False]],
+                        label = monthDate[3],
                         method='restyle'
                     ),
                     dict(
-                        args=['visible', [False, False, False, True, False, False, False, True]],
-                        label=monthDate[3],
+                        args=['visible', [False, False, False, False, True]],
+                        label = monthDate[4],
                         method='restyle'
                     )
                 ]),
@@ -171,8 +178,9 @@ def btnMonthlySale():
     fig = Figure(data=data, layout=layout)
     return render_template(plot(fig))
 
-@app.route('/signUp',methods=['POST'])
-def signUp():
+
+@app.route('/GoodsSale',methods=['POST'])
+def GoodsSale():
 	# read the posted values from the UI
 	# _name = request.form['inputName']
 	# _email = request.form['inputEmail']
@@ -237,10 +245,20 @@ def signUp():
         # ),
         name=monthDate[3]
     )
+    trace5 = Bar(
+    #     x=countries,
+        y=total,
+        # color='#000000',
+        # line=Line(
+        #     color='#000000',
+        #     width=4
+        # ),
+        name=monthDate[4]
+    )
 
     # data = [trace]
     # plot(data, filename = 'basic_table')
-    data = Data([trace1, trace2, trace3, trace4])
+    data = Data([trace1, trace2, trace3, trace4,trace5])
     layout = Layout(
         title='2019 sale for each months',
         updatemenus=list([
@@ -250,28 +268,33 @@ def signUp():
                 yanchor='top',
                 buttons=list([
                     dict(
-                        args=['visible', [True, True, True, True, False, False, False, False]],
+                        args=['visible', [True, True, True, True, True]],
                         label='All',
                         method='restyle'
                     ),
                     dict(
-                        args=['visible', [True, False, False, False, True, False, False, False]],
+                        args=['visible', [True, False, False, False, False]],
                         label=monthDate[0],
                         method='restyle'
                     ),
                     dict(
-                        args=['visible', [False, True, False, False, False, True, False, False]],
+                        args=['visible', [False, True, False, False, False]],
                         label=monthDate[1],
                         method='restyle'
                     ),
                     dict(
-                        args=['visible', [False, False, True, False, False, False, True, False]],
+                        args=['visible', [False, False, True, False, False]],
                         label=monthDate[2],
                         method='restyle'
                     ),
                     dict(
-                        args=['visible', [False, False, False, True, False, False, False, True]],
+                        args=['visible', [False, False, False, True, False]],
                         label=monthDate[3],
+                        method='restyle'
+                    ),
+                    dict(
+                        args=['visible', [False, False, False, False, True]],
+                        label=monthDate[4],
                         method='restyle'
                     )
                 ]),
