@@ -305,6 +305,10 @@ def GoodsSale():
     plot(fig,filename='Sale_Of_Goods')
     return render_template('Sale_Of_Goods.html')
 
+@app.route('/Stock Status',methods=['POST'])
+def stockStatus():
+
+    return 1
 
 if __name__ == "__main__":
     app.run(debug=True)
