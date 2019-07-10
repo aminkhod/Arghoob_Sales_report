@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e6e224e6-d6bf-4e62-88ed-19cc7de721d1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Monthly_Sale.html" beforeDir="false" afterPath="$PROJECT_DIR$/Monthly_Sale.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sale_Of_Goods.html" beforeDir="false" afterPath="$PROJECT_DIR$/Sale_Of_Goods.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fast moving.html" beforeDir="false" afterPath="$PROJECT_DIR$/fast moving.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main6.py" beforeDir="false" afterPath="$PROJECT_DIR$/main6.py" afterDir="false" />
-    </list>
+    <list default="true" id="e6e224e6-d6bf-4e62-88ed-19cc7de721d1" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +141,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
