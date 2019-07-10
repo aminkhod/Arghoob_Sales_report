@@ -10599,6 +10599,7 @@ $(function() {
         $.ajax({
             url: '/GoodsSale',
             //data: $('form').serialize(),
+			data: {},
             type: 'POST',
             success: function(response) {
                 console.log(response);
@@ -10613,6 +10614,7 @@ $(function() {
         $.ajax({
             url: '/MonthlySale',
             //data: $('form').serialize(),
+			data: {},
             type: 'POST',
             success: function(response) {
                 console.log(response);
@@ -10627,6 +10629,7 @@ $(function() {
         $.ajax({
             url: '/Stock Status',
             //data: $('form').serialize(),
+			data: {},
             type: 'POST',
             success: function(response) {
                 console.log(response);

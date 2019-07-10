@@ -1,25 +1,25 @@
 
 from flask import Flask, render_template, json, request
 # from flaskext.mysql import MySQL
-from werkzeug import generate_password_hash, check_password_hash
+# from werkzeug import generate_password_hash, check_password_hash
 
-import plotly
+
 import pandas as pd
-import numpy as np
+# import numpy as np
 import os
 # import plotly.io as pio
-import plotly.plotly as py
-import plotly.figure_factory as ff
+# import plotly.plotly as py
+# import plotly.figure_factory as ff
 import plotly.graph_objs as go
 # import dash
 # import dash_core_components as dcc
 # import dash_html_components as html
 from  plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
-import plotly
+# import plotly
 # from IPython.display import SVG, display
 # from IPython.display import Image
 # from IPython.display import display, Math, Latex
-import colorlover as cl
+# import colorlover as cl
 # from IPython.display import HTML
 # from IPython.display import IFrame
 from plotly.graph_objs import *
@@ -307,8 +307,13 @@ def GoodsSale():
 
 @app.route('/Stock Status',methods=['POST'])
 def stockStatus():
+    df = pd.read_csv('allMonthes.csv')
+    df[df['Stock Status'],0:8].to_html('fast moing.html')
+    # fig = Figure(data=data, layout=layout)
+    # plot(fig,filename='Sale_Of_Goods')
+    # return render_template('Sale_Of_Goods.html')
+    return render_template('fast moing.html')
 
-    return 1
 
 if __name__ == "__main__":
     app.run(debug=True)
