@@ -302,7 +302,7 @@ def GoodsSale():
         ]),
     )
     fig = Figure(data=data, layout=layout)
-    plot(fig,filename='Sale_Of_Goods')
+    plot(fig,filename='Sale_Of_Goods.html')
     return render_template('Sale_Of_Goods.html')
 
 @app.route('/StockStatus',methods=['POST'])
