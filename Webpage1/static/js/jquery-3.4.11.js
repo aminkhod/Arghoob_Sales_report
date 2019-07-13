@@ -10624,10 +10624,25 @@ $(function() {
             }
         });
     });
-	   $('#btnStockStatus').click(function() {
+	   $('#btnFastMoving').click(function() {
  
         $.ajax({
-            url: '/StockStatus',
+            url: '/Fast_Moving',
+            //data: $('form').serialize(),
+			data: {},
+            type: 'POST',
+            success: function(response) {
+                console.log(response);
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    });	
+	$('#btnNonMoving').click(function() {
+ 
+        $.ajax({
+            url: '/Non_Moving',
             //data: $('form').serialize(),
 			data: {},
             type: 'POST',
