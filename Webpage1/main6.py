@@ -326,7 +326,9 @@ def stockSta():
     newdf = newdf.loc[:,['Sku', 'UPC', 'Catalogue N', 'Title', 'Label', 'Arq COST', "Cost Price", 'V.S.P.']].reindex()
     trace = go.Table(
         header=dict(values=['Sku', 'UPC', 'Catalogue N', 'Title', 'Label', 'Arq COST', "Cost Price", 'V.S.P.']),
-        cells=dict(values=np.transpose(newdf.values[:,:])))
+        cells=dict(values=np.transpose(newdf.values[:,:]), line = dict(color='#7D7F80'),
+               fill = dict(color='#EDFAFF'),
+               align = ['left'] * 5))
 
     data = [trace]
     plot(data, filename = 'basic_table')
