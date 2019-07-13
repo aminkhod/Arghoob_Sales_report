@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6e224e6-d6bf-4e62-88ed-19cc7de721d1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Monthly_Sale.html" beforeDir="false" afterPath="$PROJECT_DIR$/Monthly_Sale.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sale_Of_Goods.html" beforeDir="false" afterPath="$PROJECT_DIR$/Sale_Of_Goods.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fast_moving.html" beforeDir="false" afterPath="$PROJECT_DIR$/fast_moving.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main6.py" beforeDir="false" afterPath="$PROJECT_DIR$/main6.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/jquery-3.4.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/jquery-3.4.1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/fast moving.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/jquery-3.4.11.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,8 +21,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main6.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="332" column="42" selection-start-line="332" selection-start-column="42" selection-end-line="332" selection-end-column="42" />
+            <state relative-caret-position="476">
+              <caret line="336" column="23" lean-forward="true" selection-start-line="336" selection-start-column="23" selection-end-line="336" selection-end-column="23" />
               <folding>
                 <element signature="e#1#56#0" expanded="true" />
               </folding>
@@ -164,8 +167,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main6.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="332" column="42" selection-start-line="332" selection-start-column="42" selection-end-line="332" selection-end-column="42" />
+        <state relative-caret-position="476">
+          <caret line="336" column="23" lean-forward="true" selection-start-line="336" selection-start-column="23" selection-end-line="336" selection-end-column="23" />
           <folding>
             <element signature="e#1#56#0" expanded="true" />
           </folding>

@@ -10609,7 +10609,7 @@ $(function() {
             }
         });
     });
-	   $('#btnMonthlySale').click(function() {
+	$('#btnMonthlySale').click(function() {
  
         $.ajax({
             url: '/MonthlySale',
@@ -10624,10 +10624,10 @@ $(function() {
             }
         });
     });
-	   $('#btnFastMoving').click(function() {
+	$('#btnFastMoving').click(function() {
  
         $.ajax({
-            url: '/Fast_Moving',
+            url: '/FastMoving',
             //data: $('form').serialize(),
 			data: {},
             type: 'POST',
@@ -10642,7 +10642,7 @@ $(function() {
 	$('#btnNonMoving').click(function() {
  
         $.ajax({
-            url: '/Non_Moving',
+            url: '/NonMoving',
             //data: $('form').serialize(),
 			data: {},
             type: 'POST',

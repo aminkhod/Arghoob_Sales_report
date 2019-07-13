@@ -306,8 +306,8 @@ def GoodsSale():
     plot(fig,filename='Sale_Of_Goods.html')
     # return render_template('Sale_Of_Goods.html')
 
-@app.route('/Fast_Moving',methods=['POST'])
-def Fast_Moving():
+@app.route('/FastMoving',methods=['POST'])
+def FastMoving():
     df = pd.read_csv('allMonthes.csv')
     newdf = df[df['Stock Status'] == 'Fast moving']
     newdf = newdf.loc[:,['Sku', 'UPC', 'Catalogue N', 'Title', 'Label', 'Arq COST', "Cost Price", 'V.S.P.']].reindex()
@@ -319,8 +319,8 @@ def Fast_Moving():
     # return render_template('fast_moving.html')
 
 
-@app.route('/Non_Moving',methods=['POST'])
-def Non_Moving():
+@app.route('/NonMoving',methods=['POST'])
+def NonMoving():
     df = pd.read_csv('allMonthes.csv')
     newdf = df[df['Stock Status'] == 'Non moving']
     newdf = newdf.loc[:,['Sku', 'UPC', 'Catalogue N', 'Title', 'Label', 'Arq COST', "Cost Price", 'V.S.P.']].reindex()
