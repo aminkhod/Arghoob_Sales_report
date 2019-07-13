@@ -1,20 +1,21 @@
 
 from flask import Flask, render_template, json, request
-from flaskext.mysql import MySQL
-from werkzeug import generate_password_hash, check_password_hash
-
-
 import pandas as pd
-# import numpy as np
 import os
+import plotly.graph_objs as go
+from  plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
+import numpy as np
+from plotly.tools import FigureFactory as FF
+from plotly.graph_objs import *
+
+# from flaskext.mysql import MySQL
+# from werkzeug import generate_password_hash, check_password_hash
 # import plotly.io as pio
 # import plotly.plotly as py
 # import plotly.figure_factory as ff
-import plotly.graph_objs as go
 # import dash
 # import dash_core_components as dcc
 # import dash_html_components as html
-from  plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
 # import plotly
 # from IPython.display import SVG, display
 # from IPython.display import Image
@@ -22,7 +23,7 @@ from  plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
 # import colorlover as cl
 # from IPython.display import HTML
 # from IPython.display import IFrame
-from plotly.graph_objs import *
+
 
 
 app = Flask(__name__)
@@ -310,20 +311,10 @@ def stockStatus():
     df = pd.read_csv('allMonthes.csv')
     newdf = df[df['Stock Status'] == 'Fast moving']
     newdf = newdf.loc[:,['Sku', 'UPC', 'Catalogue N', 'Title', 'Label', 'Arq COST', "Cost Price", 'V.S.P.']].reindex()
-    from plotly.tools import FigureFactory as FF
 
-    # z = [[.1, .3, .5],
-    #      [1.0, .8, .6],
-    #      [.6, .4, .2]]
-
-    # x = ['Team A', 'Team B', 'Team C']
-    # y = ['Game Three', 'Game Two', 'Game One']
-
-    z_text = [['Win', 'Lose', 'Win'],
-              ['Lose', 'Lose', 'Win'],
-              ['Win', 'Win', 'Lose']]
-
-    fig = FF.create_annotated_heatmap(newdf,  annotation_text=newdf, colorscale='Viridis')
+    r,c = newdf.shape
+    z = np.random.randn(r,c)
+    fig = FF.create_annotated_heatmap(z,  annotation_text=newdf.values[:,:8])
     iplot(fig, filename='fast moving.html')
 
     return render_template('fast moving.html')
