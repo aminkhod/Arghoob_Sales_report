@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e6e224e6-d6bf-4e62-88ed-19cc7de721d1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/fast_moving.html" beforeDir="false" afterPath="$PROJECT_DIR$/fast_moving.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main6.py" beforeDir="false" afterPath="$PROJECT_DIR$/main6.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main6.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="327" column="110" selection-start-line="327" selection-start-column="110" selection-end-line="327" selection-end-column="110" />
+            <state relative-caret-position="316">
+              <caret line="326" column="21" selection-start-line="326" selection-start-column="21" selection-end-line="326" selection-end-column="21" />
               <folding>
                 <element signature="e#1#56#0" expanded="true" />
               </folding>
@@ -26,6 +25,11 @@
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>table</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -150,15 +154,15 @@
   <component name="editorHistoryManager">
     <entry file="file://C:/Program Files/Python36/Lib/site-packages/plotly/graph_objs/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5">
-          <caret line="86330" lean-forward="true" selection-start-line="86330" selection-end-line="86330" />
+        <state relative-caret-position="134">
+          <caret line="12319" column="31" selection-start-line="12319" selection-start-column="26" selection-end-line="12319" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main6.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="327" column="110" selection-start-line="327" selection-start-column="110" selection-end-line="327" selection-end-column="110" />
+        <state relative-caret-position="316">
+          <caret line="326" column="21" selection-start-line="326" selection-start-column="21" selection-end-line="326" selection-end-column="21" />
           <folding>
             <element signature="e#1#56#0" expanded="true" />
           </folding>
