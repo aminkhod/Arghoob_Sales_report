@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6e224e6-d6bf-4e62-88ed-19cc7de721d1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/fast moving.html" beforeDir="false" afterPath="$PROJECT_DIR$/fast moving.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main6.py" beforeDir="false" afterPath="$PROJECT_DIR$/main6.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main6.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="108">
+              <caret line="316" column="75" selection-start-line="316" selection-start-column="75" selection-end-line="316" selection-end-column="75" />
               <folding>
                 <element signature="e#1#56#0" expanded="true" />
               </folding>
@@ -156,8 +157,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main6.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="108">
+          <caret line="316" column="75" selection-start-line="316" selection-start-column="75" selection-end-line="316" selection-end-column="75" />
           <folding>
             <element signature="e#1#56#0" expanded="true" />
           </folding>

@@ -314,8 +314,8 @@ def stockStatus():
 
     r,c = newdf.shape
     z = np.random.randn(r,c)
-    fig = FF.create_annotated_heatmap(z,  annotation_text=newdf.values[:,:8])
-    iplot(fig, filename='fast moving.html')
+    fig = FF.create_annotated_heatmap(z,  annotation_text=newdf.values[:,:1])
+    plot(fig, filename='fast moving.html')
 
     return render_template('fast moving.html')
 
