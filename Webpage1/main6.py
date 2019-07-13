@@ -5,7 +5,7 @@ import os
 import plotly.graph_objs as go
 from  plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
 import numpy as np
-from plotly.tools import FigureFactory as FF
+from plotly import figure_factory as FF
 from plotly.graph_objs import *
 
 # from flaskext.mysql import MySQL
@@ -176,7 +176,7 @@ def btnMonthlySale():
             ]),
         )
     fig = Figure(data=data, layout=layout)
-    plot(fig, filename='Monthly_Sale.html')
+    iplot(fig, filename='Monthly_Sale.html')
     return render_template("Monthly_Sale.html")
 
 
@@ -303,7 +303,7 @@ def GoodsSale():
         ]),
     )
     fig = Figure(data=data, layout=layout)
-    plot(fig,filename='Sale_Of_Goods.html')
+    iplot(fig,filename='templates/Sale_Of_Goods.html')
     return render_template('Sale_Of_Goods.html')
 
 @app.route('/StockStatus',methods=['POST'])
@@ -315,7 +315,7 @@ def stockStatus():
     r,c = newdf.shape
     z = np.random.randn(r,c)
     fig = FF.create_annotated_heatmap(z,  annotation_text=newdf.values[:,:])
-    plot(fig, filename='fast moving.html')
+    iplot(fig, filename='templates/fast moving.html')
 
     return render_template('fast moving.html')
 
