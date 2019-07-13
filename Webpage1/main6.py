@@ -103,40 +103,40 @@ def btnMonthlySale():
     branchTot1 = []
     for col in numListOfBranch:
     	branchTot1.append(df[col].sum())
-    	trace5 = go.Table(
-    		header=dict(values=numListOfBranch),
-    		cells=dict(values=branchTot1))
+    trace5 = go.Table(
+        header=dict(values=numListOfBranch),
+        cells=dict(values=branchTot1))
 
     df = pd.read_csv('../Monthes/02-2019.csv')
     branchTot2 = []
     for col in numListOfBranch:
     	branchTot2.append(df[col].sum())
-    	trace6 = go.Table(
-    		header=dict(values=numListOfBranch),
-    		cells=dict(values=branchTot2))
+    trace6 = go.Table(
+        header=dict(values=numListOfBranch),
+        cells=dict(values=branchTot2))
 
     df = pd.read_csv('../Monthes/03-2019.csv')
     branchTot3 = []
     for col in numListOfBranch:
     	branchTot3.append(df[col].sum())
-    	trace7 = go.Table(
-    		header=dict(values=numListOfBranch),
-    		cells=dict(values=branchTot3))
+    trace7 = go.Table(
+        header=dict(values=numListOfBranch),
+        cells=dict(values=branchTot3))
 
     df = pd.read_csv('../Monthes/04-2019.csv')
     branchTot4 = []
     for col in numListOfBranch:
     	branchTot4.append(df[col].sum())
-    	trace8 = go.Table(
-    		header=dict(values=numListOfBranch),
-    		cells=dict(values=branchTot4))
+    trace8 = go.Table(
+        header=dict(values=numListOfBranch),
+        cells=dict(values=branchTot4))
     df = pd.read_csv('../Monthes/05-2019.csv')
     branchTot4 = []
     for col in numListOfBranch:
     	branchTot4.append(df[col].sum())
-    	trace9 = go.Table(
-    		header=dict(values=numListOfBranch),
-    		cells=dict(values=branchTot4))
+    trace9 = go.Table(
+        header=dict(values=numListOfBranch),
+        cells=dict(values=branchTot4))
     data = Data([trace5, trace6, trace7, trace8, trace9])
     layout = Layout(
         title='2019 sale for each months',
@@ -176,8 +176,8 @@ def btnMonthlySale():
             ]),
         )
     fig = Figure(data=data, layout=layout)
-    iplot(fig, filename='Monthly_Sale.html')
-    return render_template("Monthly_Sale.html")
+    plot(fig, filename='Monthly_Sale.html')
+    # return render_template("Monthly_Sale.html")
 
 
 @app.route('/GoodsSale',methods=['POST'])
@@ -303,22 +303,34 @@ def GoodsSale():
         ]),
     )
     fig = Figure(data=data, layout=layout)
-    iplot(fig,filename='templates/Sale_Of_Goods.html')
-    return render_template('Sale_Of_Goods.html')
+    plot(fig,filename='Sale_Of_Goods.html')
+    # return render_template('Sale_Of_Goods.html')
 
 @app.route('/StockStatus',methods=['POST'])
 def stockStatus():
     df = pd.read_csv('allMonthes.csv')
     newdf = df[df['Stock Status'] == 'Fast moving']
     newdf = newdf.loc[:,['Sku', 'UPC', 'Catalogue N', 'Title', 'Label', 'Arq COST', "Cost Price", 'V.S.P.']].reindex()
+    trace = go.Table(
+        header=dict(values=['Sku', 'UPC', 'Catalogue N', 'Title', 'Label', 'Arq COST', "Cost Price", 'V.S.P.']),
+        cells=dict(values=np.transpose(newdf.values[:,:])))
+    data = [trace]
+    plot(data, filename = 'fast_moving.html')
+    # return render_template('fast_moving.html')
 
-    r,c = newdf.shape
-    z = np.random.randn(r,c)
-    fig = FF.create_annotated_heatmap(z,  annotation_text=newdf.values[:,:])
-    iplot(fig, filename='templates/fast moving.html')
 
-    return render_template('fast moving.html')
+@app.route('/StockS',methods=['POST'])
+def stockSta():
+    df = pd.read_csv('allMonthes.csv')
+    newdf = df[df['Stock Status'] == 'Fast moving']
+    newdf = newdf.loc[:,['Sku', 'UPC', 'Catalogue N', 'Title', 'Label', 'Arq COST', "Cost Price", 'V.S.P.']].reindex()
+    trace = go.Table(
+        header=dict(values=['Sku', 'UPC', 'Catalogue N', 'Title', 'Label', 'Arq COST', "Cost Price", 'V.S.P.']),
+        cells=dict(values=np.transpose(newdf.values[:,:])))
 
+    data = [trace]
+    plot(data, filename = 'basic_table')
+    # return render_template('fast_moving.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
