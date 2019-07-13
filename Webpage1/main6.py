@@ -310,7 +310,22 @@ def stockStatus():
     df = pd.read_csv('allMonthes.csv')
     newdf = df[df['Stock Status'] == 'Fast moving']
     newdf = newdf.loc[:,['Sku', 'UPC', 'Catalogue N', 'Title', 'Label', 'Arq COST', "Cost Price", 'V.S.P.']].reindex()
-    newdf.to_html('fast moving.html',index =False)
+    from plotly.tools import FigureFactory as FF
+
+    # z = [[.1, .3, .5],
+    #      [1.0, .8, .6],
+    #      [.6, .4, .2]]
+
+    # x = ['Team A', 'Team B', 'Team C']
+    # y = ['Game Three', 'Game Two', 'Game One']
+
+    z_text = [['Win', 'Lose', 'Win'],
+              ['Lose', 'Lose', 'Win'],
+              ['Win', 'Win', 'Lose']]
+
+    fig = FF.create_annotated_heatmap(newdf,  annotation_text=newdf, colorscale='Viridis')
+    iplot(fig, filename='fast moving.html')
+
     return render_template('fast moving.html')
 
 
