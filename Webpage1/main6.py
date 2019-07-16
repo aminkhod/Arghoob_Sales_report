@@ -176,8 +176,8 @@ def btnMonthlySale():
             ]),
         )
     fig = Figure(data=data, layout=layout)
-    plot(fig, filename='templates/Monthly_Sale.html')
-    return render_template("/Monthly_Sale.html")
+    plot(fig, filename='Monthly_Sale.html')
+    return render_template("Monthly_Sale.html")
 
 
 @app.route('/GoodsSale',methods=['POST'])
@@ -303,7 +303,7 @@ def GoodsSale():
         ]),
     )
     fig = Figure(data=data, layout=layout)
-    iplot(fig,filename='Sale_Of_Goods.html')
+    plot(fig,filename='Sale_Of_Goods.html')
     return render_template('Sale_Of_Goods.html')
 
 @app.route('/FastMoving',methods=['POST'])
@@ -346,7 +346,7 @@ def FastMoving():
 #     data = [trace]
 #     fig = Figure(data=data)
 #     plot(fig, filename = 'Non_moving.html')
-#     return render_template('/Non_Moving.html')
+#     return render_template('Non_Moving.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
