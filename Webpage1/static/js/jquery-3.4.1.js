@@ -10599,7 +10599,7 @@ $(function() {
         $.ajax({
             url: '/GoodsSale',
             //data: $('form').serialize(),
-			//data: {},
+			data: {},
             type: 'POST',
             success: function(response) {
                 console.log(response);

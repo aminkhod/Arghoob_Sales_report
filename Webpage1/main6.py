@@ -316,7 +316,7 @@ def FastMoving():
         cells=dict(values=np.transpose(newdf.values[:,:])))
     data = [trace]
     fig = Figure(data=data)
-    plot(fig, filename = 'fast_moving.html')
+    plot(data, filename = 'fast_moving.html')
     return render_template('fast_moving.html')
 
     #
