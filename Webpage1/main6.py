@@ -176,8 +176,8 @@ def btnMonthlySale():
             ]),
         )
     fig = Figure(data=data, layout=layout)
-    plot(fig, filename='Monthly_Sale.html')
-    # return render_template("Monthly_Sale.html")
+    plot(fig, filename='templates/Monthly_Sale.html')
+    return render_template("/Monthly_Sale.html")
 
 
 @app.route('/GoodsSale',methods=['POST'])
@@ -303,8 +303,8 @@ def GoodsSale():
         ]),
     )
     fig = Figure(data=data, layout=layout)
-    plot(fig,filename='Sale_Of_Goods.html')
-    # return render_template('Sale_Of_Goods.html')
+    iplot(fig,filename='Sale_Of_Goods.html')
+    return render_template('Sale_Of_Goods.html')
 
 @app.route('/FastMoving',methods=['POST'])
 def FastMoving():
@@ -315,23 +315,38 @@ def FastMoving():
         header=dict(values=['Sku', 'UPC', 'Catalogue N', 'Title', 'Label', 'Arq COST', "Cost Price", 'V.S.P.']),
         cells=dict(values=np.transpose(newdf.values[:,:])))
     data = [trace]
-    plot(data, filename = 'fast_moving.html')
-    # return render_template('fast_moving.html')
+    fig = Figure(data=data)
+    plot(fig, filename = 'fast_moving.html')
+    return render_template('fast_moving.html')
 
-
-@app.route('/NonMoving',methods=['POST'])
-def NonMoving():
-    df = pd.read_csv('allMonthes.csv')
-    newdf = df[df['Stock Status'] == 'Non moving']
-    newdf = newdf.loc[:,['Sku', 'UPC', 'Catalogue N', 'Title', 'Label', 'Arq COST', "Cost Price", 'V.S.P.']].reindex()
-    trace = go.Table(
-        header=dict(values=['Sku', 'UPC', 'Catalogue N', 'Title', 'Label', 'Arq COST', "Cost Price", 'V.S.P.']),
-        cells=dict(values=np.transpose(newdf.values[:,:])))
-
-
-    data = [trace]
-    plot(data, filename = 'Non moving.html')
-    # return render_template('fast_moving.html')
+    #
+	# $('#btnNonMoving').click(function() {
+    #
+    #     $.ajax({
+    #         url: '/NonMoving',
+    #         //data: $('form').serialize(),
+	# 		data: {},
+    #         type: 'POST',
+    #         success: function(response) {
+    #             console.log(response);
+    #         },
+    #         error: function(error) {
+    #             console.log(error);
+    #         }
+    #     });
+    # });
+# @app.route('/NonMoving',methods=['POST'])
+# def NonMoving():
+#     df = pd.read_csv('allMonthes.csv')
+#     newdf = df[df['Stock Status'] == 'Non moving']
+#     newdf = newdf.loc[:,['Sku', 'UPC', 'Catalogue N', 'Title', 'Label', 'Arq COST', "Cost Price", 'V.S.P.']].reindex()
+#     trace = go.Table(
+#         header=dict(values=['Sku', 'UPC', 'Catalogue N', 'Title', 'Label', 'Arq COST', "Cost Price", 'V.S.P.']),
+#         cells=dict(values=np.transpose(newdf.values[:,:])))
+#     data = [trace]
+#     fig = Figure(data=data)
+#     plot(fig, filename = 'Non_moving.html')
+#     return render_template('/Non_Moving.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
