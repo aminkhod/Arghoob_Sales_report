@@ -328,8 +328,8 @@ def NonMoving():
         header=dict(values=['Sku', 'UPC', 'Catalogue N', 'Title', 'Label', 'Arq COST', "Cost Price", 'V.S.P.']),
         cells=dict(values=np.transpose(newdf.values[:,:])))
     data = [trace]
-    plot(data, filename = 'Non_moving.html')
-    return render_template('Non_Moving.html')
+    plot(data, filename = 'NonMoving.html')
+    return render_template('NonMoving.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
