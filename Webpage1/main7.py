@@ -99,88 +99,35 @@ def showSignUp():
 
 @app.route('/MonthlySale', methods=['POST'])
 def btnMonthlySale():
-    df = pd.read_csv('../Monthes/01-2019.csv')
-    branchTot1 = []
-    for col in listOfBranch:
-        branchTot1.append(df[col].sum())
-    trace5 = go.Table(
-        header=dict(values=listOfBranch),
-        cells=dict(values=branchTot1))
+    path = 'Monthes/'
 
-    df = pd.read_csv('../Monthes/02-2019.csv')
-    branchTot2 = []
-    for col in numListOfBranch:
-        branchTot2.append(df[col].sum())
-    trace6 = go.Table(
-        header=dict(values=numListOfBranch),
-        cells=dict(values=branchTot2))
+    files = []
+    filesNoAdd = []
+    # r=root, d=directories, f = files
+    for r, d, f in os.walk(path):
+        for file in f:
+            if '.csv' in file:
+                files.append(os.path.join(r, file))
+                filesNoAdd.append(file)
+    cell = []
+    for file in files:
+        df = pd.read_csv(file)
+        branchTot = []
+        for col in listOfBranch:
+            branchTot.append(df[col].sum())
+            cell.append(branchTot)
 
-    df = pd.read_csv('../Monthes/03-2019.csv')
-    branchTot3 = []
-    for col in numListOfBranch:
-        branchTot3.append(df[col].sum())
-    trace7 = go.Table(
-        header=dict(values=numListOfBranch),
-        cells=dict(values=branchTot3))
+    trace = go.Table(
+                header=dict(values=listOfBranch),
+                cells=dict(values=np.array(cell)))
 
-    df = pd.read_csv('../Monthes/04-2019.csv')
-    branchTot4 = []
-    for col in numListOfBranch:
-        branchTot4.append(df[col].sum())
-    trace8 = go.Table(
-        header=dict(values=numListOfBranch),
-        cells=dict(values=branchTot4))
-    df = pd.read_csv('../Monthes/05-2019.csv')
-    branchTot4 = []
-    for col in numListOfBranch:
-        branchTot4.append(df[col].sum())
-    trace9 = go.Table(
-
-        header=dict(values=numListOfBranch),
-        cells=dict(values=branchTot4))
-    data = Data([trace5, trace6, trace7, trace8, trace9])
-    # layout = Layout(
-    #     title='2019 sale for each months',
-    #     width = 1000,
-    #     updatemenus=list([
-    #         dict(
-    #
-    #             x=-0.05,
-    #             y=1,
-    #
-    #             yanchor='top',
-    #             buttons=list([
-    #                 dict(
-    #                     args=['visible', [ True, False, False, False, False]],
-    #                     label = monthDate[0],
-    #                     method='restyle'
-    #                 ),
-    #                 dict(
-    #                     args=['visible', [False, True, False, False, False]],
-    #                     label = monthDate[1],
-    #                     method='restyle'
-    #                 ),
-    #                 dict(
-    #                     args=['visible', [False, False, True, False, False]],
-    #                     label = monthDate[2],
-    #                     method='restyle'
-    #                 ),
-    #                 dict(
-    #                     args=['visible', [False, False, False, True, False]],
-    #                     label = monthDate[3],
-    #                     method='restyle'
-    #                 ),
-    #                 dict(
-    #                     args=['visible', [False, False, False, False, True]],
-    #                     label = monthDate[4],
-    #                     method='restyle'
-    #                     )
-    #                 ]),
-    #             )
-    #         ]),
-    #     )
-    # fig = Figure(data=data, layout=layout)
-    fig = Figure(data=data)
+    data = Data([trace])
+    layout = Layout(
+        title='2019 sale for each months',
+        width=5000
+        )
+    fig = Figure(data=data, layout=layout)
+    # fig = Figure(data=data)
     plot(fig, filename='Monthly_Sale.html')
     return render_template("Monthly_Sale.html")
 
