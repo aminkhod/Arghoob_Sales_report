@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e6e224e6-d6bf-4e62-88ed-19cc7de721d1" name="Default Changelist" comment="" />
+    <list default="true" id="e6e224e6-d6bf-4e62-88ed-19cc7de721d1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Build  Excel File.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../Build  Excel File.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Monthes/01-2019.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Monthes/01-2019.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Monthes/02-2019.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Monthes/02-2019.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Monthes/04-2019.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Monthes/04-2019.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Monthly_Sale.html" beforeDir="false" afterPath="$PROJECT_DIR$/Monthly_Sale.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sale_Of_Goods.html" beforeDir="false" afterPath="$PROJECT_DIR$/Sale_Of_Goods.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main7.py" beforeDir="false" afterPath="$PROJECT_DIR$/main7.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dist/Monthes/01-2019.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../dist/Monthes/01-2019.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dist/Monthes/02-2019.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../dist/Monthes/02-2019.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dist/Monthes/03-2019.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../dist/Monthes/03-2019.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dist/Monthes/04-2019.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../dist/Monthes/04-2019.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dist/Monthes/05-2019.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../dist/Monthes/05-2019.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dist/Weaks of Month/02-09-2019.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dist/Weaks of Month/02-16-2019.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dist/Weaks of Month/02-23-2019.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dist/Weaks of Month/03-02-2019.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dist/allMonthes.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../dist/allMonthes.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dist/toalOfMonth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../dist/toalOfMonth.csv" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -10,11 +30,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main7.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="300" column="19" lean-forward="true" selection-end-line="335" />
+            <state relative-caret-position="119">
+              <caret line="140" selection-start-line="140" selection-end-line="177" selection-end-column="42" />
               <folding>
                 <element signature="e#1#56#0" expanded="true" />
               </folding>
@@ -22,11 +42,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Main8.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
+            <state relative-caret-position="1428">
+              <caret line="91" selection-start-line="91" selection-end-line="91" />
               <folding>
                 <element signature="e#1#56#0" expanded="true" />
               </folding>
@@ -55,15 +75,15 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/main6.py" />
-        <option value="$PROJECT_DIR$/main7.py" />
         <option value="$PROJECT_DIR$/Main8.py" />
+        <option value="$PROJECT_DIR$/main7.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="10" />
     <option name="y" value="50" />
-    <option name="width" value="1134" />
+    <option name="width" value="1135" />
     <option name="height" value="795" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -175,13 +195,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1038" height="803" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17964073" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17964073" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.40218878" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33857143" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -214,20 +235,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main7.py">
+    <entry file="file://$PROJECT_DIR$/Main8.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="300" column="19" lean-forward="true" selection-end-line="335" />
+        <state relative-caret-position="1428">
+          <caret line="91" selection-start-line="91" selection-end-line="91" />
           <folding>
             <element signature="e#1#56#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main8.py">
+    <entry file="file://$PROJECT_DIR$/main7.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
+        <state relative-caret-position="119">
+          <caret line="140" selection-start-line="140" selection-end-line="177" selection-end-column="42" />
           <folding>
             <element signature="e#1#56#0" expanded="true" />
           </folding>

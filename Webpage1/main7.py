@@ -102,7 +102,7 @@ def btnMonthlySale():
     df = pd.read_csv('../Monthes/01-2019.csv')
     branchTot1 = []
     for col in numListOfBranch:
-    	branchTot1.append(df[col].sum())
+        branchTot1.append(df[col].sum())
     trace5 = go.Table(
         header=dict(values=numListOfBranch),
         cells=dict(values=branchTot1))
@@ -110,7 +110,7 @@ def btnMonthlySale():
     df = pd.read_csv('../Monthes/02-2019.csv')
     branchTot2 = []
     for col in numListOfBranch:
-    	branchTot2.append(df[col].sum())
+        branchTot2.append(df[col].sum())
     trace6 = go.Table(
         header=dict(values=numListOfBranch),
         cells=dict(values=branchTot2))
@@ -118,7 +118,7 @@ def btnMonthlySale():
     df = pd.read_csv('../Monthes/03-2019.csv')
     branchTot3 = []
     for col in numListOfBranch:
-    	branchTot3.append(df[col].sum())
+        branchTot3.append(df[col].sum())
     trace7 = go.Table(
         header=dict(values=numListOfBranch),
         cells=dict(values=branchTot3))
@@ -126,14 +126,14 @@ def btnMonthlySale():
     df = pd.read_csv('../Monthes/04-2019.csv')
     branchTot4 = []
     for col in numListOfBranch:
-    	branchTot4.append(df[col].sum())
+        branchTot4.append(df[col].sum())
     trace8 = go.Table(
         header=dict(values=numListOfBranch),
         cells=dict(values=branchTot4))
     df = pd.read_csv('../Monthes/05-2019.csv')
     branchTot4 = []
     for col in numListOfBranch:
-    	branchTot4.append(df[col].sum())
+        branchTot4.append(df[col].sum())
     trace9 = go.Table(
         header=dict(values=numListOfBranch),
         cells=dict(values=branchTot4))
@@ -175,6 +175,7 @@ def btnMonthlySale():
                 )
             ]),
         )
+    fig = Figure(data=data, layout=layout)
     fig = Figure(data=data, layout=layout)
     plot(fig, filename='Monthly_Sale.html')
     return render_template("Monthly_Sale.html")
