@@ -62,7 +62,8 @@ for i in range(5):
     yV.append(df.values[:,i + 8])
 numListOfBranch = ['401 Co','402 Co','404 Co','405 Co','412 Co','416 Co',
                    '417 Co','423 Co', '424 Co','425 Co','426 Co','429 Co','444 Co','490 Co']
-listOfBranch = ['401 Co', '401.Arq COST', '401.Cost Price', '401.V.S.P.', '401.AVG. WEEK',
+listOfBranch = ['total sale of Goods', 'Latest SOH',
+                '401 Co', '401.Arq COST', '401.Cost Price', '401.V.S.P.', '401.AVG. WEEK',
                 '402 Co', '402.Arq COST', '402.Cost Price', '402.V.S.P.', '402.AVG. WEEK',
                 '404 Co', '404.Arq COST', '404.Cost Price', '404.V.S.P.', '404.AVG. WEEK',
                 '405 Co', '405.Arq COST', '405.Cost Price', '405.V.S.P.', '405.AVG. WEEK',
@@ -75,7 +76,7 @@ listOfBranch = ['401 Co', '401.Arq COST', '401.Cost Price', '401.V.S.P.', '401.A
                 '426 Co', '426.Arq COST', '426.Cost Price', '426.V.S.P.', '426.AVG. WEEK',
                 '429 Co', '429.Arq COST', '429.Cost Price', '429.V.S.P.', '429.AVG. WEEK',
                 '444 Co', '444.Arq COST', '444.Cost Price', '444.V.S.P.', '444.AVG. WEEK',
-                '490 Co', '490.Arq COST', '490.Cost Price', '490.V.S.P.', '490.AVG. WEEK', 'Latest SOH']
+                '490 Co', '490.Arq COST', '490.Cost Price', '490.V.S.P.', '490.AVG. WEEK']
 
 productDetail = ['Sku', 'UPC', 'Catalogue N', 'Title', 'Label' ,'Arq COST', 'Cost Price' ,'V.S.P.']
 header = productDetail.copy()
@@ -116,7 +117,7 @@ def btnMonthlySale():
         date = date.replace('.csv','')
         branchTot.append(date)
         for col in listOfBranch:
-            branchTot.append(df[col].sum())
+            branchTot.append(round(df[col].sum(),2))
         cell.append(branchTot)
         # print(branchTot)
     # print(cell)
