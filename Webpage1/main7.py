@@ -99,8 +99,7 @@ def showSignUp():
 
 @app.route('/MonthlySale', methods=['POST'])
 def btnMonthlySale():
-    path = 'Monthes/'
-
+    path = '../Monthes/'
     files = []
     filesNoAdd = []
     # r=root, d=directories, f = files
@@ -113,20 +112,27 @@ def btnMonthlySale():
     for file in files:
         df = pd.read_csv(file)
         branchTot = []
+        date = file.replace('../Monthes/','')
+        date = date.replace('.csv','')
+        branchTot.append(date)
         for col in listOfBranch:
             branchTot.append(df[col].sum())
-            cell.append(branchTot)
-    print(cell)
+        cell.append(branchTot)
+        # print(branchTot)
+    # print(cell)
+    head = ['Date']
+    head.extend(listOfBranch)
     trace = go.Table(
-                header=dict(values=listOfBranch),
 
-                cells=dict(values=np.array(cell[0])))
+                header=dict(values=head),
+
+                cells=dict(values=np.transpose(cell)))
 
 
     data = Data([trace])
     layout = Layout(
         title='2019 sale for each months',
-        width=5000
+        width=6000
         )
     fig = Figure(data=data, layout=layout)
     # fig = Figure(data=data)
