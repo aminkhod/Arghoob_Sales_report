@@ -116,10 +116,12 @@ def btnMonthlySale():
         for col in listOfBranch:
             branchTot.append(df[col].sum())
             cell.append(branchTot)
-
+    print(cell)
     trace = go.Table(
                 header=dict(values=listOfBranch),
-                cells=dict(values=np.array(cell)))
+
+                cells=dict(values=np.array(cell[0])))
+
 
     data = Data([trace])
     layout = Layout(
