@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[100]:
+# In[159]:
 
 
 import pandas as pd
@@ -12,7 +12,7 @@ import os
 # subprocess.check_call(['pip', 'install',"--upgrade", 'numpy']) # upgrade pkg
 
 
-# In[101]:
+# In[160]:
 
 
 path = 'Weaks of Month/'
@@ -26,11 +26,11 @@ for r, d, f in os.walk(path):
             files.append(os.path.join(r, file))
             filesNoAdd.append(file)
 
-for f in filesNoAdd:
-    print(f)
+# for f in filesNoAdd:
+#     print(f)
 
 
-# In[110]:
+# In[161]:
 
 
 numListOfBranch = ['401 Co','402 Co','404 Co','405 Co','412 Co','416 Co',
@@ -55,7 +55,7 @@ header = productDetail.copy()
 header.extend(listOfBranch.copy())
 
 
-# In[111]:
+# In[162]:
 
 
 def findID(sku, Data):
@@ -68,7 +68,7 @@ def findID(sku, Data):
     return "This good with Sku of " + sku + " is not in data." 
 
 
-# In[112]:
+# In[163]:
 
 
 def buildList(num, ide, productDetail, listOfBranch, rawData, final):
@@ -100,7 +100,7 @@ def buildList(num, ide, productDetail, listOfBranch, rawData, final):
     return producList
 
 
-# In[113]:
+# In[164]:
 
 
 def listAddition(Dataide, ide, num, productDetail, listOfBranch, rawData, monthRawData, final):
@@ -112,7 +112,7 @@ def listAddition(Dataide, ide, num, productDetail, listOfBranch, rawData, monthR
         qbranch = str(branch + '.Quantit')        
         head = str(branch + '.Sales Quantity')
         if head in rawData.head(0):
-            buf = colid + 4
+            buf = colid + 5
 #             print(colid)
             monthRawData.iloc[Dataide, colid] = monthRawData.iloc[Dataide, colid] + rawData[head][ide]
             monthRawData.iloc[Dataide, colid+1] = monthRawData.iloc[Dataide, colid] * float(rawData['Arq COST'][ide])
@@ -135,7 +135,7 @@ def listAddition(Dataide, ide, num, productDetail, listOfBranch, rawData, monthR
     return monthRawData
 
 
-# In[114]:
+# In[165]:
 
 
 def noStock(sku,rawData):
@@ -153,7 +153,7 @@ def noStock(sku,rawData):
     return True
 
 
-# In[115]:
+# In[ ]:
 
 
 # a = np.zeros(shape=(1,len(header)))
@@ -186,7 +186,7 @@ for f in files:
         sid +=1
 
 
-# In[116]:
+# In[ ]:
 
 
 totalGoodSale = []
@@ -222,7 +222,7 @@ for i in range(len(status)):
 monthRawData["Status"] = status
 
 
-# In[117]:
+# In[ ]:
 
 
 monthRawData.to_csv("toalOfMonth.csv", index=False)
