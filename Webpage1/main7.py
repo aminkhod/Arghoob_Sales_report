@@ -135,49 +135,52 @@ def btnMonthlySale():
     for col in numListOfBranch:
         branchTot4.append(df[col].sum())
     trace9 = go.Table(
+
         header=dict(values=numListOfBranch),
         cells=dict(values=branchTot4))
     data = Data([trace5, trace6, trace7, trace8, trace9])
-    layout = Layout(
-        title='2019 sale for each months',
-        width = 1000,
-        updatemenus=list([
-            dict(
-                x=-0.05,
-                y=1,
-
-                yanchor='top',
-                buttons=list([
-                    dict(
-                        args=['visible', [ True, False, False, False, False]],
-                        label = monthDate[0],
-                        method='restyle'
-                    ),
-                    dict(
-                        args=['visible', [False, True, False, False, False]],
-                        label = monthDate[1],
-                        method='restyle'
-                    ),
-                    dict(
-                        args=['visible', [False, False, True, False, False]],
-                        label = monthDate[2],
-                        method='restyle'
-                    ),
-                    dict(
-                        args=['visible', [False, False, False, True, False]],
-                        label = monthDate[3],
-                        method='restyle'
-                    ),
-                    dict(
-                        args=['visible', [False, False, False, False, True]],
-                        label = monthDate[4],
-                        method='restyle'
-                        )
-                    ]),
-                )
-            ]),
-        )
-    fig = Figure(data=data, layout=layout)
+    # layout = Layout(
+    #     title='2019 sale for each months',
+    #     width = 1000,
+    #     updatemenus=list([
+    #         dict(
+    #
+    #             x=-0.05,
+    #             y=1,
+    #
+    #             yanchor='top',
+    #             buttons=list([
+    #                 dict(
+    #                     args=['visible', [ True, False, False, False, False]],
+    #                     label = monthDate[0],
+    #                     method='restyle'
+    #                 ),
+    #                 dict(
+    #                     args=['visible', [False, True, False, False, False]],
+    #                     label = monthDate[1],
+    #                     method='restyle'
+    #                 ),
+    #                 dict(
+    #                     args=['visible', [False, False, True, False, False]],
+    #                     label = monthDate[2],
+    #                     method='restyle'
+    #                 ),
+    #                 dict(
+    #                     args=['visible', [False, False, False, True, False]],
+    #                     label = monthDate[3],
+    #                     method='restyle'
+    #                 ),
+    #                 dict(
+    #                     args=['visible', [False, False, False, False, True]],
+    #                     label = monthDate[4],
+    #                     method='restyle'
+    #                     )
+    #                 ]),
+    #             )
+    #         ]),
+    #     )
+    # fig = Figure(data=data, layout=layout)
+    fig = Figure(data=data)
     plot(fig, filename='Monthly_Sale.html')
     return render_template("Monthly_Sale.html")
 
