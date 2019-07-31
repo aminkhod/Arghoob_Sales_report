@@ -271,9 +271,11 @@ def GoodsSale():
 def FastMoving():
     df = pd.read_csv('allMonthes.csv')
     newdf = df[df['Stock Status'] == 'Fast moving']
-    newdf = newdf.loc[:,['Sku', 'UPC', 'Catalogue N', 'Title', 'Label', 'Arq COST', "Cost Price", 'V.S.P.']].reindex()
+    newdf = newdf.loc[:,['Sku', 'UPC', 'Catalogue N', 'Title', 'Label',
+                         'Arq COST', "Cost Price", 'V.S.P.', 'Latest SOH','Reordering']].reindex()
     trace = go.Table(
-        header=dict(values=['Sku', 'UPC', 'Catalogue N', 'Title', 'Label', 'Arq COST', "Cost Price", 'V.S.P.']),
+        header=dict(values=['Sku', 'UPC', 'Catalogue N', 'Title', 'Label',
+                            'Arq COST', "Cost Price", 'V.S.P.', 'Latest SOH','Reordering']),
         cells=dict(values=np.transpose(newdf.values[:,:])))
     data = [trace]
     plot(data, filename = 'FastMoving.html')
@@ -284,9 +286,13 @@ def FastMoving():
 def NonMoving():
     df = pd.read_csv('allMonthes.csv')
     newdf = df[df['Stock Status'] == 'Non moving']
-    newdf = newdf.loc[:,['Sku', 'UPC', 'Catalogue N', 'Title', 'Label', 'Arq COST', "Cost Price", 'V.S.P.']].reindex()
+    newdf = newdf.loc[:,['Sku', 'UPC', 'Catalogue N', 'Title', 'Label',
+                         'Arq COST', "Cost Price", 'V.S.P.',
+                         'Non Moving Action','Reordering']].reindex()
     trace = go.Table(
-        header=dict(values=['Sku', 'UPC', 'Catalogue N', 'Title', 'Label', 'Arq COST', "Cost Price", 'V.S.P.']),
+        header=dict(values=['Sku', 'UPC', 'Catalogue N', 'Title',
+                            'Label', 'Arq COST', "Cost Price",
+                            'V.S.P.', 'Non Moving Action', 'Reordering']),
         cells=dict(values=np.transpose(newdf.values[:,:])))
     data = [trace]
     plot(data, filename = 'NonMoving.html')
