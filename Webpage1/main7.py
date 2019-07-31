@@ -1,13 +1,15 @@
 
-from flask import Flask, render_template, json, request
+from flask import Flask, render_template
 import pandas as pd
 import os
 import plotly.graph_objs as go
-from  plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
+from  plotly.offline import plot
 import numpy as np
-from plotly import figure_factory as FF
 from plotly.graph_objs import *
 
+# from plotly.offline import download_plotlyjs, init_notebook_mode
+# from flask import json, request
+# from plotly import figure_factory as FF
 # from flaskext.mysql import MySQL
 # from werkzeug import generate_password_hash, check_password_hash
 # import plotly.io as pio
@@ -27,7 +29,6 @@ from plotly.graph_objs import *
 
 
 app = Flask(__name__)
-# pd.r
 
 # mysql = MySQL()
 #
@@ -45,7 +46,7 @@ path = '../Monthes/'
 
 files = []
 filesNoAdd = []
-# r=root, d=directories, f = files
+
 for r, d, f in os.walk(path):
     for file in f:
         if '.csv' in file:
@@ -54,7 +55,6 @@ for r, d, f in os.walk(path):
 monthDate = []
 for f in filesNoAdd:
     monthDate.append(f.replace('.csv',''))
-# print(monthDate)
 
 df = pd.read_csv('allMonthes.csv')
 yV = []
@@ -82,8 +82,6 @@ productDetail = ['Sku', 'UPC', 'Catalogue N', 'Title', 'Label' ,'Arq COST', 'Cos
 header = productDetail.copy()
 header.extend(listOfBranch.copy())
 
-
-
 @app.route("/")
 def template():
     return render_template("template.html")
@@ -103,7 +101,6 @@ def btnMonthlySale():
     path = '../Monthes/'
     files = []
     filesNoAdd = []
-    # r=root, d=directories, f = files
     for r, d, f in os.walk(path):
         for file in f:
             if '.csv' in file:
@@ -119,8 +116,7 @@ def btnMonthlySale():
         for col in listOfBranch:
             branchTot.append(round(df[col].sum(),2))
         cell.append(branchTot)
-        # print(branchTot)
-    # print(cell)
+
     head = ['Date']
     head.extend(listOfBranch)
     trace = go.Table(
@@ -128,7 +124,6 @@ def btnMonthlySale():
                 header=dict(values=head),
 
                 cells=dict(values=np.transpose(cell)))
-
 
     data = Data([trace])
     layout = Layout(
@@ -177,49 +172,24 @@ def GoodsSale():
     )
 
     trace2 = Bar(
-    #     x=countries,
         y=silver,
-        # line=Line(
-        #     color='#C0C0C0',
-        #     width=3
-        # ),
         name=monthDate[1]
     )
 
     trace3 = Bar(
-    #     x=countries,
         y=bronze,
-        # color='#BA8651',
-        # line=Line(
-        #     color='#BA8651',
-        #     width=3
-        # ),
         name=monthDate[2]
     )
 
     trace4 = Bar(
-    #     x=countries,
         y=total,
-        # color='#000000',
-        # line=Line(
-        #     color='#000000',
-        #     width=4
-        # ),
         name=monthDate[3]
     )
     trace5 = Bar(
-    #     x=countries,
         y=total,
-        # color='#000000',
-        # line=Line(
-        #     color='#000000',
-        #     width=4
-        # ),
         name=monthDate[4]
     )
 
-    # data = [trace]
-    # plot(data, filename = 'basic_table')
     data = Data([trace1, trace2, trace3, trace4,trace5])
     layout = Layout(
         title='2019 sale for each months',
