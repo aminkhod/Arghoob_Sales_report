@@ -279,7 +279,7 @@ def FastMoving():
         cells=dict(values=np.transpose(newdf.values[:,:])))
     layout = Layout(
         title='Fast Moving Goods',
-        width=6000
+        width=1300
         )
     data = [trace]
     fig = Figure(data=data, layout=layout)
@@ -300,8 +300,8 @@ def NonMoving():
                             'V.S.P.', 'Non Moving Action', 'Reordering']),
         cells=dict(values=np.transpose(newdf.values[:,:])))
     layout = Layout(
-        title='Fast Moving Goods',
-        width=6000
+        title='Non Moving Goods',
+        width=1300
         )
     data = [trace]
     fig = Figure(data=data, layout=layout)
