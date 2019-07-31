@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6e224e6-d6bf-4e62-88ed-19cc7de721d1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMoving.html" beforeDir="false" afterPath="$PROJECT_DIR$/FastMoving.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Monthly_Sale.html" beforeDir="false" afterPath="$PROJECT_DIR$/Monthly_Sale.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NonMoving.html" beforeDir="false" afterPath="$PROJECT_DIR$/NonMoving.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sale_Of_Goods.html" beforeDir="false" afterPath="$PROJECT_DIR$/Sale_Of_Goods.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/allMonthes.csv" beforeDir="false" afterPath="$PROJECT_DIR$/allMonthes.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main7.py" beforeDir="false" afterPath="$PROJECT_DIR$/main7.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main7.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="274" column="72" selection-start-line="274" selection-start-column="72" selection-end-line="274" selection-end-column="72" />
+            <state relative-caret-position="564">
+              <caret line="310" column="26" lean-forward="true" selection-start-line="310" selection-start-column="26" selection-end-line="310" selection-end-column="26" />
               <folding>
                 <element signature="e#1#56#0" expanded="true" />
               </folding>
@@ -226,8 +220,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main7.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="274" column="72" selection-start-line="274" selection-start-column="72" selection-end-line="274" selection-end-column="72" />
+        <state relative-caret-position="564">
+          <caret line="310" column="26" lean-forward="true" selection-start-line="310" selection-start-column="26" selection-end-line="310" selection-end-column="26" />
           <folding>
             <element signature="e#1#56#0" expanded="true" />
           </folding>

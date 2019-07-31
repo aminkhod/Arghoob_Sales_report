@@ -277,8 +277,13 @@ def FastMoving():
         header=dict(values=['Sku', 'UPC', 'Catalogue N', 'Title', 'Label',
                             'Arq COST', "Cost Price", 'V.S.P.', 'Latest SOH','Reordering']),
         cells=dict(values=np.transpose(newdf.values[:,:])))
+    layout = Layout(
+        title='Fast Moving Goods',
+        width=6000
+        )
     data = [trace]
-    plot(data, filename = 'FastMoving.html')
+    fig = Figure(data=data, layout=layout)
+    plot(fig, filename = 'FastMoving.html')
     return render_template('FastMoving.html')
 
 
@@ -294,8 +299,13 @@ def NonMoving():
                             'Label', 'Arq COST', "Cost Price",
                             'V.S.P.', 'Non Moving Action', 'Reordering']),
         cells=dict(values=np.transpose(newdf.values[:,:])))
+    layout = Layout(
+        title='Fast Moving Goods',
+        width=6000
+        )
     data = [trace]
-    plot(data, filename = 'NonMoving.html')
+    fig = Figure(data=data, layout=layout)
+    plot(fig, filename = 'NonMoving.html')
     return render_template('NonMoving.html')
 
 if __name__ == "__main__":
