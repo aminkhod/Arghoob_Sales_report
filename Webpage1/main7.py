@@ -154,8 +154,8 @@ def GoodsSale():
 	# else:
 	# 	return json.dumps({'error':str(data[0])})
 
-
     # countries = ['United States', 'China', 'South Korea', 'Hungary', 'Austraila', 'Canada']
+
     gold = yV[0]
     silver = yV[1]
     bronze = yV[2]
