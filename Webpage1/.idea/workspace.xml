@@ -2,7 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6e224e6-d6bf-4e62-88ed-19cc7de721d1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.ipynb_checkpoints/Arghoob_sale_report-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../.ipynb_checkpoints/Arghoob_sale_report-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.ipynb_checkpoints/annotated_heatmap-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../.ipynb_checkpoints/annotated_heatmap-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Arghoob_sale_report.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../Arghoob_sale_report.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastMoving.html" beforeDir="false" afterPath="$PROJECT_DIR$/FastMoving.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main8.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main8.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Monthly_Sale.html" beforeDir="false" afterPath="$PROJECT_DIR$/Monthly_Sale.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NonMoving.html" beforeDir="false" afterPath="$PROJECT_DIR$/NonMoving.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sale_Of_Goods.html" beforeDir="false" afterPath="$PROJECT_DIR$/Sale_Of_Goods.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main7.py" beforeDir="false" afterPath="$PROJECT_DIR$/main7.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../annotated_heatmap.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../annotated_heatmap.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../samplePlotly.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../samplePlotly.ipynb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,10 +26,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main7.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="155" lean-forward="true" selection-start-line="155" selection-end-line="155" />
+            <state relative-caret-position="533">
+              <caret line="335" selection-start-line="335" selection-end-line="335" />
               <folding>
-                <element signature="e#1#41#0" expanded="true" />
+                <element signature="e#1#56#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -27,10 +38,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Main8.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="65" column="47" selection-start-line="65" selection-start-column="47" selection-end-line="65" selection-end-column="47" />
+            <state relative-caret-position="615">
+              <caret line="282" selection-start-line="282" selection-end-line="282" />
               <folding>
-                <element signature="e#1#56#0" expanded="true" />
+                <element signature="e#1#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -58,8 +69,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/main6.py" />
-        <option value="$PROJECT_DIR$/Main8.py" />
         <option value="$PROJECT_DIR$/main7.py" />
+        <option value="$PROJECT_DIR$/Main8.py" />
       </list>
     </option>
   </component>
@@ -75,7 +86,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Course" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -87,6 +97,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Course" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -178,8 +189,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1038" height="803" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17964073" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17964073" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -219,20 +231,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main7.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="155" lean-forward="true" selection-start-line="155" selection-end-line="155" />
+        <state relative-caret-position="533">
+          <caret line="335" selection-start-line="335" selection-end-line="335" />
           <folding>
-            <element signature="e#1#41#0" expanded="true" />
+            <element signature="e#1#56#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Main8.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="65" column="47" selection-start-line="65" selection-start-column="47" selection-end-line="65" selection-end-column="47" />
+        <state relative-caret-position="615">
+          <caret line="282" selection-start-line="282" selection-end-line="282" />
           <folding>
-            <element signature="e#1#56#0" expanded="true" />
+            <element signature="e#1#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
