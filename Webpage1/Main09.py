@@ -149,18 +149,17 @@ def GoodsSale():
     for file in files:
         df = pd.read_csv(file)
         branchTot = []
-        for col in listOfBranch:
+        for col in numListOfBranch:
             branchTot.append(round(df[col].sum(),2))
         cell.append(branchTot)
-    
-    head = ['Date']
-    head.extend(listOfBranch)
+
+
 
     traces = []
     for i in range(len(files)):
         trace = go.Bar(
         y=cell[i],
-        x=head,
+        x=numListOfBranch,
         name=monthDate[i]
         )
         traces.append(trace)
