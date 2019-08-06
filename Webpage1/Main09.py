@@ -292,7 +292,7 @@ def profitTable():
     for i in range(len(DaysStockInHand)):
         try:
             int(DaysStockInHand[i])
-            print(i)
+
         except:
             DaysStockInHand[i] = 0
     for N in DaysStockInHand:
