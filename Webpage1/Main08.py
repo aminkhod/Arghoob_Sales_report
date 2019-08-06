@@ -58,7 +58,7 @@ for f in filesNoAdd:
 
 df = pd.read_csv('allMonthes.csv')
 yV = []
-for i in range(5):
+for i in range(len(files)):
     yV.append(df.values[:,i + 8])
 numListOfBranch = ['401 Co','402 Co','404 Co','405 Co','412 Co','416 Co',
                    '417 Co','423 Co', '424 Co','425 Co','426 Co','429 Co','444 Co','490 Co']
