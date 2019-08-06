@@ -287,19 +287,20 @@ def profitTable():
     DaysStockInHand = round(newdf['Latest SOH'] / qtyAvgDay,2)
     WeeksStockInHand = round(DaysStockInHand/7,0)
     MonthesStockInHand = round(DaysStockInHand/30,0)
-
-    N = 35
-    date_N_days_ago = datetime.now() + timedelta(days=N)
+    CurrentStockCoverUpto = [datetime.now() + timedelta(days=N) for N in DaysStockInHand]
 
     newdf['Total Qty Sold'], newdf['Total Arghoob Cost'],newdf['Total Arqhoob Price'],\
     newdf['Qty Avg Day'], newdf['Qty Avg Month'], newdf['Value Avg Month'],\
     newdf['Qty Stock Value'], newdf['Days Stock in Hand'],newdf['Current stock cover upto (Week)'], \
-    newdf['Current stock cover upto'] = totalQtySold,\
+    newdf['Current stock cover upto'], newdf['Current stock cover upto (Date)'] = totalQtySold,\
                 totalArghoobCost,totalArqhoobPrice,qtyAvgDay, qtyAvgMonth,\
-                valueAvgMonth, qtyStockValue,DaysStockInHand, WeeksStockInHand, MonthesStockInHand
+                valueAvgMonth, qtyStockValue,DaysStockInHand, WeeksStockInHand, MonthesStockInHand,\
+                CurrentStockCoverUpto
 
     list.extend(['Total Qty Sold', 'Total Arghoob Cost', 'Total Arqhoob Price',
-                 'Qty Avg Day', 'Qty Avg Month','Value Avg Month', 'Qty Stock Value'])
+                 'Qty Avg Day', 'Qty Avg Month','Value Avg Month', 'Qty Stock Value',
+                 'Days Stock in Hand', 'Current stock cover upto (Week)', 'Current stock cover upto',
+                 'Current stock cover upto (Date)'])
     trace = go.Table(
         header=dict(values=list),
         cells=dict(values=np.transpose(newdf.values[:,:])))
