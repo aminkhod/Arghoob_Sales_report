@@ -287,7 +287,21 @@ def profitTable():
     DaysStockInHand = round(newdf['Latest SOH'] / qtyAvgDay,2)
     WeeksStockInHand = round(DaysStockInHand/7,0)
     MonthesStockInHand = round(DaysStockInHand/30,0)
-    CurrentStockCoverUpto = [datetime.now() + timedelta(days=N) for N in DaysStockInHand]
+    i = 0
+    CurrentStockCoverUpto = []
+    for i in range(len(DaysStockInHand)):
+        try:
+            int(DaysStockInHand[i])
+            print(i)
+        except:
+            DaysStockInHand[i] = 0
+    for N in DaysStockInHand:
+        if(N!=0):
+            CurrentStockCoverUpto.append(str(datetime.now() + timedelta(days=N))[:10])
+        else:
+            CurrentStockCoverUpto.append('null')
+        i +=1
+
 
     newdf['Total Qty Sold'], newdf['Total Arghoob Cost'],newdf['Total Arqhoob Price'],\
     newdf['Qty Avg Day'], newdf['Qty Avg Month'], newdf['Value Avg Month'],\
