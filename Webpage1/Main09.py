@@ -258,19 +258,20 @@ def NonMoving():
 def profitTable():
     df = pd.read_csv('allMonthes.csv')
     foo = [filesNoAdd[i].replace('.csv',' total sale of Goods') for i in range(len(filesNoAdd))]
-    list = ['Sku', 'UPC', 'Catalogue N', 'Title', 'Label', 'Arq COST',
+    list = ['Sku', 'UPC', 'Catalogue N', 'Label', 'Arq COST',
             'Cost Price', 'V.S.P.', 'Latest SOH']
-
-    list.extend(foo)
-    print(list)
     newdf = df[list]
-
+    for i in range(len(foo)):
+        cName = foo[i].replace(' total sale of Goods','QTY SOLD')
+        newdf[cName] = df[foo[i]]
+    #     newdf[foo[i].replace(' total sale of Goods','Arqoob Cost')] = df[foo[i]] * df['Arq COST']
+    #     newdf[foo[i].replace(' total sale of Goods','QTY SOLD VALUE')] = df[foo[i]] * df['Cost Price']
     trace = go.Table(
         header=dict(values=list),
         cells=dict(values=np.transpose(newdf.values[:,:])))
     layout = Layout(
         title='Profit Table',
-        width=1300
+        width=1500
         )
     data = [trace]
     fig = Figure(data=data, layout=layout)
