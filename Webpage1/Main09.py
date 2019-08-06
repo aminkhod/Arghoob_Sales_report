@@ -253,5 +253,27 @@ def NonMoving():
     plot(fig, filename = 'NonMoving.html')
     return render_template('NonMoving.html')
 
+'profitTable'
+@app.route('/profitTable',methods=['POST'])
+def profitTable():
+    df = pd.read_csv('allMonthes.csv')
+    newdf = df[df['Stock Status'] == 'Non moving']
+    newdf = newdf.loc[:,['Sku', 'UPC', 'Catalogue N', 'Title', 'Label',
+                         'Arq COST', "Cost Price", 'V.S.P.',
+                         'Non Moving Action','Reordering']].reindex()
+    trace = go.Table(
+        header=dict(values=['Sku', 'UPC', 'Catalogue N', 'Title',
+                            'Label', 'Arq COST', "Cost Price",
+                            'V.S.P.', 'Non Moving Action', 'Reordering']),
+        cells=dict(values=np.transpose(newdf.values[:,:])))
+    layout = Layout(
+        title='Non Moving Goods',
+        width=1300
+        )
+    data = [trace]
+    fig = Figure(data=data, layout=layout)
+    plot(fig, filename = 'NonMoving.html')
+    return render_template('NonMoving.html')
+
 if __name__ == "__main__":
     app.run(debug=True)
