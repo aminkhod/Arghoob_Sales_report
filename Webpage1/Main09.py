@@ -257,14 +257,16 @@ def NonMoving():
 @app.route('/profitTable',methods=['POST'])
 def profitTable():
     df = pd.read_csv('allMonthes.csv')
-    newdf = df[df['Stock Status'] == 'Non moving']
-    newdf = newdf.loc[:,['Sku', 'UPC', 'Catalogue N', 'Title', 'Label',
-                         'Arq COST', "Cost Price", 'V.S.P.',
-                         'Non Moving Action','Reordering']].reindex()
+    foo = [filesNoAdd[i].replace('.csv','') for i in range(len(filesNoAdd))]
+    list = ['Sku', 'UPC', 'Catalogue N', 'Title', 'Label', 'Arq COST',
+            'Cost Price', 'V.S.P.', 'Latest', 'SOH']
+
+    list.extend(foo)
+    print(list)
+    newdf = df[list]
+
     trace = go.Table(
-        header=dict(values=['Sku', 'UPC', 'Catalogue N', 'Title',
-                            'Label', 'Arq COST', "Cost Price",
-                            'V.S.P.', 'Non Moving Action', 'Reordering']),
+        header=dict(values=list),
         cells=dict(values=np.transpose(newdf.values[:,:])))
     layout = Layout(
         title='Non Moving Goods',
