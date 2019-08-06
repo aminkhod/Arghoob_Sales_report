@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e6e224e6-d6bf-4e62-88ed-19cc7de721d1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main09.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main09.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/jquery-3.4.12.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/jquery-3.4.12.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
-    </list>
+    <list default="true" id="e6e224e6-d6bf-4e62-88ed-19cc7de721d1" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +13,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Main09.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="259" column="39" lean-forward="true" selection-start-line="259" selection-start-column="38" selection-end-line="259" selection-end-column="41" />
+            <state relative-caret-position="470">
+              <caret line="261" column="26" selection-start-line="261" selection-start-column="26" selection-end-line="261" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -231,8 +226,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Main09.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="259" column="39" lean-forward="true" selection-start-line="259" selection-start-column="38" selection-end-line="259" selection-end-column="41" />
+        <state relative-caret-position="470">
+          <caret line="261" column="26" selection-start-line="261" selection-start-column="26" selection-end-line="261" selection-end-column="26" />
         </state>
       </provider>
     </entry>
