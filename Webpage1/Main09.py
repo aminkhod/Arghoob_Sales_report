@@ -306,15 +306,15 @@ def profitTable():
     newdf['Total Qty Sold'], newdf['Total Arghoob Cost'],newdf['Total Arqhoob Price'],\
     newdf['Qty Avg Day'], newdf['Qty Avg Month'], newdf['Value Avg Month'],\
     newdf['Qty Stock Value'], newdf['Days Stock in Hand'],newdf['Current stock cover upto (Week)'], \
-    newdf['Current stock cover upto'], newdf['Current stock cover upto (Date)'] = totalQtySold,\
-                totalArghoobCost,totalArqhoobPrice,qtyAvgDay, qtyAvgMonth,\
+    newdf['Current stock cover upto (Month)'], newdf['Current stock cover upto (Date)'] = \
+                totalQtySold, totalArghoobCost,totalArqhoobPrice,qtyAvgDay, qtyAvgMonth,\
                 valueAvgMonth, qtyStockValue,DaysStockInHand, WeeksStockInHand, MonthesStockInHand,\
                 CurrentStockCoverUpto
 
     list.extend(['Total Qty Sold', 'Total Arghoob Cost', 'Total Arqhoob Price',
                  'Qty Avg Day', 'Qty Avg Month','Value Avg Month', 'Qty Stock Value',
-                 'Days Stock in Hand', 'Current stock cover upto (Week)', 'Current stock cover upto',
-                 'Current stock cover upto (Date)'])
+                 'Days Stock in Hand', 'Current stock cover upto (Week)',
+                 'Current stock cover upto (Month)','Current stock cover upto (Date)'])
     trace = go.Table(
         header=dict(values=list),
         cells=dict(values=np.transpose(newdf.values[:,:])))

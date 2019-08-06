@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e6e224e6-d6bf-4e62-88ed-19cc7de721d1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/Main09.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main09.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profitTable.html" beforeDir="false" afterPath="$PROJECT_DIR$/profitTable.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Main09.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="299" column="84" selection-start-line="299" selection-start-column="84" selection-end-line="299" selection-end-column="84" />
+            <state relative-caret-position="146">
+              <caret line="309" column="30" selection-start-line="309" selection-start-column="30" selection-end-line="309" selection-end-column="30" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -249,8 +248,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Main09.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="299" column="84" selection-start-line="299" selection-start-column="84" selection-end-line="299" selection-end-column="84" />
+        <state relative-caret-position="146">
+          <caret line="309" column="30" selection-start-line="309" selection-start-column="30" selection-end-line="309" selection-end-column="30" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
