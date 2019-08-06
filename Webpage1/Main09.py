@@ -1,9 +1,12 @@
+from typing import Any, Union
+
 from flask import Flask, render_template
 import pandas as pd
 import os
 import plotly.graph_objs as go
 from  plotly.offline import plot
 import numpy as np
+from datetime import datetime, timedelta
 from plotly.graph_objs import *
 
 # from plotly.offline import download_plotlyjs, init_notebook_mode
@@ -256,22 +259,53 @@ def NonMoving():
 'profitTable'
 @app.route('/profitTable',methods=['POST'])
 def profitTable():
+    monthesLenght = [31,28,31,30,31,30,31,31,30,31,30,31]
     df = pd.read_csv('allMonthes.csv')
     foo = [filesNoAdd[i].replace('.csv',' total sale of Goods') for i in range(len(filesNoAdd))]
     list = ['Sku', 'UPC', 'Catalogue N', 'Label', 'Arq COST',
             'Cost Price', 'V.S.P.', 'Latest SOH']
     newdf = df[list]
+
+    totalQtySold = np.zeros(len(df['Sku']))
+    totalArghoobCost = np.zeros(len(df['Sku']))
+    totalArqhoobPrice = np.zeros(len(df['Sku']))
+
     for i in range(len(foo)):
-        cName = foo[i].replace(' total sale of Goods','QTY SOLD')
+        cName = foo[i].replace(' total sale of Goods',': QTY SOLD')
         newdf[cName] = df[foo[i]]
-    #     newdf[foo[i].replace(' total sale of Goods','Arqoob Cost')] = df[foo[i]] * df['Arq COST']
-    #     newdf[foo[i].replace(' total sale of Goods','QTY SOLD VALUE')] = df[foo[i]] * df['Cost Price']
+        newdf[cName+'Arqoob Cost'] = df[foo[i]] * df['Arq COST']
+        newdf[cName+'QTY SOLD VALUE'] = df[foo[i]] * df['Cost Price']
+        list.extend([cName,cName+'Arqoob Cost',cName+'QTY SOLD VALUE'])
+        totalQtySold += newdf[cName]
+        totalArghoobCost += newdf[cName+'Arqoob Cost']
+        totalArqhoobPrice += newdf[cName+'QTY SOLD VALUE']
+
+    qtyAvgDay = round(totalQtySold/np.sum(monthesLenght[:len(foo)]),2)
+    qtyAvgMonth = round(totalQtySold/len(foo),2)
+    valueAvgMonth = round(totalArqhoobPrice/len(foo),2)
+    qtyStockValue = newdf['Latest SOH'] * newdf['Cost Price']
+    DaysStockInHand = round(newdf['Latest SOH'] / qtyAvgDay,2)
+    WeeksStockInHand = round(DaysStockInHand/7,0)
+    MonthesStockInHand = round(DaysStockInHand/30,0)
+
+    N = 35
+    date_N_days_ago = datetime.now() + timedelta(days=N)
+
+    newdf['Total Qty Sold'], newdf['Total Arghoob Cost'],newdf['Total Arqhoob Price'],\
+    newdf['Qty Avg Day'], newdf['Qty Avg Month'], newdf['Value Avg Month'],\
+    newdf['Qty Stock Value'], newdf['Days Stock in Hand'],newdf['Current stock cover upto (Week)'], \
+    newdf['Current stock cover upto'] = totalQtySold,\
+                totalArghoobCost,totalArqhoobPrice,qtyAvgDay, qtyAvgMonth,\
+                valueAvgMonth, qtyStockValue,DaysStockInHand, WeeksStockInHand, MonthesStockInHand
+
+    list.extend(['Total Qty Sold', 'Total Arghoob Cost', 'Total Arqhoob Price',
+                 'Qty Avg Day', 'Qty Avg Month','Value Avg Month', 'Qty Stock Value'])
     trace = go.Table(
         header=dict(values=list),
         cells=dict(values=np.transpose(newdf.values[:,:])))
     layout = Layout(
         title='Profit Table',
-        width=1500
+        width=3500
         )
     data = [trace]
     fig = Figure(data=data, layout=layout)
