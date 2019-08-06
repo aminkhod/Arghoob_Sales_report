@@ -257,9 +257,9 @@ def NonMoving():
 @app.route('/profitTable',methods=['POST'])
 def profitTable():
     df = pd.read_csv('allMonthes.csv')
-    foo = [filesNoAdd[i].replace('.csv','') for i in range(len(filesNoAdd))]
+    foo = [filesNoAdd[i].replace('.csv',' total sale of Goods') for i in range(len(filesNoAdd))]
     list = ['Sku', 'UPC', 'Catalogue N', 'Title', 'Label', 'Arq COST',
-            'Cost Price', 'V.S.P.', 'Latest', 'SOH']
+            'Cost Price', 'V.S.P.', 'Latest SOH']
 
     list.extend(foo)
     print(list)
@@ -269,13 +269,13 @@ def profitTable():
         header=dict(values=list),
         cells=dict(values=np.transpose(newdf.values[:,:])))
     layout = Layout(
-        title='Non Moving Goods',
+        title='Profit Table',
         width=1300
         )
     data = [trace]
     fig = Figure(data=data, layout=layout)
-    plot(fig, filename = 'NonMoving.html')
-    return render_template('NonMoving.html')
+    plot(fig, filename = 'profitTable.html')
+    return render_template('profitTable.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
