@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59f30fbf-ddcf-422e-b8ec-26303a6452c4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../Webpage1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Webpage1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Webpage1/Main09.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Webpage1/Main09.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Webpage1/Profit Table.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Webpage1/Profit Table.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Webpage1/temp-plot.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Webpage1/templates/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Webpage1/templates/template.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Webpage1/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Webpage1/templates/home.html" afterDir="false" />
     </list>
     <ignored path="FirstDashboard.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -336,7 +333,7 @@
       <window_info anchor="bottom" id="Educational.CheckDetails" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32857144" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.31463748" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
