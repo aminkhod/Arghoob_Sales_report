@@ -3,10 +3,13 @@ from typing import Any, Union
 from flask import Flask, render_template, Response
 import pandas as pd
 import os
+import json
 import plotly.graph_objs as go
 from  plotly.offline import plot, iplot
+import plotly
 import numpy as np
 from datetime import datetime, timedelta
+
 from plotly.graph_objs import *
 
 # from plotly.offline import download_plotlyjs, init_notebook_mode
@@ -20,7 +23,6 @@ from plotly.graph_objs import *
 # import dash
 # import dash_core_components as dcc
 # import dash_html_components as html
-# import plotly
 # from IPython.display import SVG, display
 # from IPython.display import Image
 # from IPython.display import display, Math, Latex
@@ -331,10 +333,13 @@ def profitTable():
         )
     data = [trace]
     fig = Figure(data=data, layout=layout)
-    # plot(fig, filename='profitTable.html')
-    return Response(csv,mimetype="csv",
-        headers={"Content-disposition":
-                 "attachment; filename=Profit Table.csv"})
+    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+# Response(
+#         csv,
+#         mimetype="csv",
+#         headers={"Content-disposition":
+#                  "attachment; filename=Profit Table.csv"}),
+    return graphJSON
 
 
 
@@ -350,10 +355,10 @@ def profitTable():
 #         csv = fp.read()
 #
 #
-#     return Response(
-#         csv,
-#         mimetype="csv",
-#         headers={"Content-disposition":
-#                  "attachment; filename=myplot.csv"})
+    # return Response(
+    #     csv,
+    #     mimetype="csv",
+    #     headers={"Content-disposition":
+    #              "attachment; filename=myplot.csv"})
 if __name__ == "__main__":
     app.run(debug=True)

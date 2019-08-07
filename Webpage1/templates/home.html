@@ -2,6 +2,8 @@
 <html lang="en" dir="ltr">
   <head>
 	<script type="text/javascript" src="static/js/jquery-3.4.12.js"></script>
+
+	<script src="{{ url_for('static', filename='js/plots.js') }}"></script>	
 	<!-- <script type="text/javascript"> -->
     <meta charset="utf-8">
     <title>Flask App</title>
@@ -20,12 +22,20 @@
 		<button id="btnFastMoving" class="btn btn-lg btn-primary btn-block" type="button">Fast Moving </button>
 		<button id="btnNonMoving" class="btn btn-lg btn-primary btn-block" type="button">Non Moving</button>
         <button id="btnProfitTable" class="btn btn-lg btn-primary btn-block" type="button">Profit Table</button>
+		
      <!--   <button id="btnSignUp" class="btn btn-lg btn-primary btn-block" type="button">Sign up</button>
         <button id="btnSignUp" class="btn btn-lg btn-primary btn-block" type="button">Sign up</button>
         <button id="btnSignUp" class="btn btn-lg btn-primary btn-block" type="button">Sign up</button>
         <button id="btnSignUp" class="btn btn-lg btn-primary btn-block" type="button">Sign up</button> -->
 
       </div>
+	  <div class="col-xs-3">
+    <label> Choose the plot type....</label>
+    <select class="form-control" id ='first_cat'>
+        <option value="Bar">Bar</option>
+        <option value="Scatter">Scatter</option>
+    </select>
+</div>
     
     {% endblock %}
   </body>
