@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6e224e6-d6bf-4e62-88ed-19cc7de721d1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/static/js/plotly..js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main09.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main09.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Profit Table.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Profit Table.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp-plot.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/template.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flask-Dashboard-master/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flask-Dashboard-master/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Main09.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="341" column="20" selection-start-line="341" selection-start-column="20" selection-end-line="341" selection-end-column="20" />
+            <state relative-caret-position="68">
+              <caret line="267" column="18" selection-start-line="267" selection-start-column="18" selection-end-line="267" selection-end-column="18" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -173,6 +175,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1038" height="803" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17964073" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -223,8 +226,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Main09.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="341" column="20" selection-start-line="341" selection-start-column="20" selection-end-line="341" selection-end-column="20" />
+        <state relative-caret-position="68">
+          <caret line="267" column="18" selection-start-line="267" selection-start-column="18" selection-end-line="267" selection-end-column="18" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>

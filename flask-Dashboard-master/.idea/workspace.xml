@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="59f30fbf-ddcf-422e-b8ec-26303a6452c4" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/../Webpage1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Webpage1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Webpage1/static/js/plotly..js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Webpage1/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Webpage1/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Webpage1/Main09.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Webpage1/Main09.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Webpage1/Profit Table.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Webpage1/Profit Table.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Webpage1/temp-plot.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Webpage1/templates/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Webpage1/templates/template.html" afterDir="false" />
     </list>
     <ignored path="FirstDashboard.iws" />
@@ -22,7 +23,6 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="FirstDashboard" />
   </component>
@@ -31,11 +31,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FirstDashboard.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="48" selection-start-line="48" selection-end-line="48" />
-              <folding>
-                <element signature="e#0#48#0" expanded="true" />
-              </folding>
+            <state>
+              <caret column="18" lean-forward="true" selection-start-column="18" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -331,14 +328,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1038" height="803" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.250499" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.250499" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Educational.CheckDetails" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32935917" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32857144" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -366,11 +364,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/FirstDashboard.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
+        <state>
+          <caret column="18" lean-forward="true" selection-start-column="18" selection-end-column="48" />
         </state>
       </provider>
     </entry>
