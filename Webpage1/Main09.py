@@ -1,6 +1,5 @@
-from typing import Any, Union
 
-from flask import Flask, render_template,request, Response
+from flask import Flask, render_template,request, Response, send_file
 import pandas as pd
 import os
 import json
@@ -263,14 +262,7 @@ def NonMoving():
     fig = Figure(data=data, layout=layout)
     plot(fig, filename='NonMoving.html')
     return render_template('NonMoving.html')
-
-@app.route('/profitTable',methods=['POST'])
-def profitTable():
-    feature = 'Bar'
-    bar = create_plot(feature)
-    return render_template('index.html', plot=bar)
-
-def create_plot(feature):
+def create_plot():
     monthesLenght = [31,28,31,30,31,30,31,31,30,31,30,31]
     df = pd.read_csv('allMonthes.csv')
     foo = [filesNoAdd[i].replace('.csv',' total sale of Goods') for i in range(len(filesNoAdd))]
@@ -322,9 +314,7 @@ def create_plot(feature):
                 totalQtySold, totalArghoobCost,totalArqhoobPrice,qtyAvgDay, qtyAvgMonth,\
                 valueAvgMonth, qtyStockValue,DaysStockInHand, WeeksStockInHand, MonthesStockInHand,\
                 CurrentStockCoverUpto
-    newdf.to_csv('Profit Table.csv')
-    with open('Profit Table.csv') as fp:
-        csv = fp.read()
+    newdf.to_csv('Profit Table.csv',index=False)
     list.extend(['Total Qty Sold', 'Total Arghoob Cost', 'Total Arqhoob Price',
                  'Qty Avg Day', 'Qty Avg Month','Value Avg Month', 'Qty Stock Value',
                  'Days Stock in Hand', 'Current stock cover upto (Week)',
@@ -334,24 +324,37 @@ def create_plot(feature):
         cells=dict(values=np.transpose(newdf.values[:,:])))
     layout = Layout(
         title='Profit Table',
-        width=3500
+        width=3600,
         )
     data = [trace]
     fig = Figure(data=data, layout=layout)
-
-
-
     graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
 
     return graphJSON
 
 @app.route('/bar', methods=['GET', 'POST'])
 def change_features():
-
     feature = request.args['selected']
     graphJSON= create_plot(feature)
-
     return graphJSON
+
+@app.route('/profitTable')
+def profitTable():
+    bar = create_plot()
+    return render_template('Profit Table.html', plot=bar)
+
+@app.route('/downloadprofit')
+def downloadprofit():
+    with open('Profit Table.csv') as fp:
+        csv = fp.read()
+    return Response(csv, mimetype="text/csv",
+                headers={"Content-disposition":
+                         "attachment; filename=Profit Table.csv"})
+
+@app.route('/index')
+def index():
+    bar = create_plot()
+    return render_template('index.html', plot=bar)
 
 if __name__ == "__main__":
     app.run(debug=True)

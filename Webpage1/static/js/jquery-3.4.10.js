@@ -10655,7 +10655,7 @@ $(function() {
             }
         });
     });
-		$('#btnProfitTable').click(function() {
+/*		$('#btnProfitTable').click(function() {
 
         $.ajax({
             url: '/profitTable',
