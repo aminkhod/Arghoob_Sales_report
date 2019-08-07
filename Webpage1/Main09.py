@@ -1,10 +1,10 @@
 from typing import Any, Union
 
-from flask import Flask, render_template
+from flask import Flask, render_template, Response
 import pandas as pd
 import os
 import plotly.graph_objs as go
-from  plotly.offline import plot
+from  plotly.offline import plot, iplot
 import numpy as np
 from datetime import datetime, timedelta
 from plotly.graph_objs import *
@@ -83,7 +83,13 @@ listOfBranch = ['total sale of Goods', 'Latest SOH',
 productDetail = ['Sku', 'UPC', 'Catalogue N', 'Title', 'Label' ,'Arq COST', 'Cost Price' ,'V.S.P.']
 header = productDetail.copy()
 header.extend(listOfBranch.copy())
-
+# @app.route("/")
+# def hello():
+#     return '''
+#         <html><body>
+#         Hello. <a href="/getPlotCSV">Click me.</a>
+#         </body></html>
+#             '''
 @app.route("/")
 def template():
     return render_template("template.html")
@@ -253,10 +259,9 @@ def NonMoving():
         )
     data = [trace]
     fig = Figure(data=data, layout=layout)
-    plot(fig, filename = 'NonMoving.html')
+    plot(fig, filename='NonMoving.html')
     return render_template('NonMoving.html')
 
-'profitTable'
 @app.route('/profitTable',methods=['POST'])
 def profitTable():
     monthesLenght = [31,28,31,30,31,30,31,31,30,31,30,31]
@@ -310,7 +315,9 @@ def profitTable():
                 totalQtySold, totalArghoobCost,totalArqhoobPrice,qtyAvgDay, qtyAvgMonth,\
                 valueAvgMonth, qtyStockValue,DaysStockInHand, WeeksStockInHand, MonthesStockInHand,\
                 CurrentStockCoverUpto
-
+    newdf.to_csv('Profit Table.csv')
+    with open('Profit Table.csv') as fp:
+        csv = fp.read()
     list.extend(['Total Qty Sold', 'Total Arghoob Cost', 'Total Arqhoob Price',
                  'Qty Avg Day', 'Qty Avg Month','Value Avg Month', 'Qty Stock Value',
                  'Days Stock in Hand', 'Current stock cover upto (Week)',
@@ -324,8 +331,29 @@ def profitTable():
         )
     data = [trace]
     fig = Figure(data=data, layout=layout)
-    plot(fig, filename = 'profitTable.html')
-    return render_template('profitTable.html')
+    # plot(fig, filename='profitTable.html')
+    return Response(csv,mimetype="csv",
+        headers={"Content-disposition":
+                 "attachment; filename=Profit Table.csv"})
 
+
+
+# @app.route('/getPlotCSV')
+# def getPlotCSV():
+# 	try:
+# 		return render_template('downloads.html')
+# 	except Exception as e:
+# 		return str(e)
+# @app.route("/getPlotCSV")
+# def getPlotCSV():
+#     with open('allMonthes.csv') as fp:
+#         csv = fp.read()
+#
+#
+#     return Response(
+#         csv,
+#         mimetype="csv",
+#         headers={"Content-disposition":
+#                  "attachment; filename=myplot.csv"})
 if __name__ == "__main__":
     app.run(debug=True)
