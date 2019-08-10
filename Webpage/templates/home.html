@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+	<script type="text/javascript" src="static/js/jquery-3.4.10.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+	<!-- <script type="text/javascript"> -->
+    <title>Flask App</title>
+
+  </head>
+  <body>
+    {% extends "template.html" %}
+    {% block content %}
+    
+    <h1> Arghoob Dashboard</h1>
+    <p></p>
+	    <div class="jumbotron">
+        <h1></h1>
+		<div class="container">
+			<strong><nav>
+				<ul class="menu">
+					<li><a href="{{ url_for('profitTable') }}">Profit Table</a></li>
+			 </ul>
+        </nav></strong>
+		</div>
+        <button id="btnGoodsSale" class="btn btn-lg btn-primary btn-block" type="button">Sale of each Good</button>
+        <button id="btnMonthlySale" class="btn btn-lg btn-primary btn-block" type="button">Monthly Sale</button>
+		<button id="btnFastMoving" class="btn btn-lg btn-primary btn-block" type="button">Fast Moving </button>
+		<button id="btnNonMoving" class="btn btn-lg btn-primary btn-block" type="button">Non Moving</button>
+        <!--button id="btnProfitTable" class="btn btn-lg btn-primary btn-block" type="button">Profit Table</button>-->
+		
+     <!--   <button id="btnSignUp" class="btn btn-lg btn-primary btn-block" type="button">Sign up</button>
+        <button id="btnSignUp" class="btn btn-lg btn-primary btn-block" type="button">Sign up</button>
+        <button id="btnSignUp" class="btn btn-lg btn-primary btn-block" type="button">Sign up</button>
+        <button id="btnSignUp" class="btn btn-lg btn-primary btn-block" type="button">Sign up</button> -->
+		</div>
+    
+    {% endblock %}
+	<script src="{{ url_for('static', filename='js/jquery-1.11.1.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/plots.js') }}"></script>
+  </body>
+
+
+</body>
+</html>
