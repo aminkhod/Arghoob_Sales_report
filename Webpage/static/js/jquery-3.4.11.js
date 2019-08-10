@@ -10669,7 +10669,7 @@ $(function() {
                 console.log(error);
             }
         });
-    });
+    });*/
 });
 return jQuery;
 } );
