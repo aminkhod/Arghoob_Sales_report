@@ -351,10 +351,10 @@ def downloadprofit():
                 headers={"Content-disposition":
                          "attachment; filename=Profit Table.csv"})
 
-@app.route('/index')
-def index():
-    bar = create_plot()
-    return render_template('index.html', plot=bar)
+# @app.route('/index')
+# def index():
+#     bar = create_plot()
+#     return render_template('index.html', plot=bar)
 
 if __name__ == "__main__":
     app.run(debug=True)
