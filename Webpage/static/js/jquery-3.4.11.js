@@ -10594,10 +10594,10 @@ if ( !noGlobal ) {
 
 
 $(function() {
-    $('#btnGoodsSale').click(function() {
+    $('#btnBranchSale').click(function() {
  
         $.ajax({
-            url: '/GoodsSale',
+            url: '/BranchSale',
             //data: $('form').serialize(),
 			data: {},
             type: 'POST',

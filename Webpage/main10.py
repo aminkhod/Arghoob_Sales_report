@@ -145,8 +145,8 @@ def btnMonthlySale():
     return render_template("Monthly_Sale.html")
 
 
-@app.route('/GoodsSale',methods=['POST'])
-def GoodsSale():
+@app.route('/BranchSale',methods=['POST'])
+def BranchSale():
     path = '../Monthes/'
     files = []
     filesNoAdd = []
