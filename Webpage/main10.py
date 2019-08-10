@@ -81,7 +81,7 @@ listOfBranch = ['total sale of Goods', 'Latest SOH',
                 '444 Co', '444.Arq COST', '444.Cost Price', '444.V.S.P.', '444.AVG. WEEK',
                 '490 Co', '490.Arq COST', '490.Cost Price', '490.V.S.P.', '490.AVG. WEEK']
 
-productDetail = ['Sku', 'UPC', 'Catalogue N', 'Title', 'Label' ,'Arq COST', 'Cost Price' ,'V.S.P.']
+productDetail = ['Sku', 'Catalogue N', 'Title', 'Label' ,'Arq COST', 'Cost Price' ,'V.S.P.']
 header = productDetail.copy()
 header.extend(listOfBranch.copy())
 # @app.route("/")
@@ -226,10 +226,10 @@ def BranchSale():
 def FastMoving():
     df = pd.read_csv('allMonthes.csv')
     newdf = df[df['Stock Status'] == 'Fast moving']
-    newdf = newdf.loc[:,['Sku', 'UPC', 'Catalogue N', 'Title', 'Label',
+    newdf = newdf.loc[:,['Sku', 'Catalogue N', 'Title', 'Label',
                          'Arq COST', "Cost Price", 'V.S.P.', 'Latest SOH','Reordering']].reindex()
     trace = go.Table(
-        header=dict(values=['Sku', 'UPC', 'Catalogue N', 'Title', 'Label',
+        header=dict(values=['Sku', 'Catalogue N', 'Title', 'Label',
                             'Arq COST', "Cost Price", 'V.S.P.', 'Latest SOH','Reordering']),
         cells=dict(values=np.transpose(newdf.values[:,:])))
     layout = Layout(
@@ -246,11 +246,11 @@ def FastMoving():
 def NonMoving():
     df = pd.read_csv('allMonthes.csv')
     newdf = df[df['Stock Status'] == 'Non moving']
-    newdf = newdf.loc[:,['Sku', 'UPC', 'Catalogue N', 'Title', 'Label',
+    newdf = newdf.loc[:,['Sku', 'Catalogue N', 'Title', 'Label',
                          'Arq COST', "Cost Price", 'V.S.P.',
                          'Non Moving Action','Reordering']].reindex()
     trace = go.Table(
-        header=dict(values=['Sku', 'UPC', 'Catalogue N', 'Title',
+        header=dict(values=['Sku', 'Catalogue N', 'Title',
                             'Label', 'Arq COST', "Cost Price",
                             'V.S.P.', 'Non Moving Action', 'Reordering']),
         cells=dict(values=np.transpose(newdf.values[:,:])))
@@ -266,7 +266,7 @@ def create_plot():
     monthesLenght = [31,28,31,30,31,30,31,31,30,31,30,31]
     df = pd.read_csv('allMonthes.csv')
     foo = [filesNoAdd[i].replace('.csv',' total sale of Goods') for i in range(len(filesNoAdd))]
-    list = ['Sku', 'UPC', 'Catalogue N', 'Label', 'Arq COST',
+    list = ['Sku', 'Catalogue N', 'Label', 'Arq COST',
             'Cost Price', 'V.S.P.', 'Latest SOH']
     newdf = df[list]
 
@@ -338,18 +338,31 @@ def change_features():
     graphJSON= create_plot(feature)
     return graphJSON
 
-@app.route('/profitTable')
-def profitTable():
+@app.route('/Stock_forecast')
+def Stock_forecast():
     bar = create_plot()
     return render_template('Profit Table.html', plot=bar)
 
-@app.route('/downloadprofit')
-def downloadprofit():
-    with open('Profit Table.csv') as fp:
+@app.route('/ItemRestock')
+def ItemRestock():
+    Restockdf = pd.read_csv('Profit Table.csv')
+    Restockdf = Restockdf[Restockdf['Days Stock in Hand']<=10]
+    Restockdf.to_csv('ItemRestock.csv')
+    with open('ItemRestock.csv') as fp:
         csv = fp.read()
     return Response(csv, mimetype="text/csv",
                 headers={"Content-disposition":
-                         "attachment; filename=Profit Table.csv"})
+                         "attachment; filename=Items to be Restock.csv"})
+@app.route('/ItemMonitor')
+def ItemMonitor():
+    Monitordf = pd.read_csv('Profit Table.csv')
+    Monitordf = Monitordf[Monitordf['Latest SOH']/Monitordf['Total Qty Sold']>=4]
+    Monitordf.to_csv('ItemMonitor.csv')
+    with open('ItemMonitor.csv') as fp:
+        csv = fp.read()
+    return Response(csv, mimetype="text/csv",
+                headers={"Content-disposition":
+                         "attachment; filename=Items to be Monitor.csv"})
 
 # @app.route('/index')
 # def index():
