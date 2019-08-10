@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[70]:
+# In[80]:
 
 
 import pandas as pd
@@ -9,7 +9,7 @@ import numpy as np
 import os
 
 
-# In[244]:
+# In[81]:
 
 
 path = 'Monthes/'
@@ -27,7 +27,7 @@ for f in filesNoAdd:
     print(f)
 
 
-# In[245]:
+# In[82]:
 
 
 # monthresult = ['total sale of Goods', 'Status']
@@ -36,7 +36,7 @@ productDetail = ['Sku', 'UPC', 'Catalogue N', 'Title', 'Label' ,'Arq COST', 'Cos
 header = productDetail.copy()
 
 
-# In[246]:
+# In[83]:
 
 
 def findID(sku, Data):
@@ -49,7 +49,7 @@ def findID(sku, Data):
     return "This good with Sku of " + str(sku) + " is not in data." 
 
 
-# In[247]:
+# In[84]:
 
 
 def listOfGoods(files):
@@ -65,7 +65,7 @@ def listOfGoods(files):
     return listOfSku
 
 
-# In[248]:
+# In[85]:
 
 
 def buildList(file, ide, productDetail, monthresult, rawData, sku,monthRawData, finalFile):
@@ -83,7 +83,7 @@ def buildList(file, ide, productDetail, monthresult, rawData, sku,monthRawData, 
     return monthRawData
 
 
-# In[249]:
+# In[86]:
 
 
 # 'Existence on Shop'
@@ -93,6 +93,7 @@ def existence(sku, files):
         Data = pd.read_csv(file)
         try:
             ide = findID(sku, Data)
+#             print(Data.loc[ide, 'Latest SOH'])
             if Data.loc[ide, 'Latest SOH'] > 0:
                 numExistence +=1
             else:
@@ -105,25 +106,27 @@ def existence(sku, files):
     return numExistence
 
 
-# In[250]:
+# In[87]:
 
 
 monthRawData = pd.DataFrame(columns = list(header))
 
 
-# In[251]:
+# In[88]:
 
 
 for file in filesNoAdd:
-    monthRawData['Sku'] = listOfGoods(files)
-    for head in monthresult:
+    file = str(file).replace('.csv','')
+    monthRawData[file + ' ' + monthresult[0]] = np.zeros(len(listOfGoods(files)))
+monthRawData['Sku'] = listOfGoods(files)
+#     print(monthresult)
+#     for head in monthresult:
         
-        file = str(file).replace('.csv','')
-        monthRawData[file + ' ' + head] = np.zeros(len(listOfGoods(files)))
+
 monthRawData['Latest SOH'] = np.zeros(len(monthRawData['Sku']))
 
 
-# In[252]:
+# In[89]:
 
 
 # a = np.zeros(shape=(1,len(header)))
@@ -158,7 +161,7 @@ for file in files:
 monthRawData['Existence on Shop'] =Existence
 
 
-# In[253]:
+# In[90]:
 
 
 average = []
@@ -172,18 +175,24 @@ monthRawData['3 months avrage sale'] = average1
      
 
 
-# In[254]:
+# In[93]:
 
 
 
 delList =[]
 for i in range(len(monthRawData['Sku'])):
-  if average[i] == 0 and monthRawData.loc[i, 'Latest SOH'] == 0:
+  if monthRawData.loc[i, 'Latest SOH'] == 0:
       delList.append(i)
 delList = delList[::-1]
 
 
-# In[255]:
+# In[94]:
+
+
+# average[13]
+
+
+# In[95]:
 
 
 
@@ -191,7 +200,7 @@ for i in delList:
     del average[i]
 
 
-# In[256]:
+# In[96]:
 
 
 frame = pd.DataFrame(average)
@@ -200,14 +209,15 @@ x, y, z = frame[0].quantile([0.25, 0.5, 0.75])
 # print(delList,average)
 
 
-# In[257]:
+# In[97]:
 
 
 Status = strs = ["" for x in range(len(monthRawData['Sku']))]
 
 
 for i in range(len(monthRawData['Sku'])):
-    if i in delList:
+    
+    if i in delList :
         Status[i] = 'Run out of stock'
     elif average[0] >= z:
         Status[i] = 'Fast moving'
@@ -218,11 +228,12 @@ for i in range(len(monthRawData['Sku'])):
     elif average[0] < z and average[0] > x:
         Status[i] = 'Slow moving'
         del average[0]
-    
-monthRawData['Status'] = Status
+
+        
+monthRawData['Stock Status'] = Status
 
 
-# In[258]:
+# In[98]:
 
 
 profit = []
@@ -232,13 +243,13 @@ profit1 = profit.copy()
 monthRawData['profit'] = profit1
 
 
-# In[259]:
+# In[99]:
 
 
 # print(len(profit))
 
 
-# In[260]:
+# In[100]:
 
 
 
@@ -256,7 +267,7 @@ print(x,y,z)
 # print(delList,profit)
 
 
-# In[261]:
+# In[101]:
 
 
 profitStatus = strs = ["" for x in range(len(monthRawData['Sku']))]
@@ -278,7 +289,7 @@ for i in range(len(monthRawData['Sku'])):
 monthRawData['Profit status'] = profitStatus
 
 
-# In[262]:
+# In[102]:
 
 
 finalStatus = []
@@ -287,7 +298,7 @@ for i in range(len(monthRawData['Sku'])):
 monthRawData['Final Status'] = finalStatus
 
 
-# In[263]:
+# In[103]:
 
 
 nonMovingAction = []
@@ -303,7 +314,7 @@ for i in range(len(monthRawData['Sku'])):
 monthRawData['Non Moving Action'] = nonMovingAction
 
 
-# In[268]:
+# In[104]:
 
 
 #=IF(O5="Run out of stock - Most Profitable","No Stock - Reorder",
@@ -322,14 +333,27 @@ for i in range(len(monthRawData['Sku'])):
 monthRawData['Reordering'] = Reordering
 
 
-# In[269]:
+# In[105]:
 
 
 monthRawData.to_csv('allMonthes.csv',index=False)
 
 
+# In[24]:
+
+
+#     df = pd.read_csv('allMonthes.csv')
+#     newdf = df[df['Stock Status'] == 'Fast moving']
+#     newdf = newdf.loc[:,['Sku', 'UPC', 'Catalogue N', 'Title', 'Label', 'Arq COST', "Cost Price", 'V.S.P.']].reindex()
+#     newdf.to_html('fast moving.html')
+#     .to_html('fast moing.html')
+#     ['Sku', 'UPC', 'Catalogue N', 'Title', 'Label', 'Arq COST', "Cost Price", 'V.S.P.']
+
+
 # In[ ]:
 
 
-
+# date_index = pd.date_range('1/1/2010', periods=6, freq='D')
+# df2 = pd.DataFrame({"prices": [100, 101, np.nan, 100, 89, 88]},
+#                     index=date_index)
 

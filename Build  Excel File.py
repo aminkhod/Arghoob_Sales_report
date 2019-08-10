@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[159]:
+# In[179]:
 
 
 import pandas as pd
@@ -12,7 +12,7 @@ import os
 # subprocess.check_call(['pip', 'install',"--upgrade", 'numpy']) # upgrade pkg
 
 
-# In[160]:
+# In[180]:
 
 
 path = 'Weaks of Month/'
@@ -26,11 +26,11 @@ for r, d, f in os.walk(path):
             files.append(os.path.join(r, file))
             filesNoAdd.append(file)
 
-# for f in filesNoAdd:
-#     print(f)
+for f in filesNoAdd:
+    print(f)
 
 
-# In[161]:
+# In[181]:
 
 
 numListOfBranch = ['401 Co','402 Co','404 Co','405 Co','412 Co','416 Co',
@@ -55,7 +55,7 @@ header = productDetail.copy()
 header.extend(listOfBranch.copy())
 
 
-# In[162]:
+# In[182]:
 
 
 def findID(sku, Data):
@@ -68,7 +68,7 @@ def findID(sku, Data):
     return "This good with Sku of " + sku + " is not in data." 
 
 
-# In[163]:
+# In[183]:
 
 
 def buildList(num, ide, productDetail, listOfBranch, rawData, final):
@@ -100,7 +100,7 @@ def buildList(num, ide, productDetail, listOfBranch, rawData, final):
     return producList
 
 
-# In[164]:
+# In[184]:
 
 
 def listAddition(Dataide, ide, num, productDetail, listOfBranch, rawData, monthRawData, final):
@@ -135,7 +135,7 @@ def listAddition(Dataide, ide, num, productDetail, listOfBranch, rawData, monthR
     return monthRawData
 
 
-# In[165]:
+# In[185]:
 
 
 def noStock(sku,rawData):
@@ -153,7 +153,7 @@ def noStock(sku,rawData):
     return True
 
 
-# In[ ]:
+# In[186]:
 
 
 # a = np.zeros(shape=(1,len(header)))
@@ -186,7 +186,7 @@ for f in files:
         sid +=1
 
 
-# In[ ]:
+# In[187]:
 
 
 totalGoodSale = []
@@ -222,7 +222,7 @@ for i in range(len(status)):
 monthRawData["Status"] = status
 
 
-# In[ ]:
+# In[188]:
 
 
 monthRawData.to_csv("toalOfMonth.csv", index=False)

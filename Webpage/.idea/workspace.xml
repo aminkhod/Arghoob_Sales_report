@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e6e224e6-d6bf-4e62-88ed-19cc7de721d1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Profit Table.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Profit Table.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main10.py" beforeDir="false" afterPath="$PROJECT_DIR$/main10.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Profit Table.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Profit Table.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
-    </list>
+    <list default="true" id="e6e224e6-d6bf-4e62-88ed-19cc7de721d1" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,8 +31,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="88" selection-start-line="22" selection-start-column="88" selection-end-line="22" selection-end-column="88" />
+            <state relative-caret-position="357">
+              <caret line="21" column="33" lean-forward="true" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -358,8 +353,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="88" selection-start-line="22" selection-start-column="88" selection-end-line="22" selection-end-column="88" />
+        <state relative-caret-position="357">
+          <caret line="21" column="33" lean-forward="true" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
         </state>
       </provider>
     </entry>
