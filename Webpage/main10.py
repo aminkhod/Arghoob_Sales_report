@@ -1,4 +1,3 @@
-
 from flask import Flask, render_template,request, Response, send_file
 import pandas as pd
 import os
@@ -8,7 +7,6 @@ from  plotly.offline import plot, iplot
 import plotly
 import numpy as np
 from datetime import datetime, timedelta
-
 from plotly.graph_objs import *
 
 # from plotly.offline import download_plotlyjs, init_notebook_mode
