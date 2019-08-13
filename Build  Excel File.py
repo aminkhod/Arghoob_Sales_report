@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[179]:
+# In[2]:
 
 
 import pandas as pd
@@ -12,7 +12,7 @@ import os
 # subprocess.check_call(['pip', 'install',"--upgrade", 'numpy']) # upgrade pkg
 
 
-# In[180]:
+# In[3]:
 
 
 path = 'Weaks of Month/'
@@ -30,7 +30,7 @@ for f in filesNoAdd:
     print(f)
 
 
-# In[181]:
+# In[4]:
 
 
 numListOfBranch = ['401 Co','402 Co','404 Co','405 Co','412 Co','416 Co',
@@ -55,7 +55,7 @@ header = productDetail.copy()
 header.extend(listOfBranch.copy())
 
 
-# In[182]:
+# In[5]:
 
 
 def findID(sku, Data):
@@ -68,7 +68,7 @@ def findID(sku, Data):
     return "This good with Sku of " + sku + " is not in data." 
 
 
-# In[183]:
+# In[6]:
 
 
 def buildList(num, ide, productDetail, listOfBranch, rawData, final):
@@ -100,7 +100,7 @@ def buildList(num, ide, productDetail, listOfBranch, rawData, final):
     return producList
 
 
-# In[184]:
+# In[7]:
 
 
 def listAddition(Dataide, ide, num, productDetail, listOfBranch, rawData, monthRawData, final):
@@ -135,7 +135,7 @@ def listAddition(Dataide, ide, num, productDetail, listOfBranch, rawData, monthR
     return monthRawData
 
 
-# In[185]:
+# In[8]:
 
 
 def noStock(sku,rawData):
@@ -151,6 +151,21 @@ def noStock(sku,rawData):
         if rawData.loc[i,qbranch] > 0 and str(branch)!='444'and str(branch)!='490':
             return False
     return True
+
+
+# In[20]:
+
+
+ArghoobCost = pd.read_excel('ARQOOB Cost.xlsx')
+for f in files:
+    rawData = pd.read_csv(f , encoding='latin1')
+    i = 0
+    for sku in rawData['Sku']:
+        j = findID(sku, ArghoobCost)
+        rawData.loc[i,'Arq COST'] = ArghoobCost.loc[j, 'Arq COST']
+        i += 1
+    rawData.to_csv(f, index=False)
+# ArghoobCost
 
 
 # In[186]:
