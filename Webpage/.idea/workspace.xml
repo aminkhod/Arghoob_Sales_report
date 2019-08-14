@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e6e224e6-d6bf-4e62-88ed-19cc7de721d1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.ipynb_checkpoints/Build  Excel File-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../.ipynb_checkpoints/Build  Excel File-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Build  Excel File.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../Build  Excel File.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Raw Data for APP/March/03-09-2019.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Raw Data for APP/March/03-09-2019.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Raw Data for APP/March/03-16-2019.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Raw Data for APP/March/03-16-2019.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Raw Data for APP/March/03-23-2019.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Raw Data for APP/March/03-23-2019.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Raw Data for APP/March/03-30-2019.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Raw Data for APP/March/03-30-2019.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Raw Data for APP/May/05-04-2019.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Raw Data for APP/May/05-04-2019.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Raw Data for APP/May/05-11-2019.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Raw Data for APP/May/05-11-2019.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Raw Data for APP/May/05-18-2019.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Raw Data for APP/May/05-18-2019.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Raw Data for APP/May/05-25-2019.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Raw Data for APP/May/05-25-2019.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Raw Data for APP/May/06-01-2019.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Raw Data for APP/May/06-01-2019.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Weaks of Month/05-04-2019.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Weaks of Month/05-04-2019.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Weaks of Month/05-11-2019.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Weaks of Month/05-11-2019.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Weaks of Month/05-18-2019.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Weaks of Month/05-18-2019.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Weaks of Month/05-25-2019.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Weaks of Month/05-25-2019.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Weaks of Month/06-01-2019.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Weaks of Month/06-01-2019.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dist/toalOfMonth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../dist/toalOfMonth.csv" afterDir="false" />
-    </list>
+    <list default="true" id="e6e224e6-d6bf-4e62-88ed-19cc7de721d1" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +13,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main10.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="615">
+              <caret line="126" column="19" lean-forward="true" selection-start-line="126" selection-start-column="19" selection-end-line="126" selection-end-column="19" />
               <folding>
                 <element signature="e#0#69#0" expanded="true" />
               </folding>
@@ -335,7 +318,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main10.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="615">
+          <caret line="126" column="19" lean-forward="true" selection-start-line="126" selection-start-column="19" selection-end-line="126" selection-end-column="19" />
           <folding>
             <element signature="e#0#69#0" expanded="true" />
           </folding>
