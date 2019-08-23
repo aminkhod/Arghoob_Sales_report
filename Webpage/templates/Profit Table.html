@@ -5,6 +5,8 @@
     <title>My First Dashboard</title>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+	<link rel="stylesheet" href="{{ url_for('static',    filename='css/bootstrap.min.css') }}" crossorigin="anonymous">
+	<link rel="stylesheet" href="{{ url_for('static',    filename='css/template.css') }}">
 </head>
 <body>
     <header>
@@ -32,7 +34,9 @@
 	<ul class="menu">
 	</ul>
 </div>
-<script src="{{ url_for('static', filename='js/jquery-1.11.1.min.js') }}"></script>
-<script src="{{ url_for('static', filename='js/plots.js') }}"></script>
+    <script src="{{ url_for('static',    filename='js/bootstrap.min.js') }}" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="{{ url_for('static', filename='js/jquery-1.11.1.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/plots.js') }}"></script>
+
 </body>
 </html>
