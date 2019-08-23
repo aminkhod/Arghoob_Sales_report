@@ -339,7 +339,7 @@ def change_features():
 @app.route('/Stock_forecast')
 def Stock_forecast():
     bar = create_plot()
-    return render_template('Profit Table.html', plot=bar)
+    return render_template('Stock_forecast.html', plot=bar)
 
 @app.route('/ItemRestock')
 def ItemRestock():
