@@ -2,26 +2,44 @@
 <html lang="en" dir="ltr">
  <head>
    <meta charset="utf-8">
-   <title>Arghoob\</title>
+   <title>Arghoob</title>
    <link rel="stylesheet" href="{{ url_for('static',    filename='css/bootstrap.min.css') }}" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static',    filename='css/template.css') }}">
-	<script type="text/javascript" src="static/js/jquery-3.4.13.js"></script>
+	<script type="text/javascript" src="static/js/jquery-3.4.12.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
  </head>
+ <style>
+ ul{
+	display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+ }
+ ul li{
+	display: block;
+    flex: 0 1 auto; /* Default */
+    list-style-type: none;
+ }
+ #m1{
+    width: 100%;
+    background: #ccc;
+    padding: 10px 0;
+    margin-bottom: 10px;}
+ </style>
  <body>
     <header>
-      <div class="container">
-        <h1 class="logo">Arghoob Web App</h1>
-        <strong><nav>
-          <ul class="menu">
-            <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li role="presentation"><a href="#">Sign In</a></li>
-            <li role="presentation" class="active"><a href="showSignUp">Sign Up</a></li>
-			<li><a href="{{ url_for('about') }}">About</a></li>
+	<h1 class="logo" style="text-align: center; margin: 0; ">Arghoob Web App</h1>
+        <strong><nav id="m1">
+          <ul class="menu col-sm-3">
+            <li class="menu col-sm-5"><a href="{{ url_for('home') }}">Home</a></li>
+            <li role="presentation" class="menu col-sm-5"><a href="#">Sign In</a></li>
+            <li class="menu col-sm-5" role="presentation" class="active"><a href="showSignUp">Sign Up</a></li>
+			<li class="menu col-sm-5" ><a href="{{ url_for('about') }}">About</a></li>
           </ul>
         </nav></strong>
-      </div>
     </header>
     
     {% block content %}

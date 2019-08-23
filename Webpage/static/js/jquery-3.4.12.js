@@ -10655,6 +10655,22 @@ $(function() {
             }
         });
     });
+		$('#btnStock_forecast').click(function() {
+
+        $.ajax({
+            url: '/Stock_forecast',
+            //data: $('form').serialize(),
+			data: {},
+            type: 'POST',
+            success: function(response) {
+                console.log(response);
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    });
+	Stock_forecast
 /*		$('#btnProfitTable').click(function() {
 
         $.ajax({

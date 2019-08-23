@@ -2,7 +2,6 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-	<!-- <script type="text/javascript"> -->
     <title>Flask App</title>
 
   </head>
@@ -10,31 +9,19 @@
     {% extends "template.html" %}
     {% block content %}
     
-    <h1> Arghoob Dashboard</h1>
+    <h1 style="text-align: center;"> Arghoob Dashboard</h1>
     <p></p>
 	    <div class="jumbotron">
-        <h1></h1>
-		<div class="container">
-			<strong><nav>
-				<ul class="menu">
-					<li><a href="{{ url_for('Stock_forecast') }}">Monthly Stock Forecast</a></li>
-			 </ul>
-        </nav></strong>
-		</div>
         <button id="btnBranchSale" class="btn btn-lg btn-primary btn-block" type="button">Sale of each Branch</button>
         <button id="btnMonthlySale" class="btn btn-lg btn-primary btn-block" type="button">Monthly Sale</button>
 		<button id="btnFastMoving" class="btn btn-lg btn-primary btn-block" type="button">Fast Moving </button>
 		<button id="btnNonMoving" class="btn btn-lg btn-primary btn-block" type="button">Non Moving</button>
-        <!--button id="btnProfitTable" class="btn btn-lg btn-primary btn-block" type="button">Profit Table</button>-->
-		
-     <!--   <button id="btnSignUp" class="btn btn-lg btn-primary btn-block" type="button">Sign up</button>
-        <button id="btnSignUp" class="btn btn-lg btn-primary btn-block" type="button">Sign up</button>
-        <button id="btnSignUp" class="btn btn-lg btn-primary btn-block" type="button">Sign up</button>
-        <button id="btnSignUp" class="btn btn-lg btn-primary btn-block" type="button">Sign up</button> -->
+		<button id="btnStock_forecast" class="btn btn-lg btn-primary btn-block" type="button">Monthly Stock Forecast</button>
+		</div>
 		</div>
     
     {% endblock %}
-
+	</script>
   </body>
 
 
