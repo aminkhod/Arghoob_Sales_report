@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[33]:
+# In[44]:
 
 
 import pandas as pd
@@ -12,7 +12,7 @@ import os
 # subprocess.check_call(['pip', 'install',"--upgrade", 'numpy']) # upgrade pkg
 
 
-# In[34]:
+# In[45]:
 
 
 path = 'Weaks of Month/'
@@ -30,7 +30,7 @@ for f in filesNoAdd:
     print(f)
 
 
-# In[35]:
+# In[46]:
 
 
 numListOfBranch = ['401 Co','402 Co','404 Co','405 Co','412 Co','416 Co',
@@ -55,7 +55,7 @@ header = productDetail.copy()
 header.extend(listOfBranch.copy())
 
 
-# In[36]:
+# In[47]:
 
 
 def findID(sku, Data):
@@ -68,7 +68,7 @@ def findID(sku, Data):
     return "This good with Sku of " + sku + " is not in data." 
 
 
-# In[37]:
+# In[48]:
 
 
 def buildList(num, ide, productDetail, listOfBranch, rawData, final):
@@ -100,7 +100,7 @@ def buildList(num, ide, productDetail, listOfBranch, rawData, final):
     return producList
 
 
-# In[38]:
+# In[49]:
 
 
 def listAddition(Dataide, ide, num, productDetail, listOfBranch, rawData, monthRawData, final):
@@ -135,7 +135,7 @@ def listAddition(Dataide, ide, num, productDetail, listOfBranch, rawData, monthR
     return monthRawData
 
 
-# In[39]:
+# In[50]:
 
 
 def noStock(sku,rawData):
@@ -153,7 +153,7 @@ def noStock(sku,rawData):
     return True
 
 
-# In[40]:
+# In[51]:
 
 
 ArghoobCost = pd.read_excel('hand made rteports\ARQOOB Cost.xlsx')
@@ -169,7 +169,7 @@ for f in files:
 # ArghoobCost
 
 
-# In[41]:
+# In[52]:
 
 
 # a = np.zeros(shape=(1,len(header)))
@@ -202,7 +202,7 @@ for f in files:
         sid +=1
 
 
-# In[42]:
+# In[53]:
 
 
 totalGoodSale = []
@@ -238,7 +238,7 @@ for i in range(len(status)):
 monthRawData["Status"] = status
 
 
-# In[43]:
+# In[54]:
 
 
 monthRawData.to_csv("toalOfMonth.csv", index=False)
