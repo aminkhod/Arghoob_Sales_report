@@ -79,7 +79,7 @@ listOfBranch = ['total sale of Goods', 'Latest SOH',
                 '444 Co', '444.Arq COST', '444.Cost Price', '444.V.S.P.', '444.AVG. WEEK',
                 '490 Co', '490.Arq COST', '490.Cost Price', '490.V.S.P.', '490.AVG. WEEK']
 
-productDetail = ['Sku', 'Catalogue N', 'Title', 'Label' ,'Arq COST', 'Cost Price' ,'V.S.P.']
+productDetail = ['Sku','UPC', 'Catalogue N', 'Title', 'Label' ,'Arq COST', 'Cost Price' ,'V.S.P.']
 header = productDetail.copy()
 header.extend(listOfBranch.copy())
 # @app.route("/")
@@ -264,7 +264,7 @@ def create_plot():
     monthesLenght = [31,28,31,30,31,30,31,31,30,31,30,31]
     df = pd.read_csv('allMonthes.csv')
     foo = [filesNoAdd[i].replace('.csv',' total sale of Goods') for i in range(len(filesNoAdd))]
-    list = ['Sku', 'Catalogue N', 'Label', 'Arq COST',
+    list = ['Sku','UPC', 'Catalogue N', 'Label', 'Arq COST',
             'Cost Price', 'V.S.P.', 'Latest SOH']
     newdf = df[list]
 
@@ -275,17 +275,17 @@ def create_plot():
     for i in range(len(foo)):
         cName = foo[i].replace(' total sale of Goods',': QTY SOLD')
         newdf[cName] = df[foo[i]]
-        newdf[cName+'Arqoob Cost'] = df[foo[i]] * df['Arq COST']
-        newdf[cName+'QTY SOLD VALUE'] = df[foo[i]] * df['Cost Price']
+        newdf[cName+'Arqoob Cost'] = round(df[foo[i]] * df['Arq COST'],2)
+        newdf[cName+'QTY SOLD VALUE'] = round(df[foo[i]] * df['Cost Price'],2)
         list.extend([cName,cName+'Arqoob Cost',cName+'QTY SOLD VALUE'])
         totalQtySold += newdf[cName]
         totalArghoobCost += newdf[cName+'Arqoob Cost']
         totalArqhoobPrice += newdf[cName+'QTY SOLD VALUE']
-
+    totalArghoobCost = round(totalArghoobCost,2)
     qtyAvgDay = round(totalQtySold/np.sum(monthesLenght[:len(foo)]),2)
     qtyAvgMonth = round(totalQtySold/len(foo),2)
     valueAvgMonth = round(totalArqhoobPrice/len(foo),2)
-    qtyStockValue = newdf['Latest SOH'] * newdf['Cost Price']
+    qtyStockValue = round(newdf['Latest SOH'] * newdf['Cost Price'],2)
     DaysStockInHand = round(newdf['Latest SOH'] / qtyAvgDay,2)
     WeeksStockInHand = round(DaysStockInHand/7,0)
     MonthesStockInHand = round(DaysStockInHand/30,0)
@@ -322,7 +322,7 @@ def create_plot():
         cells=dict(values=np.transpose(newdf.values[:,:])))
     layout = Layout(
         title='Profit Table',
-        width=3800,
+        width=4400,
 		height=620
         )
     data = [trace]

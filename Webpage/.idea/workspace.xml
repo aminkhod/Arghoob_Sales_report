@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6e224e6-d6bf-4e62-88ed-19cc7de721d1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastMoving.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ItemMonitor.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ItemRestock.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Monthly_Sale.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NonMoving.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Profit Table.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Profit Table.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sale_Of_Goods.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allMonthes.csv" beforeDir="false" afterPath="$PROJECT_DIR$/allMonthes.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main10.py" beforeDir="false" afterPath="$PROJECT_DIR$/main10.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,7 +21,20 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main10.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="394">
+              <caret line="324" column="16" selection-start-line="324" selection-start-column="16" selection-end-line="324" selection-end-column="16" />
+              <folding>
+                <element signature="e#0#69#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -32,6 +55,7 @@
       <find>index'</find>
       <find>upc</find>
       <find>menu</find>
+      <find>TotalArghoobCos</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -52,8 +76,8 @@
         <option value="$PROJECT_DIR$/templates/signup.html" />
         <option value="$PROJECT_DIR$/templates/Profit Table.html" />
         <option value="$PROJECT_DIR$/templates/home.html" />
-        <option value="$PROJECT_DIR$/main10.py" />
         <option value="$PROJECT_DIR$/p.py" />
+        <option value="$PROJECT_DIR$/main10.py" />
       </list>
     </option>
   </component>
@@ -69,6 +93,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Course" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -76,27 +101,10 @@
               <item name="Webpage" type="b2602c69:ProjectViewProjectNode" />
               <item name="Webpage" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Webpage" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Webpage" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Webpage" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Webpage" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Webpage" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Webpage" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Course" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -232,6 +240,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1038" height="803" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17964073" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -334,8 +343,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main10.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="179" column="11" selection-start-line="179" selection-start-column="11" selection-end-line="179" selection-end-column="11" />
+        <state relative-caret-position="394">
+          <caret line="324" column="16" selection-start-line="324" selection-start-column="16" selection-end-line="324" selection-end-column="16" />
           <folding>
             <element signature="e#0#69#0" expanded="true" />
           </folding>
