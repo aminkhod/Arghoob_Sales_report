@@ -322,8 +322,8 @@ def create_plot():
         cells=dict(values=np.transpose(newdf.values[:,:])))
     layout = Layout(
         title='Profit Table',
-        width=4400,
-		height=620
+        width=4800,
+		height=630
         )
     data = [trace]
     fig = Figure(data=data, layout=layout)

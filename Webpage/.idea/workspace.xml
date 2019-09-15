@@ -2,16 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6e224e6-d6bf-4e62-88ed-19cc7de721d1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastMoving.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ItemMonitor.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ItemRestock.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Monthly_Sale.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NonMoving.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Profit Table.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Profit Table.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sale_Of_Goods.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allMonthes.csv" beforeDir="false" afterPath="$PROJECT_DIR$/allMonthes.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main10.py" beforeDir="false" afterPath="$PROJECT_DIR$/main10.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
