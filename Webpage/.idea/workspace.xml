@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6e224e6-d6bf-4e62-88ed-19cc7de721d1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Profit Table.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Profit Table.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main10.py" beforeDir="false" afterPath="$PROJECT_DIR$/main10.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Stock_forecast.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Stock_forecast.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,8 +17,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main10.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="324" column="16" selection-start-line="324" selection-start-column="16" selection-end-line="324" selection-end-column="16" />
+            <state relative-caret-position="275">
+              <caret line="368" column="72" lean-forward="true" selection-start-line="368" selection-start-column="72" selection-end-line="370" selection-end-column="73" />
               <folding>
                 <element signature="e#0#69#0" expanded="true" />
               </folding>
@@ -46,6 +48,7 @@
       <find>upc</find>
       <find>menu</find>
       <find>TotalArghoobCos</find>
+      <find>non</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -331,10 +334,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://C:/Program Files/Python36/Lib/site-packages/pandas/core/series.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-184">
+          <caret line="4148" column="8" selection-start-line="4148" selection-start-column="8" selection-end-line="4148" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main10.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="324" column="16" selection-start-line="324" selection-start-column="16" selection-end-line="324" selection-end-column="16" />
+        <state relative-caret-position="275">
+          <caret line="368" column="72" lean-forward="true" selection-start-line="368" selection-start-column="72" selection-end-line="370" selection-end-column="73" />
           <folding>
             <element signature="e#0#69#0" expanded="true" />
           </folding>

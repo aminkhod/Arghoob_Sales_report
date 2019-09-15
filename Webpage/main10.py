@@ -244,11 +244,11 @@ def FastMoving():
 def NonMoving():
     df = pd.read_csv('allMonthes.csv')
     newdf = df[df['Stock Status'] == 'Non moving']
-    newdf = newdf.loc[:,['Sku', 'Catalogue N', 'Title', 'Label',
+    newdf = newdf.loc[:,['Sku','UPC', 'Catalogue N', 'Title', 'Label',
                          'Arq COST', "Cost Price", 'V.S.P.',
                          'Non Moving Action','Reordering']].reindex()
     trace = go.Table(
-        header=dict(values=['Sku', 'Catalogue N', 'Title',
+        header=dict(values=['Sku', 'UPC', 'Catalogue N', 'Title',
                             'Label', 'Arq COST', "Cost Price",
                             'V.S.P.', 'Non Moving Action', 'Reordering']),
         cells=dict(values=np.transpose(newdf.values[:,:])))
@@ -346,7 +346,7 @@ def Stock_forecast():
 def ItemRestock():
     Restockdf = pd.read_csv('Profit Table.csv')
     Restockdf = Restockdf[Restockdf['Days Stock in Hand']<=10]
-    Restockdf.to_csv('ItemRestock.csv')
+    Restockdf.to_csv('ItemRestock.csv', index=False)
     with open('ItemRestock.csv') as fp:
         csv = fp.read()
     return Response(csv, mimetype="text/csv",
@@ -356,13 +356,25 @@ def ItemRestock():
 def ItemMonitor():
     Monitordf = pd.read_csv('Profit Table.csv')
     Monitordf = Monitordf[Monitordf['Latest SOH']/Monitordf['Total Qty Sold']>=4]
-    Monitordf.to_csv('ItemMonitor.csv')
+    Monitordf.to_csv('ItemMonitor.csv', index=False)
     with open('ItemMonitor.csv') as fp:
         csv = fp.read()
     return Response(csv, mimetype="text/csv",
                 headers={"Content-disposition":
                          "attachment; filename=Items to be Monitor.csv"})
-
+@app.route('/ItemNonMoving')
+def ItemNonMoving():
+    df = pd.read_csv('allMonthes.csv')
+    newdf = df[df['Stock Status'] == 'Non moving']
+    # newdf = newdf.loc[:,['Sku','UPC', 'Catalogue N', 'Title', 'Label',
+    #                      'Arq COST', "Cost Price", 'V.S.P.',
+    #                      'Non   Moving Action','Reordering']].reindex()
+    newdf.to_csv('nonMovingItem.csv', index=False)
+    with open('nonMovingItem.csv') as fp:
+        csv = fp.read()
+    return Response(csv, mimetype="text/csv",
+                headers={"Content-disposition":
+                         "attachment; filename= Non Moving Item.csv"})
 # @app.route('/index')
 # def index():
 #     bar = create_plot()
