@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[33]:
 
 
 import pandas as pd
@@ -12,7 +12,7 @@ import os
 # subprocess.check_call(['pip', 'install',"--upgrade", 'numpy']) # upgrade pkg
 
 
-# In[2]:
+# In[34]:
 
 
 path = 'Weaks of Month/'
@@ -30,7 +30,7 @@ for f in filesNoAdd:
     print(f)
 
 
-# In[3]:
+# In[35]:
 
 
 numListOfBranch = ['401 Co','402 Co','404 Co','405 Co','412 Co','416 Co',
@@ -55,7 +55,7 @@ header = productDetail.copy()
 header.extend(listOfBranch.copy())
 
 
-# In[4]:
+# In[36]:
 
 
 def findID(sku, Data):
@@ -68,7 +68,7 @@ def findID(sku, Data):
     return "This good with Sku of " + sku + " is not in data." 
 
 
-# In[5]:
+# In[37]:
 
 
 def buildList(num, ide, productDetail, listOfBranch, rawData, final):
@@ -100,7 +100,7 @@ def buildList(num, ide, productDetail, listOfBranch, rawData, final):
     return producList
 
 
-# In[6]:
+# In[38]:
 
 
 def listAddition(Dataide, ide, num, productDetail, listOfBranch, rawData, monthRawData, final):
@@ -135,7 +135,7 @@ def listAddition(Dataide, ide, num, productDetail, listOfBranch, rawData, monthR
     return monthRawData
 
 
-# In[7]:
+# In[39]:
 
 
 def noStock(sku,rawData):
@@ -153,22 +153,23 @@ def noStock(sku,rawData):
     return True
 
 
-# In[8]:
+# In[40]:
 
 
-ArghoobCost = pd.read_excel('hand make rteports/ARQOOB Cost.xlsx')
+ArghoobCost = pd.read_excel('hand made rteports\ARQOOB Cost.xlsx')
 for f in files:
     rawData = pd.read_csv(f , encoding='latin1')
     i = 0
     for sku in rawData['Sku']:
         j = findID(sku, ArghoobCost)
         rawData.loc[i,'Arq COST'] = ArghoobCost.loc[j, 'Arq COST']
+        rawData.loc[i,'UPC'] = ArghoobCost.loc[j, 'UPC Code']
         i += 1
     rawData.to_csv(f, index=False)
 # ArghoobCost
 
 
-# In[186]:
+# In[41]:
 
 
 # a = np.zeros(shape=(1,len(header)))
@@ -201,7 +202,7 @@ for f in files:
         sid +=1
 
 
-# In[187]:
+# In[42]:
 
 
 totalGoodSale = []
@@ -237,7 +238,7 @@ for i in range(len(status)):
 monthRawData["Status"] = status
 
 
-# In[188]:
+# In[43]:
 
 
 monthRawData.to_csv("toalOfMonth.csv", index=False)
