@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6e224e6-d6bf-4e62-88ed-19cc7de721d1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/template.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main11.py" beforeDir="false" afterPath="$PROJECT_DIR$/main11.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,37 +20,49 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="1" />
+          <entry key="py" value="2" />
           <entry key="yaml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="1" />
+          <entry key="Python" value="2" />
           <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="124" />
+          <entry key="py" value="132" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="124" />
+          <entry key="Python" value="132" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main10.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="362" column="44" lean-forward="true" selection-start-line="362" selection-start-column="44" selection-end-line="362" selection-end-column="44" />
+            <state relative-caret-position="919">
+              <caret line="286" column="46" selection-start-line="286" selection-start-column="46" selection-end-line="286" selection-end-column="46" />
               <folding>
                 <element signature="e#0#69#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main11.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="485">
+              <caret line="364" lean-forward="true" selection-start-line="364" selection-end-line="364" />
+              <folding>
+                <element signature="e#0#59#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -106,14 +116,15 @@
         <option value="$PROJECT_DIR$/p.py" />
         <option value="$PROJECT_DIR$/h.py" />
         <option value="$PROJECT_DIR$/main10.py" />
+        <option value="$PROJECT_DIR$/main11.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="65" />
-    <option name="y" value="20" />
-    <option name="width" value="1305" />
-    <option name="height" value="745" />
+    <option name="x" value="116" />
+    <option name="y" value="-15" />
+    <option name="width" value="1366" />
+    <option name="height" value="742" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -159,7 +170,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.p">
+  <component name="RunManager" selected="Python.main11">
     <configuration name="main10" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Webpage" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -173,6 +184,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main10.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main11" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Webpage" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main11.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -249,9 +281,11 @@
       <item itemvalue="Python.main6" />
       <item itemvalue="Python.main7" />
       <item itemvalue="Python.p" />
+      <item itemvalue="Python.main11" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main11" />
         <item itemvalue="Python.p" />
         <item itemvalue="Python.main10" />
         <item itemvalue="Python.main7" />
@@ -390,10 +424,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main10.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="362" column="44" lean-forward="true" selection-start-line="362" selection-start-column="44" selection-end-line="362" selection-end-column="44" />
+        <state relative-caret-position="919">
+          <caret line="286" column="46" selection-start-line="286" selection-start-column="46" selection-end-line="286" selection-end-column="46" />
           <folding>
             <element signature="e#0#69#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main11.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="364" lean-forward="true" selection-start-line="364" selection-end-line="364" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
           </folding>
         </state>
       </provider>
