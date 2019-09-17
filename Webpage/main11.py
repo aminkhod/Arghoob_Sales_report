@@ -1,4 +1,4 @@
-from flask import Flask, render_template,request, Response, send_file
+from flask import Flask, render_template,request, Response
 import pandas as pd
 import os
 import json
@@ -20,9 +20,6 @@ from plotly.graph_objs import *
 # import dash
 # import dash_core_components as dcc
 # import dash_html_components as html
-# from IPython.display import SVG, display
-# from IPython.display import Image
-# from IPython.display import display, Math, Latex
 # import colorlover as cl
 # from IPython.display import HTML
 # from IPython.display import IFrame
@@ -58,9 +55,7 @@ for f in filesNoAdd:
     monthDate.append(f.replace('.csv',''))
 
 df = pd.read_csv('allMonthes.csv')
-# yV = []
-# for i in range(len(files)):
-#     yV.append(df.values[:,i + 8])
+
 numListOfBranch = ['401 Co','402 Co','404 Co','405 Co','412 Co','416 Co',
                    '417 Co','423 Co', '424 Co','425 Co','426 Co','429 Co','444 Co','490 Co']
 listOfBranch = ['total sale of Goods', 'Latest SOH',
@@ -82,13 +77,7 @@ listOfBranch = ['total sale of Goods', 'Latest SOH',
 productDetail = ['Sku','UPC', 'Catalogue N', 'Title', 'Label' ,'Arq COST', 'Cost Price' ,'V.S.P.']
 header = productDetail.copy()
 header.extend(listOfBranch.copy())
-# @app.route("/")
-# def hello():
-#     return '''
-#         <html><body>
-#         Hello. <a href="/getPlotCSV">Click me.</a>
-#         </body></html>
-#             '''
+
 @app.route("/")
 def template():
     return render_template("template.html")
@@ -138,7 +127,7 @@ def btnMonthlySale():
         width=6000
         )
     fig = Figure(data=data, layout=layout)
-    # fig = Figure(data=data)
+
     plot(fig, filename='Monthly_Sale.html')
     return render_template("Monthly_Sale.html")
 
@@ -161,8 +150,6 @@ def BranchSale():
             branchTot.append(round(df[col].sum(),2))
         cell.append(branchTot)
 
-
-
     traces = []
     for i in range(len(files)):
         trace = go.Bar(
@@ -171,7 +158,6 @@ def BranchSale():
         name=monthDate[i]
         )
         traces.append(trace)
-
 
     data = Data(traces)
     layout = Layout(
@@ -260,6 +246,7 @@ def NonMoving():
     fig = Figure(data=data, layout=layout)
     plot(fig, filename='NonMoving.html')
     return render_template('NonMoving.html')
+
 def create_plot():
     monthesLenght = [31,28,31,30,31,30,31,31,30,31,30,31]
     df = pd.read_csv('allMonthes.csv')
@@ -352,6 +339,7 @@ def ItemRestock():
     return Response(csv, mimetype="text/csv",
                 headers={"Content-disposition":
                          "attachment; filename=Items to be Restock.csv"})
+
 @app.route('/ItemMonitor')
 def ItemMonitor():
     Monitordf = pd.read_csv('Profit Table.csv')
@@ -362,23 +350,18 @@ def ItemMonitor():
     return Response(csv, mimetype="text/csv",
                 headers={"Content-disposition":
                          "attachment; filename=Items to be Monitor.csv"})
+
 @app.route('/ItemNonMoving')
 def ItemNonMoving():
     df = pd.read_csv('allMonthes.csv')
     newdf = df[df['Stock Status'] == 'Non moving']
-    # newdf = newdf.loc[:,['Sku','UPC', 'Catalogue N', 'Title', 'Label',
-    #                      'Arq COST', "Cost Price", 'V.S.P.',
-    #                      'Non   Moving Action','Reordering']].reindex()
     newdf.to_csv('nonMovingItem.csv', index=False)
     with open('nonMovingItem.csv') as fp:
         csv = fp.read()
     return Response(csv, mimetype="text/csv",
                 headers={"Content-disposition":
                          "attachment; filename= Non Moving Item.csv"})
-# @app.route('/index')
-# def index():
-#     bar = create_plot()
-#     return render_template('index.html', plot=bar)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
