@@ -269,7 +269,7 @@ def create_plot():
     newdf = df[list]
 
     totalQtySold = np.zeros(len(df['Sku']))
-    totalArghoobCost = np.zeros(len(df['Sku']))
+    totalArqoobCost = np.zeros(len(df['Sku']))
     totalArqhoobPrice = np.zeros(len(df['Sku']))
 
     for i in range(len(foo)):
@@ -279,9 +279,9 @@ def create_plot():
         newdf[cName+'QTY SOLD VALUE'] = round(df[foo[i]] * df['Cost Price'],2)
         list.extend([cName,cName+'Arqoob Cost',cName+'QTY SOLD VALUE'])
         totalQtySold += newdf[cName]
-        totalArghoobCost += newdf[cName+'Arqoob Cost']
+        totalArqoobCost += newdf[cName+'Arqoob Cost']
         totalArqhoobPrice += newdf[cName+'QTY SOLD VALUE']
-    totalArghoobCost = round(totalArghoobCost,2)
+    totalArqoobCost = round(totalArqoobCost,2)
     qtyAvgDay = round(totalQtySold/np.sum(monthesLenght[:len(foo)]),2)
     qtyAvgMonth = round(totalQtySold/len(foo),2)
     valueAvgMonth = round(totalArqhoobPrice/len(foo),2)
@@ -305,15 +305,15 @@ def create_plot():
         i +=1
 
 
-    newdf['Total Qty Sold'], newdf['Total Arghoob Cost'],newdf['Total Arqhoob Price'],\
+    newdf['Total Qty Sold'], newdf['Total Arqoob Cost'],newdf['Total Arqhoob Price'],\
     newdf['Qty Avg Day'], newdf['Qty Avg Month'], newdf['Value Avg Month'],\
     newdf['Qty Stock Value'], newdf['Days Stock in Hand'],newdf['Current stock cover upto (Week)'], \
     newdf['Current stock cover upto (Month)'], newdf['Current stock cover upto (Date)'] = \
-                totalQtySold, totalArghoobCost,totalArqhoobPrice,qtyAvgDay, qtyAvgMonth,\
+                totalQtySold, totalArqoobCost,totalArqhoobPrice,qtyAvgDay, qtyAvgMonth,\
                 valueAvgMonth, qtyStockValue,DaysStockInHand, WeeksStockInHand, MonthesStockInHand,\
                 CurrentStockCoverUpto
     newdf.to_csv('Profit Table.csv',index=False)
-    list.extend(['Total Qty Sold', 'Total Arghoob Cost', 'Total Arqhoob Price',
+    list.extend(['Total Qty Sold', 'Total Arqoob Cost', 'Total Arqhoob Price',
                  'Qty Avg Day', 'Qty Avg Month','Value Avg Month', 'Qty Stock Value',
                  'Days Stock in Hand', 'Current stock cover upto (Week)',
                  'Current stock cover upto (Month)','Current stock cover upto (Date)'])
