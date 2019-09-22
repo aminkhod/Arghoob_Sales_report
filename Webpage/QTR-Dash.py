@@ -245,6 +245,7 @@ def create_plot(filesNoAdd):
     list = ['Sku','UPC', 'Catalogue N', 'Label', 'Arq COST',
             'Cost Price', 'V.S.P.', 'Latest SOH']
     newdf = df[list]
+    newdf['Arq COST'] = np.round(newdf['Arq COST'],2)
 
     totalQtySold = np.zeros(len(df['Sku']))
     totalArqoobCost = np.zeros(len(df['Sku']))
@@ -254,14 +255,14 @@ def create_plot(filesNoAdd):
         cName = foo[i].replace(' total sale of Goods',': QTY SOLD')
         newdf[cName] = df[foo[i]]
 
-        newdf[cName+'Arqoob Cost'] = np.round(df[foo[i]] * df['Arq COST'],2)
-        newdf[cName+'Arqoob Cost'] = np.round(newdf[cName+'Arqoob Cost'],2)
-        
-        newdf[cName+'QTY SOLD VALUE'] = np.round(df[foo[i]] * df['Cost Price'],2)
-        list.extend([cName,cName+'Arqoob Cost',cName+'QTY SOLD VALUE'])
+        newdf[cName+' Arqoob Cost'] = np.round(df[foo[i]] * df['Arq COST'],2)
+        newdf[cName+' Arqoob Cost'] = np.round(newdf[cName+' Arqoob Cost'],2)
+
+        newdf[cName+' QTY SOLD VALUE'] = np.round(df[foo[i]] * df['Cost Price'],2)
+        list.extend([cName,cName+' Arqoob Cost',cName+' QTY SOLD VALUE'])
         totalQtySold += newdf[cName]
-        totalArqoobCost += newdf[cName+'Arqoob Cost']
-        totalArqhoobPrice += newdf[cName+'QTY SOLD VALUE']
+        totalArqoobCost += newdf[cName+' Arqoob Cost']
+        totalArqhoobPrice += newdf[cName+' QTY SOLD VALUE']
     totalArqoobCost = round(totalArqoobCost,2)
     qtyAvgDay = round(totalQtySold/np.sum(monthesLenght[:len(foo)]),2)
     qtyAvgMonth = round(totalQtySold/len(foo),2)
