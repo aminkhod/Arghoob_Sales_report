@@ -56,14 +56,12 @@ for f in filesNoAdd:
 
 df = pd.read_csv('allMonthes.csv')
 
-numListOfBranch = ['301 Co','302 Co','306 Co','307 Co','344 Co','390 Co']
+numListOfBranch = ['301 Co','302 Co','306 Co','307 Co']
 listOfBranch = ['total sale of Goods', 'Latest SOH',
                 '301 Co', '301.Arq COST', '301.Cost Price', '301.V.S.P.', '301.AVG. WEEK',
                 '302 Co', '302.Arq COST', '302.Cost Price', '302.V.S.P.', '302.AVG. WEEK',
                 '306 Co', '306.Arq COST', '306.Cost Price', '306.V.S.P.', '306.AVG. WEEK',
-                '307 Co', '307.Arq COST', '307.Cost Price', '307.V.S.P.', '307.AVG. WEEK',
-                '344 Co', '344.Arq COST', '344.Cost Price', '344.V.S.P.', '344.AVG. WEEK',
-                '390 Co', '390.Arq COST', '390.Cost Price', '390.V.S.P.', '390.AVG. WEEK']
+                '307 Co', '307.Arq COST', '307.Cost Price', '307.V.S.P.', '307.AVG. WEEK',]
 
 productDetail = ['Sku','UPC', 'Catalogue N', 'Title', 'Label' ,'Arq COST', 'Cost Price' ,'V.S.P.']
 header = productDetail.copy()
@@ -253,8 +251,8 @@ def create_plot():
     for i in range(len(foo)):
         cName = foo[i].replace(' total sale of Goods',': QTY SOLD')
         newdf[cName] = df[foo[i]]
-        newdf[cName+'Arqoob Cost'] = round(df[foo[i]] * df['Arq COST'],2)
-        newdf[cName+'QTY SOLD VALUE'] = round(df[foo[i]] * df['Cost Price'],2)
+        newdf[cName+'Arqoob Cost'] = np.round(df[foo[i]] * df['Arq COST'],2)
+        newdf[cName+'QTY SOLD VALUE'] = np.round(df[foo[i]] * df['Cost Price'],2)
         list.extend([cName,cName+'Arqoob Cost',cName+'QTY SOLD VALUE'])
         totalQtySold += newdf[cName]
         totalArqoobCost += newdf[cName+'Arqoob Cost']
