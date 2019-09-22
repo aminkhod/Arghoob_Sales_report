@@ -201,6 +201,7 @@ def FastMoving():
     newdf = df[df['Stock Status'] == 'Fast moving']
     newdf = newdf.loc[:,['Sku', 'Catalogue N', 'Title', 'Label',
                          'Arq COST', "Cost Price", 'V.S.P.', 'Latest SOH','Reordering']].reindex()
+    newdf['Arq COST'] = np.round(newdf['Arq COST'],2)
     trace = go.Table(
         header=dict(values=['Sku', 'Catalogue N', 'Title', 'Label',
                             'Arq COST', "Cost Price", 'V.S.P.', 'Latest SOH','Reordering']),
@@ -222,6 +223,7 @@ def NonMoving():
     newdf = newdf.loc[:,['Sku','UPC', 'Catalogue N', 'Title', 'Label',
                          'Arq COST', "Cost Price", 'V.S.P.',
                          'Non Moving Action','Reordering']].reindex()
+    newdf['Arq COST'] = np.round(newdf['Arq COST'],2)
     trace = go.Table(
         header=dict(values=['Sku', 'UPC', 'Catalogue N', 'Title',
                             'Label', 'Arq COST', "Cost Price",
@@ -236,7 +238,7 @@ def NonMoving():
     plot(fig, filename='NonMoving.html')
     return render_template('NonMoving.html')
 
-def create_plot():
+def create_plot(filesNoAdd):
     monthesLenght = [31,28,31,30,31,30,31,31,30,31,30,31]
     df = pd.read_csv('allMonthes.csv')
     foo = [filesNoAdd[i].replace('.csv',' total sale of Goods') for i in range(len(filesNoAdd))]
@@ -247,11 +249,14 @@ def create_plot():
     totalQtySold = np.zeros(len(df['Sku']))
     totalArqoobCost = np.zeros(len(df['Sku']))
     totalArqhoobPrice = np.zeros(len(df['Sku']))
-
+    df['Arq COST'] = np.round(df['Arq COST'],2)
     for i in range(len(foo)):
         cName = foo[i].replace(' total sale of Goods',': QTY SOLD')
         newdf[cName] = df[foo[i]]
+
         newdf[cName+'Arqoob Cost'] = np.round(df[foo[i]] * df['Arq COST'],2)
+        newdf[cName+'Arqoob Cost'] = np.round(newdf[cName+'Arqoob Cost'],2)
+        
         newdf[cName+'QTY SOLD VALUE'] = np.round(df[foo[i]] * df['Cost Price'],2)
         list.extend([cName,cName+'Arqoob Cost',cName+'QTY SOLD VALUE'])
         totalQtySold += newdf[cName]
@@ -315,7 +320,7 @@ def change_features():
 
 @app.route('/Stock_forecast')
 def Stock_forecast():
-    bar = create_plot()
+    bar = create_plot(filesNoAdd)
     return render_template('Stock_forecast.html', plot=bar)
 
 @app.route('/ItemRestock')
